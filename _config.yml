@@ -1,5 +1,5 @@
 title: 彩芸笔记
-description: 记录工作、学习、生活的点点滴滴
-show_downloads: true
+description: 记录工作、学习、生活的点滴
+show_downloads: false
 google_analytics:
 theme: jekyll-theme-architect
