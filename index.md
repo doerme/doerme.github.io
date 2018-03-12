@@ -10,7 +10,7 @@ layout: default
 
 ## [](#css)css
 
-[网页设计中常用的19个Web安全字体](/docsrc/docs/css/20180312){:target="_blank"}
+[网页设计中常用的20个Web安全字体](/docsrc/docs/css/20180312){:target="_blank"}
 
 
 ## [](#html)html
