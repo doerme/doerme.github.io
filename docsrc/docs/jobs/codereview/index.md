@@ -1,8 +1,10 @@
-# codereview流程：
+# codereview
 
-发布生产环境，合并代码到master时候，需要走merge request流程
+找问题会是CodeReview活动启动的初衷，但越到后期它更大的意义将演变成工程师交流土壤的培育和人员成长的促进
 
 ## Create merge request
+
+发布生产环境，合并代码到master时候，需要走merge request流程
 
 小组成员A在推送自己分支到服务器之后，可以在gitlab项目仓库点击 Create merge request 按钮发起MR请求。
 
@@ -38,3 +40,8 @@ code review不是针对个人，而是为了减少线上问题，提高团队协
 code review本身可以促进开发者代码规范意识，也可以让审查者领悟到其他小伙伴的开发思路
 
 code review可以选择设计惩罚机制，但是必须是审查者和被审查者都要一起对结果负责
+
+
+## 参考文章
+
+[大家的公司code review都是怎么做的？遇到过什么问题么？](https://blog.csdn.net/MessiGodLike/article/details/78422833)
