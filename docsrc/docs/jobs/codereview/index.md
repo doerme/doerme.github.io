@@ -17,10 +17,10 @@ Milestone及label可以在立项排期时候，与开发小组成员确商好，
 ![Alt code review](img/p7.png)
 
 被Assignee的小组成员会收到邮件通知
-![Alt code review](img/p7-3.png)
+![Alt code review](img/p73.png)
 
 小组成员B再收到Merge Requests之后，会在gitlab收到消息提示。可在Merge Requests列表之后，点开MR清单查看详情。
-![Alt code review](img/p7-2.png)
+![Alt code review](img/p72.png)
 ![Alt code review](img/p8.png)
 
 在详情之中，能看到当前GIT节点的CI状态，提交时间，以及code diff。在code diff之中每一行代码都可以添加评论。
