@@ -15,13 +15,6 @@
 | 显性URL  | --将域名302重定向到另外一个地址       2|
 | 隐性URL  | --与显性URL类似，但是会隐藏真实目标地址 |
 
-| 记录类型       | head two          | three |
-|:-------------|:------------------|:------|
-| ok           | good swedish fish | nice  |
-| out of stock | good and plenty   | nice  |
-| ok           | good `oreos`      | hmm   |
-| ok           | good `zoute` drop | yumm  |
-
 主机记录
 
 | 前缀 | 作用 |
