@@ -4,6 +4,7 @@ layout: default
 
 
 # [](#前端相关记录)前端相关记录
+[域名配置知识](/docsrc/docs/jobs/domain/index.md){:target="_blank"}
 
 [contextAPI](/docsrc/docs/javascript/20180417.md){:target="_blank"}
 
