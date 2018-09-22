@@ -14,16 +14,23 @@
 | 显性URL | --将域名302重定向到另外一个地址 |
 | 隐性URL | --与显性URL类似，但是会隐藏真实目标地址 |
 
+| head1        | head two          | three |
+|:-------------|:------------------|:------|
+| ok           | good swedish fish | nice  |
+| out of stock | good and plenty   | nice  |
+| ok           | good `oreos`      | hmm   |
+| ok           | good `zoute` drop | yumm  |
+
 主机记录
-|前缀|作用|
+| 前缀 | 作用 |
 |:---|:----|
-|www|www.xxx.com|
-|@|直接解析主域名 xxx.com|
-|*|泛解析，匹配其他所有域名 *.xxx.com|
-|mail|将域名解析为mail.xxx.com，通常用于解析邮箱服务器。|
-|二级域名|如：abc.xxx.com，填写abc。|
-|手机网站|如：m.xxx.com，填写m。|
-|显性URL：|不支持泛解析（泛解析：将所有子域名解析到同一地址）|
+| www |www.xxx.com|
+| @ |直接解析主域名 xxx.com|
+| * |泛解析，匹配其他所有域名 *.xxx.com|
+| mail |将域名解析为mail.xxx.com，通常用于解析邮箱服务器。|
+| 二级域名 |如：abc.xxx.com，填写abc。|
+| 手机网站 |如：m.xxx.com，填写m。|
+| 显性URL： |不支持泛解析（泛解析：将所有子域名解析到同一地址）|
 
 
 
