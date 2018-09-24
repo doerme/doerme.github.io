@@ -4,6 +4,9 @@ layout: default
 
 
 # [](#前端相关记录)前端相关记录
+
+[osx10.8.5系统升级](/docsrc/docs/jobs/osx2sierra/index.md){:target="_blank"}
+
 [域名配置知识](/docsrc/docs/jobs/domain/index.md){:target="_blank"}
 
 [contextAPI](/docsrc/docs/javascript/20180417.md){:target="_blank"}
