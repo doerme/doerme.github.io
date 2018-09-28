@@ -4,6 +4,7 @@ layout: default
 
 
 # [](#前端相关记录)前端相关记录
+[package.json 版本号规范](/docsrc/docs/jobs/packageversionlimit/index.md){:target="_blank"}
 
 [osx10.8.5系统升级](/docsrc/docs/jobs/osx2sierra/index.md){:target="_blank"}
 
