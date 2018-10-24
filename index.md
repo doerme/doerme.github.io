@@ -4,6 +4,8 @@ layout: default
 
 
 # [](#前端相关记录)前端相关记录
+[vue生命周期](/docsrc/docs/jobs/vuecli3/vuelifecycle.md){:target="_blank"}
+
 [vuecli学习笔记](/docsrc/docs/jobs/vuecli3/index.md){:target="_blank"}
 
 [package.json 版本号规范](/docsrc/docs/jobs/packageversionlimit/index.md){:target="_blank"}
