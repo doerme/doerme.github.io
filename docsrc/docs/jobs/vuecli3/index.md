@@ -93,3 +93,5 @@ module.exports = {
   }
 }
 ```
+
+[参考文档](https://cli.vuejs.org/zh/config/#vue-config-js){:target="_blank"}
