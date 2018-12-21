@@ -4,7 +4,7 @@ layout: default
 
 
 # [](#前端相关记录)前端相关记录
-[Nginx Location 正则表达式](/docsrc/docs/jobs/nginxregexp/index.md){:target="_blank"}
+[Nginx配置](/docsrc/docs/jobs/nginxregexp/index.md){:target="_blank"}
 
 [vue生命周期](/docsrc/docs/jobs/vuecli3/vuelifecycle.md){:target="_blank"}
 
