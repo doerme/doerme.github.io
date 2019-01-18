@@ -767,15 +767,6 @@
                         "staticsrc": "static/img/spell/copy.png"
                     },
                     {
-                        "cost": "3",
-                        "rarity": "2",
-                        "priority": "203",
-                        "imgsrc": "//cdn.statsroyale.com/images/cards/full/heal.png",
-                        "href": "https://statsroyale.com/zh/card/Heal",
-                        "name": "治疗法术",
-                        "staticsrc": "static/img/spell/heal.png"
-                    },
-                    {
                         "cost": "2",
                         "rarity": "1",
                         "priority": "102",
@@ -828,6 +819,15 @@
                         "href": "https://statsroyale.com/zh/card/Mirror",
                         "name": "镜像法术",
                         "staticsrc": "static/img/spell/mirror.png"
+                    },
+                    {
+                        "cost": "1",
+                        "rarity": "2",
+                        "priority": "201",
+                        "imgsrc": "//cdn.statsroyale.com/images/cards/full/heal.png",
+                        "href": "https://statsroyale.com/zh/card/Heal",
+                        "name": "治疗法术",
+                        "staticsrc": "static/img/spell/heal.png"
                     }
                 ],
                 "index": 2,
