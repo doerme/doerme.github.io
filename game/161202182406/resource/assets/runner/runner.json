@@ -1,0 +1,5 @@
+{"file":"runner.png","frames":{
+"run1":{"x":0,"y":0,"w":108,"h":133,"offX":0,"offY":0,"sourceW":108,"sourceH":133},
+"run2":{"x":110,"y":0,"w":108,"h":131,"offX":0,"offY":1,"sourceW":108,"sourceH":133},
+"run3":{"x":0,"y":135,"w":106,"h":129,"offX":1,"offY":2,"sourceW":108,"sourceH":133},
+"run4":{"x":110,"y":133,"w":107,"h":131,"offX":1,"offY":1,"sourceW":108,"sourceH":133}}}

@@ -1,0 +1,96 @@
+{
+	"groups": [
+		{
+			"keys": "bg_jpg,egret_icon_png,description_json,big-fire_png,bomb_png,fire_png,map_png,mine_png,runner_json,runner_png,cat_png,cat_json,map_1_png,map_2_jpg,map_3_png,map_4_jpg,map_5_jpg",
+			"name": "preload"
+		}
+	],
+	"resources": [
+		{
+			"name": "bg_jpg",
+			"type": "image",
+			"url": "assets/bg.jpg"
+		},
+		{
+			"name": "egret_icon_png",
+			"type": "image",
+			"url": "assets/egret_icon.png"
+		},
+		{
+			"name": "description_json",
+			"type": "json",
+			"url": "config/description.json"
+		},
+		{
+			"name": "big-fire_png",
+			"type": "image",
+			"url": "assets/big-fire.png"
+		},
+		{
+			"name": "bomb_png",
+			"type": "image",
+			"url": "assets/bomb.png"
+		},
+		{
+			"name": "fire_png",
+			"type": "image",
+			"url": "assets/fire.png"
+		},
+		{
+			"name": "map_png",
+			"type": "image",
+			"url": "assets/map.png"
+		},
+		{
+			"name": "mine_png",
+			"type": "image",
+			"url": "assets/mine.png"
+		},
+		{
+			"name": "runner_json",
+			"type": "sheet",
+			"url": "assets/runner/runner.json",
+			"subkeys": "run1,run2,run3,run4"
+		},
+		{
+			"name": "runner_png",
+			"type": "image",
+			"url": "assets/runner/runner.png"
+		},
+		{
+			"name": "cat_png",
+			"type": "image",
+			"url": "assets/cat/cat.png"
+		},
+		{
+			"name": "cat_json",
+			"type": "json",
+			"url": "assets/cat/cat.json"
+		},
+		{
+			"name": "map_1_png",
+			"type": "image",
+			"url": "assets/map_1.png"
+		},
+		{
+			"name": "map_2_jpg",
+			"type": "image",
+			"url": "assets/map_2.jpg"
+		},
+		{
+			"name": "map_3_png",
+			"type": "image",
+			"url": "assets/map_3.png"
+		},
+		{
+			"name": "map_4_jpg",
+			"type": "image",
+			"url": "assets/map_4.jpg"
+		},
+		{
+			"name": "map_5_jpg",
+			"type": "image",
+			"url": "assets/map_5.jpg"
+		}
+	]
+}
