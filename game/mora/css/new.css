@@ -1,0 +1,256 @@
+.main-content-n{
+	position: relative;
+	top: 90px;
+	height: calc(100% - 200px);
+	height: -moz-calc(100% - 200px);
+	height: -webkit-calc(100% - 200px);
+	height: -o-calc(100% - 200px);
+	height: -ms-calc(100% - 200px); 
+	overflow-y:auto; 
+	-webkit-overflow-scrolling: touch;
+}
+
+.main-content-n .aim-block, .main-content-n .rs-block{
+	background: rgba(246, 246, 247, 0.68);/*#d0d0d5;*/
+	width: 526px;
+	padding: 20px;
+	border-radius: 8px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 20px; 
+}
+
+.main-content-n .aim-block .tips-line{
+	font-size: 22px;
+	color: #333;
+}
+
+.main-content-n .aim-block .ab-title{
+	font-size: 25px;
+	color: #ff7200;
+	text-align: center;
+	height: 60px;
+	line-height: 60px;
+}
+
+.main-content-n .aim-block .ab-list{
+	font-size: 22.5px;
+	color: #06091a;
+}
+
+.main-content-n .aim-block .ab-list .pl-lot{
+
+}
+
+.main-content-n .aim-block .ab-list .pl-alot-ul{
+	padding-left: 30px;
+}
+
+.main-content-n .aim-block .ab-list .wt1{
+	width: 198px;
+}
+.main-content-n .aim-block .ab-list input{
+	text-align: center;
+}
+.main-content-n .aim-block .ab-list .w1 input{
+	width: 110px;
+}
+
+.main-content-n .aim-block .ab-list .w2 input{
+	width: 286px;
+}
+
+.main-content-n .aim-block .ab-list table{
+	border: 2px solid #666;
+	padding: 10px;
+}
+
+.main-content-n .aim-block .ab-list table .w2 input{
+	width: 200px;
+}
+
+.main-content-n .aim-block .ab-list table .table-title{
+	width: 80px;
+	text-align: left;
+	font-weight: bold;
+}
+
+.main-content-n .aim-block .ab-list input{
+	border: none;
+	/*background: #d0d0d5;*/
+	background: rgba(246, 246, 247, 0);
+	border-bottom: 2px solid #7c7c7f;
+}
+
+.main-content-n .aim-block li{
+	line-height: 80px;
+	white-space: nowrap;
+	text-align: left;
+	overflow: hidden;
+}
+
+.main-content-n .rs-block .rs-title{
+	font-size: 25px;
+	color: #ff7200;
+	text-align: center;
+	height: 60px;
+	line-height: 60px;
+}
+
+
+.main-content-n .rs-block table{
+	width: 100%;
+}
+
+.main-content-n .rs-block table th{
+	font-size: 20.1px;
+	color: #000;
+}
+
+.main-content-n .rs-block table td{
+	font-size: 20.3px;
+	color: #030303;
+	padding-top: 30px;
+}
+
+.main-content-n .rs-block table td .line{
+	height: 40px;
+	line-height: 40px;
+	width: 132px;
+	border-bottom: 2px solid #7c7c7f;
+	margin-right: 10px; 
+	white-space: nowrap;
+	text-overflow: hidden;
+	overflow: hidden;
+	text-align: right;
+}
+
+.main-content-n .rs-block table td .line .value{
+	
+}
+
+.main-content-n .rs-block table td .line .unit{
+	
+}
+
+.main-content-n .rs-block .remind{
+	font-size: 17.8px;
+	color: #ff6600;
+	width: 100%;
+	text-align: center;
+	line-height: 80px;
+	height: 80px;
+}
+
+.main-content-n .bt{
+	display: block;
+	width: 458px;
+	height: 84px;
+	text-align:center;
+	line-height: 84px;
+	background: #eca801;
+	color: #FFF;
+	font-size: 36px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 50px;
+	border-radius: 8px 8px 8px 8px;
+}
+
+.main-content-n .select-block{
+	position: absolute;
+	top: 20px;
+	width: 594px;
+	height: 778px;
+	left: 50%;
+	margin-left: -297px;
+	background: url('../imgs/icons/cesuan_bg.png') no-repeat;
+	background-size: 100% 100%;
+}
+
+.main-content-n .select-block-tips{
+	position: absolute;
+	top: 820px;
+	color: #1c5c9d;
+	background: #FFF;
+	left: 50%;
+	width: 600px;
+	margin-left: -300px;
+	font-size: 22px;
+	height: 30px;
+	line-height: 30px;
+}
+
+.main-content-n .select-block .select-unit{
+	position: absolute;
+	width: 228px;
+	height: 228px;
+	overflow: hidden;
+}
+
+.main-content-n .select-block .select-unit:nth-child(1){
+	top: 106px;
+	left: 30px;
+}
+
+.main-content-n .select-block .select-unit:nth-child(2){
+	top: 106px;
+	left: 340px;
+}
+
+.main-content-n .select-block .select-unit:nth-child(3){
+	top: 410px;
+	left: 30px;
+}
+
+.main-content-n .select-block .select-unit:nth-child(4){
+	top: 410px;
+	left: 340px;
+}
+
+.main-content-n .select-block .select-unit .times{
+	color: #1c5c9d;
+}
+
+.main-content-n .select-block .select-unit .times .num{
+	font-size: 89px;
+}
+
+.main-content-n .select-block .select-unit .times .unit{
+	font-size: 28.4px;
+}
+
+.main-content-n .select-block .select-unit .title{
+	font-size: 35.5px;
+	color: #1c5c9d;
+}
+
+.main-content-n .select-block .select-unit .note{
+	font-size: 21.3px;
+	color: #373737;
+}
+
+.img-detail-block{
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 1000;
+}
+
+.img-detail-block .id-mask{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,.5);
+}
+
+.img-detail-block .id-main{
+	position: absolute;
+	top: 10%;
+	left: 10%;
+	width: 80%;
+}

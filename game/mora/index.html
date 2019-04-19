@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="zh-cn" class="no-js">
+	<head>
+		<meta http-equiv="Content-Type">
+		<meta content="text/html; charset=utf-8">
+		<meta charset="utf-8">
+		<title>猜丁壳</title>		
+		<meta name="viewport" content="target-densitydpi=device-dpi, width=750px, user-scalable=no">
+		<meta name="format-detection" content="telephone=no">
+		<meta name="format-detection" content="email=no">
+		<script src="js/zepto.min.js"></script>
+		<script type="text/javascript" src="https://code.createjs.com/soundjs-0.6.2.min.js"></script>
+		<script type="text/javascript">
+		function adaptscreen(widthnum){
+			try{
+			 var DEFAULT_WIDTH = widthnum, // 页面的默认宽度
+		        ua = navigator.userAgent.toLowerCase(), // 根据 user agent 的信息获取浏览器信息
+		        deviceWidth = window.screen.width, // 设备的宽度
+		        devicePixelRatio = window.devicePixelRatio || 1, // 物理像素和设备独立像素的比例，默认为1
+		        targetDensitydpi;    // Android4.0以下手机不支持viewport的width，需要设置target-densitydpi
+		        if (ua.indexOf("android") !== -1 && parseFloat(ua.slice(ua.indexOf("android")+8)) < 4) {
+		        	targetDensitydpi = DEFAULT_WIDTH / deviceWidth * devicePixelRatio * 160;
+		        	$('meta[name="viewport"]').attr('content', 'target-densitydpi=' + targetDensitydpi + ', width=device-width, user-scalable=no');
+				}else{
+					$('meta[name="viewport"]').attr('content', 'target-densitydpi=device-dpi, width='+DEFAULT_WIDTH+'px, user-scalable=no');
+				}
+			}catch(e){
+				console.log('dpi error',e);
+			}
+	    }
+	    adaptscreen(750);
+		</script>
+		<link rel="stylesheet" type="text/css" href="css/reset.css?v=6" />
+		<link rel="stylesheet" type="text/css" href="css/index.css?v=6" />
+		<link rel="stylesheet" type="text/css" href="css/animations.css?v=6" />
+        <link rel="stylesheet" type="text/css" href="css/load.css?v=6" /> 
+	</head>
+	<body  onload="loadSound();">
+    <div id="loading">
+     	<div class="spinner">
+  			<div class="double-bounce1"></div>
+  			<div class="double-bounce2"></div>
+		</div>
+	</div>
+	<div id="content" style="display:none">
+		<div class="page page-1-1 page-index" data-lock-up="1" data-lock-down="1">
+			<div class="wrap">
+				<div class="page-1-wrap">
+					<img class="guize_bt" src="./imgs/guize_bt.png" />
+					<img class="jilu_bt" src="./imgs/jilu_bt.png" />
+					<img class="index_logo pt-page-moveCircle" src="./imgs/index_logo.png" />
+					<img class="index_bt1 js_index_bt1" src="./imgs/index_bt1.png" />
+					<!--<img class="index_bt2 js_index_bt2" src="./imgs/index_bt2.png" />-->
+					<!--<img class="index_bt3 js_index_bt3" src="./imgs/index_bt3.png" />-->
+					<!-- 游戏规则 -->
+					<div class="guize-wrap shide">
+						<div class="guize-main">
+							<div class="guize-font">
+								<p>① 石头、剪子、布是一种猜拳游戏，它在各地经常有其独特称呼，如香港亦叫做”猜呈寻“。
+	这是一种在儿童和青少年中广泛流传的手技游戏，有时跟“掷硬币”、“掷骰子”有相同的功能，就是用来产生随机结果以作决策。</p>
+								<p>② 但有时它并不随机，因为游戏者可以根据经验，判断对手的手法，所以说，玩这个游戏是有一定技巧的。很多情况下，如“飞盘争夺赛”运动中或“大学辩论赛”赛场上，规则规定用“石头、剪子、布”来决定哪一队伍先发（多于用掷硬币的方法）。</p>
+								<p></p>
+								<p></p>
+							</div>
+						</div>
+						<img class="guize-back js-guize-back" src="./imgs/back-bt.png" />
+						<img class="shide" src="./imgs/guize_bg.png" />
+					</div>
+					<!-- 游戏规则 end -->
+				</div>
+			</div>
+		</div>
+		<div class="page page-2-1 hide" >
+			<div class="wrap">
+				<div class="page-2-wrap">
+					
+					<img class="chat_bt js-chat_bt" src="./imgs/chat_bt.png">
+					<img class="switch_bt js_switch_bt" src="./imgs/switch_bt.png">
+					
+					<!-- 相方金币 -->
+					<div class="user-gold-wrap top pt-page-moveFromTopFade hide js-other-ui">
+						<span>390</span>
+					</div>
+					<div class="user-gold-wrap bottom pt-page-moveFromBottomFade hide">
+						<span>390</span>
+					</div>
+					<!-- 相方金币end -->
+
+					<!-- 猜拳  剪刀 1 石头 2 包 3 -->
+					<div class="game-main-wrap pt-page-moveFromTop hide js-gmw">
+						<img class="gmw-bt dib jian js-mine-play" data-val="1" src="./imgs/game-bt-jiandao.png" />
+						<img class="gmw-bt dib chui js-mine-play" data-val="2" src="./imgs/game-bt-chui.png" />
+						<img class="gmw-bt dib bao js-mine-play" data-val="3" src="./imgs/game-bt-bao.png" />
+					</div>
+					<!-- 猜拳end -->
+
+					<!-- 对战蒙版 -->
+					<div class="vs-wrap shide">
+						<div class="vs-wrap-mask"></div>
+
+						<div class="vs-rs-other vro chui pt-page-bounceInDown js-other-play" data-val="2" ></div>
+						<img class="vs-rs-other js-game-wait pt-page-bounceInDown" src="./imgs/game-waiting.png" />
+
+						<div class="vs-rs-mine vro pt-page-bounceInUp js-mine-show" ></div>
+						<img class="vs-mark pt-page-bounceIn" src="./imgs/vs.png" />
+					</div>
+					<!-- 对战蒙版end -->
+
+					<!-- 结果动画 -->
+					<div class="result-wrap hide shide">
+						<img class="light-an pt-page-justRotate" src="./imgs/light.png" />
+						<img class="lignt-an-o pt-page-justRotateScale" src="./imgs/light_o.png" />
+						
+						<!-- 成功动画 -->	
+						<div class="win-an shide js-win-an js-rs-wrap">
+							<img class="rs-font pt-page-bounceIn win" src="./imgs/font-win.png" />
+							<img class="gold-an pt-page-delay100 pt-page-getGoldan" src="./imgs/gold.png" />
+							<img class="gold-an pt-page-delay200 pt-page-getGoldan" src="./imgs/gold.png" />
+							<img class="gold-an pt-page-delay300 pt-page-getGoldan" src="./imgs/gold.png" />
+							<img class="gold-an pt-page-delay500 pt-page-getGoldan" src="./imgs/gold.png" />
+							<img class="gold-an pt-page-delay600 pt-page-getGoldan" src="./imgs/gold.png" />
+							<img class="gold-an pt-page-delay700 pt-page-getGoldan" src="./imgs/gold.png" />
+							<img class="gold-an pt-page-delay800 pt-page-getGoldan" src="./imgs/gold.png" />
+							<img class="gold-an pt-page-delay900 pt-page-getGoldan" src="./imgs/gold.png" />
+						</div>
+						<!-- 成功动画end -->
+
+						<!-- 失败动画 -->
+						<div class="lose-an shide js-lose-an js-rs-wrap">
+							<img class="rs-font pt-page-bounceIn lose" src="./imgs/font-lose.png" />
+							<img class="gold-an pt-page-delay100 pt-page-throwGoldan" src="./imgs/gold.png" />
+							<img class="gold-an pt-page-delay200 pt-page-throwGoldan" src="./imgs/gold.png" />
+							<img class="gold-an pt-page-delay300 pt-page-throwGoldan" src="./imgs/gold.png" />
+							<img class="gold-an pt-page-delay500 pt-page-throwGoldan" src="./imgs/gold.png" />
+							<img class="gold-an pt-page-delay600 pt-page-throwGoldan" src="./imgs/gold.png" />
+							<img class="gold-an pt-page-delay700 pt-page-throwGoldan" src="./imgs/gold.png" />
+							<img class="gold-an pt-page-delay800 pt-page-throwGoldan" src="./imgs/gold.png" />
+							<img class="gold-an pt-page-delay900 pt-page-throwGoldan" src="./imgs/gold.png" />
+						</div>
+						<!-- 失败动画end -->
+
+						<!-- 平局 -->
+						<div class="eq-an shide js-eq-an js-rs-wrap">
+							<img class="rs-font pt-page-bounceIn win" src="./imgs/font-eq.png" />
+						</div>
+						<!-- 平局end -->
+						
+					</div>
+					<!-- 结果动画 end -->
+
+					<!-- 头像 -->
+					<div class="user-head-wrap">
+						<img class="game-head-wrap-top pt-page-moveFromTopFade hide" src="./imgs/game-head-wrap.png" />
+						<img class="game-head-wrap-top js-chated shide" src="./imgs/game-chat.png" />
+						<img class="user-head top pt-page-moveFromTopFade hide " src="./imgs/df-head.png" />
+
+						<div class="user-name-top pt-page-moveFromTopFade hide js-other-ui">Jeremy</div>
+						
+						<img class="game-head-wrap-bottom pt-page-moveFromBottomFade hide" src="./imgs/game-head-wrap.png" />
+						<img class="user-head bottom pt-page-moveFromBottomFade hide" src="https://avatars2.githubusercontent.com/u/2680224?s=460&v=4" />
+						<div class="user-name-bottom pt-page-moveFromBottomFade hide">Lisa</div>
+					</div>
+					<!-- 头像end -->
+
+					<img class="game-main-bt pt-page-moveFromTop hide shide" src="./imgs/game-main-bt.png" />
+
+					<!-- 返回 -->
+					<img class="p2-back js-p2-back" src="./imgs/back-bt.png" />
+				</div>
+			</div>
+		</div>	
+
+		<div class="page page-3-1 hide" >
+			<div class="wrap">
+				<div class="page-3-wrap">
+					<img class="map-bg" src="./imgs/map-bg.png" />
+					<div class="flag-wrap">
+						<a class="flag flag-1" href="javascript:;">1</a>
+						<a class="flag flag-2" href="javascript:;">2</a>
+						<a class="flag flag-3" href="javascript:;">3</a>
+						<a class="flag flag-4" href="javascript:;">4</a>
+						<a class="flag flag-5" href="javascript:;">5</a>
+						<a class="flag flag-6" href="javascript:;">6</a>
+						<a class="flag flag-7" href="javascript:;">7</a>
+
+						<!-- 我当前的位置 -->
+						<img class="mine-flag mf1" src="./imgs/map-flag.png" />
+						<img class="mine-flag mf2" src="./imgs/map-flag.png" />
+						<img class="mine-flag mf3" src="./imgs/map-flag.png" />
+						<img class="mine-flag mf4" src="./imgs/map-flag.png" />
+						<img class="mine-flag mf5" src="./imgs/map-flag.png" />
+						<img class="mine-flag mf6" src="./imgs/map-flag.png" />
+						<img class="mine-flag mf7" src="./imgs/map-flag.png" />
+
+						<!-- 头像 -->
+						<img class="mine-head mh1" src="./imgs/df-head.png" />
+						<img class="mine-head mh2" src="./imgs/df-head.png" />
+						<img class="mine-head mh3" src="./imgs/df-head.png" />
+						<img class="mine-head mh4" src="./imgs/df-head.png" />
+						<img class="mine-head mh5" src="./imgs/df-head.png" />
+						<img class="mine-head mh6" src="./imgs/df-head.png" />
+						<img class="mine-head mh7" src="./imgs/df-head.png" />
+
+						<!-- 返回 -->
+						<img class="p3-back js-p3-back" src="./imgs/back-bt.png" />
+					</div>	
+				</div>
+			</div>
+		</div>	
+		
+    </div>
+
+
+
+
+	<!-- 通用消息弹窗 -->
+	<div class="common-tips-block js-common-tips hide">
+    	<div class="tips-block-mask"></div>
+    	<div class="ctb-main">
+    		<div class="ctbm-txt">寻找对手中</div>
+    	</div>
+    </div>
+    <!-- 通用消息弹窗end -->
+
+    <div id="share">
+    	<div class="shareImg"></div>
+    </div>
+
+    <div class="tisblock mask"></div>
+    <div class="tisblock main"></div>
+
+
+    <script type="text/javascript">
+	gSound = 'imgs/samsung.mp3';
+	dontprevent = true;
+	</script>
+	<script src="js/index.js?v=6"></script>
+    <script type="text/javascript">
+	document.onreadystatechange = loading; 
+	var loading_pc_num=0;
+	var loading_pc=setInterval(function(){
+		loading_pc_num+=parseInt(Math.random()*6);
+		$('.loading_main').html(loading_pc_num+'%');
+		if(loading_pc_num>90){
+			clearInterval(loading_pc);
+		}
+	},300);
+
+	function loading(){
+		if(document.readyState == "complete"){
+			loading_pc_num=94;
+			setTimeout(function(){
+				startpage();
+			},100);
+		}
+	}
+
+	function startpage(){
+		$("#loading").hide();
+		$("#content").show();
+		//goNext();
+
+	}
+
+	function loadSound () {
+	  createjs.Sound.registerSound("./music/coin_music.wav", 'goldmu');
+	}
+
+	/*换人*/
+	function switchPreson(){
+		$('.js-common-tips').removeClass('hide');
+		$('.js-other-ui').addClass('shide');
+
+		/*模拟找到对手*/	
+		setTimeout(function(){
+			$('.js-common-tips').addClass('hide');
+			$('.js-other-ui').removeClass('shide');
+		},3000)
+	}
+
+	
+	$(function(){
+		
+		/*计算动画高度*/
+		var anHeight = parseInt($(window).height()) - 686;
+		console.log(parseInt($(window).height()),anHeight);
+		$('.js-rs-wrap').css({
+			'height': anHeight
+		})
+
+		/*换人逻辑*/
+		$('.js_switch_bt').on('tap',function(){
+			switchPreson();
+		});
+
+		/*点蒙层关闭弹窗*/
+		$('.js-tips-block-mask').on('tap',function(){
+			$(this).parent('div').addClass('hide');
+		})
+
+		/*去充值按钮*/
+		$('.js-ctbm-bt').on('tap',function(){
+			$('.go-inprice').addClass('hide');
+		})
+
+		/*记录*/
+		$('.jilu_bt').on('tap',function(){
+			window.location.href = 'history.html';
+		})
+
+
+		/*规则按钮*/
+		$('.guize_bt').on('tap',function(){
+			$('.guize-wrap').removeClass('shide');
+		})
+
+		/*规则关闭*/
+		$('.js-guize-back').on('tap',function(){
+			$('.guize-wrap').addClass('shide');
+		})
+
+		/*金币模式*/
+		$('.js_index_bt1').on('tap',function(){
+			goNext();
+			switchPreson();
+		})
+
+		/*积分模式*/
+		$('.js_index_bt2').on('tap',function(){
+			goNext();
+			switchPreson();
+		})
+
+		/*争霸模式*/
+		$('.js_index_bt3').on('tap',function(){
+			goNext();
+			goNext();
+		})
+
+		/*退出争霸模式*/
+		$('.js-p3-back').on('tap',function(){
+			goPrev();
+			goPrev();
+		})
+
+		/*点争霸模式 旗帜进入 对战页*/
+		$('.mine-flag').on('tap',function(){
+			goPrev();
+		})
+
+		/*退出对战页面*/
+		$('.js-p2-back').on('tap',function(){
+			goPrev();
+		})
+
+
+		/*聊天按钮 按下*/
+		$('.js-chat_bt').on('touchstart',function(){
+			$('.js-chated').removeClass('shide');
+		});
+
+		/*聊天按钮松开*/
+		$('.page-2-1').on('touchend',function(){
+			if(!$('.js-chated').hasClass('shide')){
+				$('.js-chated').addClass('shide');
+			}
+		})
+
+		/*猜拳 选择*/
+		$('.js-gmw > .gmw-bt').on('tap', function(){
+			$('.js-gmw > .cur').removeClass('cur');
+			$('.js-gmw > .notcur').removeClass('notcur');
+			$(this).addClass('cur');
+			$(this).siblings('.gmw-bt').addClass('notcur');
+			$('.game-main-bt').removeClass('shide');
+		})
+
+		/*出拳*/
+		$('.game-main-bt').on('tap',function(){
+			var myrs = $('.js-mine-play.cur').data('val');
+			$('.js-gmw,.game-main-bt').addClass('shide');
+			$('.vs-wrap').removeClass('shide');
+			switch(myrs){
+				case 1:
+				$('.js-mine-show').addClass('jian');
+				break;
+				case 2:
+				$('.js-mine-show').addClass('chui');
+				break;
+				case 3:
+				$('.js-mine-show').addClass('bao');
+				break;
+			}
+
+			/*异步获取对方出拳*/
+			setTimeout(function(){
+				$('.js-game-wait').addClass('shide');
+			},1000);
+
+			/*异步显示结果*/	
+			setTimeout(function(){
+				
+				var otrs = $('.js-other-play').data('val');
+
+				$('.js-mine-show').removeClass('jian chui bao');
+
+				
+
+				$('.vs-wrap').addClass('shide');
+				if(myrs == otrs){
+					/*平*/
+					$('.result-wrap,.js-eq-an').removeClass('shide');
+				}else if((myrs == 3 && otrs == 1) || myrs < otrs){
+					/*输*/
+					$('.result-wrap,.js-lose-an').removeClass('shide');
+					createjs.Sound.play('goldmu');
+				}else{
+					/*赢*/
+					$('.result-wrap,.js-win-an').removeClass('shide');
+					createjs.Sound.play('goldmu');
+				}
+				
+			},3000);
+
+			/*返回常规*/
+			setTimeout(function(){
+				$('.result-wrap,.js-eq-an,.js-lose-an,.js-win-an').addClass('shide');
+				$('.js-gmw,.game-main-bt,.js-game-wait').removeClass('shide');
+			},6000);
+
+		})
+	
+	});
+	</script>
+	</body>
+</html>
