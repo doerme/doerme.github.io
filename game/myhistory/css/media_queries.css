@@ -1,0 +1,63 @@
+/**/
+@media screen and (max-width: 480px) {
+body{min-width:320px;}
+.headbg{position:relative; background:#000; height:auto;}
+.head{width:auto;}
+.logo{text-align:center; float:none; }
+.logo img{width:120px;}
+.nav,.nav li{float:none;}
+.nav{border-top:1px solid #2f2f2f;}
+.nav li a{font-size:14px; line-height:40px; background:#1b1b1b; display:block; border-bottom:1px solid #2f2f2f; font-weight:bold;}
+.nav li a:hover{background:#101010; border-bottom:1px solid #2f2f2f;}
+
+}
+/**/
+@media screen and (min-width: 480px) and (max-width: 640px) {
+.headbg{position:relative; background:#000; height:auto;}
+.head{width:auto;}
+.logo img{width:120px;}
+.nav li a{font-size:14px; font-weight:bold;}
+}
+
+/**/
+@media screen and (min-width: 640px) and (max-width: 768px) {
+
+}
+
+/**/
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+
+}
+
+/**/
+@media screen and (min-width: 1024px) and (max-width: 1280px) {
+
+}
+
+/**/
+@media screen and (min-width: 1280px) and (max-width: 1440px) {
+
+}
+
+/**/
+@media screen and (min-width: 1440px) and (max-width: 1680px) {
+
+}
+
+/**/
+@media screen and (min-width: 1680px) {
+
+}
+
+
+
+
+/*------------------------------------*/
+@media screen and (max-width: 768px) {
+.service_ico li{width:100%; text-align:center; float:none; border-bottom:1px solid #ccc;}
+.service_ico li a{padding:15px 0;}
+.service_introduction{display:none;}
+.service_introduction_min768{display:block;}
+.service_introduction2{display:none;}
+.service_introduction2_min768{display:block;}
+}
