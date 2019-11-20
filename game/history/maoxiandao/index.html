@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="zh-cn" class="no-js">
+	<head>
+		<meta http-equiv="Content-Type">
+		<meta content="text/html; charset=utf-8">
+		<meta charset="utf-8">
+		<title>冒险岛</title>
+		<meta name="viewport" content="target-densitydpi=device-dpi, width=640px, user-scalable=no">
+		<meta name="format-detection" content="telephone=no">
+		<meta name="format-detection" content="email=no">        
+		<link rel="stylesheet" type="text/css" href="css/reset.css?v=2" />
+		<link rel="stylesheet" type="text/css" href="css/index.css?v=2" />
+		<link rel="stylesheet" type="text/css" href="css/animations.css?v=2" />
+        <link rel="stylesheet" type="text/css" href="css/load.css?v=2" /> 
+	</head>
+	<body>
+    <div id="loading">
+     	<div class="spinner">
+  			<div class="double-bounce1"></div>
+  			<div class="double-bounce2"></div>
+		</div>
+	</div>
+	<div id="content" style="display:none">
+		<div class="page page-1-1 page-current page-index" data-lock="1">
+			<div class="wrap">
+				<img class="leaf pt-page-scalebig" src="imgs/leaf.png" />
+				<img class="main_left js-msc pt-page-moveCircle" src="imgs/main_left.png" />
+				<img class="main_center js-msc pt-page-moveCircle" src="imgs/main_center.png" />
+				<img class="main_right js-msc pt-page-moveCircle" src="imgs/main_right.png" />
+				<img class="logo  pt-page-moveFromTop" src="imgs/logo.png" />
+				<img class="bt_list pt-page-moveFromBottom" src="imgs/bt_list.png" />
+				<img class="bt_rank pt-page-moveFromBottom" src="imgs/bt_rank.png" />
+				<img class="p1_font pt-page-moveFromBottom" src="imgs/p1_font.png" />
+				<img class="bt_index pt-page-moveFromBottom" src="imgs/bt_index.png" />
+				<img class="logo_foot" src="imgs/logo_foot.png" />
+			</div>
+		</div>
+		<div class="page page-2-1 hide photo-block" data-lock="1">
+			<div class="wrap">
+				<canvas id="myCanvas" width="640" height="830">您的浏览器不支持canvas</canvas>
+				<div class="submit_bt js_submit_bt">确认上传</div>
+			</div>
+		</div>
+		<div class="page page-3-1 hide photo-block" data-lock="1">
+			<div class="wrap">
+				<img class="result_img js_result_img" src="" />
+			</div>
+		</div>
+    </div>
+
+	<div class="form-block mask"></div>
+	<div class="form-block main">
+		<p class="fb-title">请先填写您的冒险宣言哦！</p>
+		<p class="fb-tips">点选红字即可编辑</p>
+		<div class="fb-main js-fb-main">
+
+		</div>
+		<div class="fb_bt_1">
+			<input class="select_file js-select-file" type="file" accept="image/*" capture="camera" size="28" onchange="fileChange(this);" />
+		</div>
+		<div class="fb_bt_2">
+			<input class="select_file js-select-file" type="file" accept="image/*" capture="camera" size="28" onchange="fileChange(this);" />
+		</div>
+	</div>
+
+	<div class="model-block hide">
+		<div class="mod mod1">
+			<p>本人 <a class="ip">恶魔猎手</a>…</p>
+			<p>没什么特别嗜好…</p>
+			<p>但讨厌<a class="m">被关注</a></p>
+			<p>讨厌其他职业装备比我好…</p>
+			<p>我只想 <a class="ip">静静</a>… </p>
+			<p>我为自己 <a class="ip">代言</a>…</p>
+		</div>
+		<div class="mod mod2">
+			<p><a class="ip">暗影双刀</a>参上!</p>
+			<p>如影如风<a class="m">如空气</a></p>
+			<p>最爱一击出暴击,</p>
+			<p>最厌有人<a class="m">抢我怪!!!</a></p>
+			<p>我就是<a class="ip">那一闪</a>,</p>
+			<p>我就是<a class="m">暗影双刀</a>,</p>
+			<p>我只为自己<a class="ip">装酷!</a></p>
+		</div>
+		<div class="mod mod3">
+			<p>我是<a class="ip">爆莉萌天使!</a></p>
+			<p>我喜欢粉色花边蕾丝短裙</p>
+			<p><a class="m">讨厌</a>挂机被打蠢</p>
+			<p>最爱大把大把<a class="m">收糖果!!!</a></p>
+			<p><a class="ip">小萝莉</a>就是我</p>
+			<p>我只为自己<a class="ip">卖萌哟</a>!</p>
+		</div>
+	</div>
+
+	<div class="top-input">
+		<input class="ti-input js-ti-input dib" type="text" value="" />
+		<div class="ti-sure js-ti-sure dib">确定</div>
+	</div>
+
+	<div class="hide">
+		<img src="imgs/bt_form_submit.png" />
+		<img src="imgs/bt_form_no.png" />
+	</div>
+
+
+    <div id="share">
+    	<div class="shareImg"></div>
+    </div>
+
+
+    <script type="text/javascript">
+	gSound = 'imgs/samsung.mp3';
+	var _mod_num=1;/*当前文字模板*/
+	</script>
+    <script src="js/jquery-2.1.3.min.js?v=2"></script>
+    <script src="js/google.fastbutton.js?v=2"></script>
+	<script src="js/jquery.google.fastbutton.js?v=2"></script>
+	<script src="js/control.js?v=2"></script>
+	<script src="js/camera.js?v=2"></script>
+	<script src="js/index.js?v=2"></script>
+    <script type="text/javascript">
+    var goNext,goPrev;
+    var t1_page=1,t2_page=1,iscanget=true;
+	document.onreadystatechange = loading; 
+	var loading_pc_num=0;
+	var loading_pc=setInterval(function(){
+		loading_pc_num+=parseInt(Math.random()*6);
+		$('.loading_main').html(loading_pc_num+'%');
+		if(loading_pc_num>90){
+			clearInterval(loading_pc);
+		}
+	},300);
+
+	function loading(){
+		if(document.readyState == "complete"){
+			loading_pc_num=94;
+			setTimeout(function(){
+				startpage();
+			},1000);
+		}
+	}
+
+	function startpage(){
+		adaptscreen(640);
+		$("#loading").hide();
+		$("#content").show();
+		//playbksound();
+	}
+
+	
+
+	$(function(){
+
+		$('.js-fb-main').html($('.model-block > .mod1').html());
+		$('.js-msc').on('fastClick',function(){
+			$('.js-msc').removeClass('pt-page-moveCircle').addClass('disable');
+			$(this).removeClass('disable');
+			_mod_num=$(this).index();
+			//console.log(_mod_num);
+			$('.js-fb-main').html($('.model-block > .mod'+_mod_num).html());
+		});
+
+		$('.bt_index').on('fastClick',function(){
+			$('.form-block').fadeIn(200);
+		});
+
+
+		$('.js-select-file').change(function(){
+			$('.form-block').hide();
+			goNext();
+		});
+
+		var cur_edit_line;
+		$('.js-fb-main .ip').on('fastClick',function(){
+			cur_edit_line=$(this);
+			$('.js-ti-input').val(cur_edit_line.html()).focus();
+			$('.top-input').fadeIn(200);
+		});
+
+		$('.js-ti-sure').on('fastClick',function(){
+			cur_edit_line.html($('.js-ti-input').val());
+			$('.top-input').fadeOut(200);
+		});
+
+		$('.js_submit_bt').on('fastClick',function(){
+			$('#js_result_img').attr('src',canvas.toDataURL());
+    		goNext();
+		});
+
+		$('.p3_bt2').on('fastClick',function(){
+			$('#share').fadeIn(200);
+		});
+
+		$('#share').on('fastClick',function(){
+			$('#share').fadeOut(200);
+		});
+	});
+
+	function adaptscreen(widthnum){
+	 var DEFAULT_WIDTH = widthnum, // 页面的默认宽度
+        ua = navigator.userAgent.toLowerCase(), // 根据 user agent 的信息获取浏览器信息
+        deviceWidth = window.screen.width, // 设备的宽度
+        devicePixelRatio = window.devicePixelRatio || 1, // 物理像素和设备独立像素的比例，默认为1
+        targetDensitydpi;    // Android4.0以下手机不支持viewport的width，需要设置target-densitydpi
+        if (ua.indexOf("android") !== -1 && parseFloat(ua.slice(ua.indexOf("android")+8)) < 4) {
+        targetDensitydpi = DEFAULT_WIDTH / deviceWidth * devicePixelRatio * 160;
+        $('meta[name="viewport"]').attr('content', 'target-densitydpi=' + targetDensitydpi + ', width=device-width, user-scalable=no');
+		}else{
+			$('meta[name="viewport"]').attr('content', 'target-densitydpi=device-dpi, width='+DEFAULT_WIDTH+'px, user-scalable=no');
+		}
+    }
+	</script>
+	</body>
+</html>

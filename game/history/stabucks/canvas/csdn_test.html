@@ -1,0 +1,141 @@
+
+<!doctype html>
+<html>
+<head>
+	<title> </title>
+	<meta http-equiv="X-UA-Compatible" content="IE=9"> 
+	<meta charset="utf-8" />
+	<meta http-equiv="pragma" content="no-cache">
+	<meta http-equiv="cache-control" content="no-cache">
+	<meta http-equiv="expires" content="0">
+	<style>
+		#canvas{border:1px solid #ccc;}
+	</style>
+   	
+</head>
+<body>
+	<canvas id="canvas" width="500" height="300"></canvas>
+	<pre>
+功能：拖拽+旋转
+思路：始终保持图片中心点在canvas坐标系的原点处，图片的每一次重绘都基于canvas坐标系的原点来绘制，即drawImage(img,-imgW/2,-imgH/2)。
+	移动、旋转的时候绘制方法不变，变换的是canvas坐标系。
+关键：理解屏幕坐标系和canvas坐标系的关系。将鼠标事件的屏幕坐标，转换为canvas坐标系中的坐标。
+	计算旋转时每一次mousemove，在旋转前的canvas坐标系中move的角度。
+	</pre>	
+	<script>
+	var cvs =document.getElementById("canvas");   
+	var ctx =cvs.getContext("2d");
+	var cvsH=cvs.height;
+	var cvsW=cvs.width;
+	var beginX,beginY;
+	var LT={x:30,y:30};//图片左上角的点
+	var Selected_Round_R=12;
+	var isDown=false;
+	var imgH,imgW;
+	var moveAble=false,rotateAble=false;
+	var img = new Image();	
+	var rotate_radian=0;//canvas坐标系x轴与屏幕坐标系X轴夹角弧度
+	img.src ="img/logo.png";
+	img.onload=function (){
+		imgH=img.height;
+		imgW=img.width;
+		PO={x:LT.x+imgW/2,y:LT.y+imgH/2};
+		ctx.translate(PO.x,PO.y);//载入时将canvas坐标系原点移到图片中心点上
+		onDraw();
+		
+	}
+	function onDraw(){
+		ctx.clearRect(-cvsW,-cvsH,2*cvsW,2*cvsH);
+		ctx.drawImage(img,-imgW/2,-imgH/2);	
+		//旋转控制旋钮
+		ctx.beginPath();
+		ctx.arc(0,-imgH/2-Selected_Round_R,Selected_Round_R,0,Math.PI*2,false);
+		ctx.closePath();
+		ctx.lineWidth=2;
+        ctx.strokeStyle="#0000ff";
+		ctx.stroke();
+	}
+	cvs.addEventListener("mousedown", startMove, false); 
+	cvs.addEventListener("mousemove", moving, false);
+	cvs.addEventListener("mouseup", endMove, false);	 	
+	cvs.addEventListener("mouseout",endMove, false);
+
+	function imgIsDown(x,y){
+		return (-imgW/2<=x && x<=imgW/2 && -imgH/2<y && y<=imgH/2);
+	}
+	function RTIsDown(x,y){
+		var round_center={x:0,y:-imgH/2-Selected_Round_R};
+		var bool=getPointDistance({x:x,y:y},round_center)<=Selected_Round_R;
+		return bool;
+	}
+	function startMove(){
+		event.preventDefault();
+		isDown=true;
+		var loc=getEvtLoc();//获取鼠标事件在屏幕坐标系的位置（原点在canvas标签左上角）
+		var x=loc.x,y=loc.y;
+		beginX=x,beginY=y;
+		var cLoc=convertCoor(loc);
+		var Xc=cLoc.x,Yc=cLoc.y;
+		moveAble=imgIsDown(Xc,Yc);
+		rotateAble=RTIsDown(Xc,Yc);		
+		if (moveAble) cvs.style.cursor="move";
+		if (rotateAble) cvs.style.cursor="crosshair";
+	}
+	function moving(){
+		event.preventDefault();
+		if(isDown==false) return;
+		var loc=getEvtLoc();
+		if(moveAble){
+			var x=loc.x,y=loc.y;
+			var dx=x-beginX,dy=y-beginY;
+			var mPO={x:PO.x+dx,y:PO.y+dy};//因为鼠标移动dx dy,所以PO在屏幕坐标系的坐标也 移动dx dy
+			var cPO=convertCoor(mPO);//屏幕坐标系移动后的PO转换成canvas坐标系的坐标
+			ctx.translate(cPO.x,cPO.y);//canvas坐标系原点移动到新的图片中心点		
+			onDraw();
+			
+			PO.x=PO.x+dx;//记录下屏幕坐标系上PO的坐标变化
+			PO.y=PO.y+dy;
+			beginX=x,beginY=y;//记录移动后鼠标在屏幕坐标系的新位置	
+		}else if(rotateAble){
+			var cLoc=convertCoor(loc);
+			var Xc=cLoc.x,Yc=cLoc.y;
+			var newR = Math.atan2(Xc,-Yc);//在旋转前的canvas坐标系中 move的角度（因为旋钮在上方，所以跟，应该计算 在旋转前canvas坐标系中，鼠标位置和原点连线 与 y轴反方向的夹角）
+			ctx.rotate(newR);
+			rotate_radian+=newR;
+			onDraw();
+		}
+	}
+	function endMove(){
+		event.preventDefault();
+		isDown=false;
+		moveAble=rotateAble=false;
+		cvs.style.cursor="auto";
+	}
+
+	function getEvtLoc(){//获取相对canvas标签左上角的鼠标事件坐标
+		return {x:event.offsetX,y:event.offsetY}
+	}
+	
+	function convertCoor(P) {//坐标变换 屏幕坐标系的点 转换为canvas坐标系的点
+		var x=P.x-PO.x;//在屏幕坐标系中，P点相对canvas坐标系原点PO的偏移
+		var y=P.y-PO.y; 
+
+		if(rotate_radian!=0){
+			var len = Math.sqrt(x*x + y*y);
+			var oldR=Math.atan2(y,x);//屏幕坐标系中 PO与P点连线 与屏幕坐标系X轴的夹角弧度			
+			var newR =oldR-rotate_radian;//canvas坐标系中PO与P点连线 与canvas坐标系x轴的夹角弧度
+			x = len*Math.cos(newR);
+			y = len*Math.sin(newR);      		
+		}
+		
+		return {x:x,y:y};
+	}
+	//获取两点距离
+	function getPointDistance(a,b){
+		var x1=a.x,y1=a.y,x2=b.x,y2=b.y;
+		var dd= Math.sqrt((x2-x1)*(x2-x1)+(y2-y1)*(y2-y1));
+		return dd;
+	}
+	</script>
+</body>
+</html>

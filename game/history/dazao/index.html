@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="zh-cn" class="no-js">
+	<head>
+		<meta http-equiv="Content-Type">
+		<meta content="text/html; charset=utf-8">
+		<meta charset="utf-8">
+		<title>好想你打枣</title>
+		<meta name="viewport" content="target-densitydpi=device-dpi, width=640px, user-scalable=no">
+		<meta name="format-detection" content="telephone=no">
+		<meta name="format-detection" content="email=no">        
+		<link rel="stylesheet" type="text/css" href="css/reset.css?v=2" />
+		<link rel="stylesheet" type="text/css" href="css/index.css?v=2" />
+		<link rel="stylesheet" type="text/css" href="css/animations.css?v=2" />
+        <link rel="stylesheet" type="text/css" href="css/load.css?v=2" /> 
+	</head>
+	<body>
+    <div id="loading">
+     	<div class="spinner">
+  			<div class="double-bounce1"></div>
+  			<div class="double-bounce2"></div>
+		</div>
+	</div>
+	<div id="content" style="display:none">
+		<div class="page page-1-1 page-current wap-index" data-lock="1">
+			<div class="wrap">
+				<img class="logo" src="imgs/logo.png" />
+				<img class="p1_main pt-page-moveCircle" src="imgs/p1_main.png" />
+				<img class="foot" src="imgs/p1_foot.png" />
+				<img class="p1_bt" src="imgs/p1_bt.png" />
+			</div>
+		</div>
+		<div class="page page-2-1 hide" data-lock="1">
+			<div class="wrap">
+				<img class="common_border" src="imgs/common_border.png" />
+				<img class="p2_title" src="imgs/p2_title.png" />
+				<img class="foot" src="imgs/p1_foot.png" />
+				<img class="bt_ikown" src="imgs/bt_ikown.png" />
+				<div class="note_block">
+					<div class="note_main">
+						<p>亲，9月5日——9月25日，第13届好想你红枣文化节。秋来了，枣 红了，想到好想你枣园打枣吗？参与打枣游戏，15秒内打落红枣的数量 越多，则奖励越大：</p>
+						<p class="c">【奖项设置】</p>
+						<p>特等奖：打枣游戏结束时，如果个人及好友助力打落红枣的数量，名列 排行榜前100位，赠送价值38元的好想你枣园门票4张+价值98元的好想 你鲜枣5斤；</p>
+						<p>一等奖：个人打落700以上颗红枣，赠送价值38元的好想你枣园门 票4张，以及5元优惠券1张（正价购买满35元抵用）；</p>
+						<p>二等奖：个人打落500到700颗红枣，赠送价值38元的好想你枣园门 票2张，以及5元优惠券1张（正价购买满35元抵用）；</p>
+						<p>三等奖：个人打落300到500颗红枣，赠送10元优惠券1张（正价购 买满69元抵用）；</p>
+						<p>四等奖：个人打落0到300颗红枣，赠送5元优惠券1张（正价购买 满35元抵用）。</p>
+						<p class="c">【温馨提醒】</p>
+						<p>1、可重复参与打枣游戏，但每人只能到店兑奖1次，个人以获得的最高 奖励为准；</p>
+						<p>2、凭好想你枣园门票，可于10月7日前，自行前往、免费游览好想你科 技示范园、好想你红枣博览园、好想你工业园等10多个景点， 免费现 场打枣并不限量吃枣；</p>
+						<p>3、如果未能赢得门票或需要更多，可到支持兑奖的好想你郑州门店， 参与“正价购买38元送38元门票”活动；</p>
+						<p>4、如果您有其他问题，请搜索关注、留言给好想你枣业官方微信：haoxiangnizaoye。</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+    </div>
+
+	<div class="hide">
+		<img src="imgs/game_score.png" />
+		<img src="imgs/game_timer.png" />
+		<img src="imgs/game_main1.png" />
+		<img src="imgs/game_main2.png" />
+		<img src="imgs/game_main3.png" />
+	</div>
+
+
+    <div id="share">
+    	<div class="shareImg"></div>
+    </div>
+
+
+    <script type="text/javascript">
+	gSound = 'imgs/samsung.mp3';
+	dontprevent=true;
+	</script>
+    <script src="js/jquery-2.1.3.min.js?v=2"></script>
+    <script src="js/google.fastbutton.js?v=2"></script>
+	<script src="js/jquery.google.fastbutton.js?v=2"></script>
+	<script src="js/control.js?v=2"></script>
+	<script src="js/index.js?v=2"></script>
+    <script type="text/javascript">
+
+    var goNext,goPrev;
+    var t1_page=1,t2_page=1,iscanget=true;
+	document.onreadystatechange = loading; 
+	var loading_pc_num=0;
+	var loading_pc=setInterval(function(){
+		loading_pc_num+=parseInt(Math.random()*6);
+		$('.loading_main').html(loading_pc_num+'%');
+		if(loading_pc_num>90){
+			clearInterval(loading_pc);
+		}
+	},300);
+
+	function loading(){
+		if(document.readyState == "complete"){
+			loading_pc_num=94;
+			setTimeout(function(){
+				startpage();
+			},1000);
+		}
+	}
+
+	function startpage(){
+		adaptscreen(640);
+		$("#loading").hide();
+		$("#content").show();
+		//playbksound();
+	}
+
+	
+
+	$(function(){
+		/*member msg submit*/
+		$('.p1_bt').on('fastClick',function(){
+			goNext();
+		});
+		/*member msg submit end*/
+		$('.bt_ikown').on('fastClick',function(){
+			window.location.href="game.html";
+		});
+
+	});
+
+	function adaptscreen(widthnum){
+	 var DEFAULT_WIDTH = widthnum, // 页面的默认宽度
+        ua = navigator.userAgent.toLowerCase(), // 根据 user agent 的信息获取浏览器信息
+        deviceWidth = window.screen.width, // 设备的宽度
+        devicePixelRatio = window.devicePixelRatio || 1, // 物理像素和设备独立像素的比例，默认为1
+        targetDensitydpi;    // Android4.0以下手机不支持viewport的width，需要设置target-densitydpi
+        if (ua.indexOf("android") !== -1 && parseFloat(ua.slice(ua.indexOf("android")+8)) < 4) {
+        targetDensitydpi = DEFAULT_WIDTH / deviceWidth * devicePixelRatio * 160;
+        $('meta[name="viewport"]').attr('content', 'target-densitydpi=' + targetDensitydpi + ', width=device-width, user-scalable=no');
+		}else{
+			$('meta[name="viewport"]').attr('content', 'target-densitydpi=device-dpi, width='+DEFAULT_WIDTH+'px, user-scalable=no');
+		}
+    }
+	</script>
+	</body>
+</html>

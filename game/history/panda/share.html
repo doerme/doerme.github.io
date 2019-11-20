@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="zh-cn" class="no-js">
+	<head>
+		<meta http-equiv="Content-Type">
+		<meta content="text/html; charset=utf-8">
+		<meta charset="utf-8">
+		<title>熊猫眼膜</title>		
+		<meta name="viewport" content="target-densitydpi=device-dpi, width=640px, user-scalable=no">
+		<meta name="format-detection" content="telephone=no">
+		<meta name="format-detection" content="email=no">        
+		<link rel="stylesheet" type="text/css" href="css/reset.css?v=3" />
+		<link rel="stylesheet" type="text/css" href="css/index.css?v=3" />
+		<link rel="stylesheet" type="text/css" href="css/load.css?v=3" /> 
+		<link rel="stylesheet" type="text/css" href="css/animations.css?v=3" />
+		<link rel="stylesheet" type="text/css" href="css/jquery.bxslider.css?v=3" /> 
+	</head>
+	<body>
+    <div id="loading">
+    	<div class="loading_mask"></div>
+    	<img class="loading_aim pt-page-aimaction" src="imgs/loading_aim.png" />
+    	<div class="font_line fl1 pt-page-loadfontshow">... 相机初始化 ...</div>
+    	<div class="font_line fl2 pt-page-loadfontshow pt-page-delay1000">... 脸部识别中 ...</div>
+    	<div class="font_line fl3 pt-page-loadfontshow pt-page-delay2000">... 熊猫眼膜装备中 ...</div>
+	</div>
+	
+	<div id="content" style="display:none">
+		<div class="page page-1-1 page-current page-index" data-lock="1">
+			<div class="wrap yauto">
+				<img class="page_logo pt-page-moveFromTop" src="imgs/page_logo.jpg" />
+				<img class="share_go_list" src="imgs/go_list.png" >
+				<img class="share_p1_bt" src="imgs/p1_bt.png" >
+				<div class="share_detail">
+			    	<img class="sd_img2" src="imgs/p1pt/p1.jpg" />
+					<img class="sd_img1" src="imgs/p1pt/p1.jpg" />
+					<img class="sd_logo" src="imgs/p3_font1.png" />
+			    	<img class="share_bt1" src="imgs/share_bt1.png" />
+			    	<img class="share_bt2" src="imgs/share_bt2.png" />
+			    	<div class="share_num_1">200人</div>
+			    	<div class="share_num_2">200人</div>
+			    </div>
+			</div>
+		</div>
+		
+    </div>
+
+    
+
+	<div id="audiocontainer"></div>
+
+    <div id="share">
+    	<div class="shareImg"></div>
+    </div>
+
+    <div id="guize">
+    	<div class="guize_main"></div>
+    </div>
+
+    <div class="shide">
+    	<img src="imgs/share_detail_block.png" />
+    </div>
+    <script type="text/javascript">
+	var gSound = 'music/game.mp3'; 
+	var dontprevent=true;
+	</script>
+    <script src="js/jquery-2.1.3.min.js?v=3"></script>
+    <script src="js/jquery.bxslider.min.js?v=2"></script>
+    <script src="js/google.fastbutton.js?v=3"></script>
+	<script src="js/jquery.google.fastbutton.js?v=3"></script>
+	<script src="js/index.js?v=3"></script>
+    <script type="text/javascript">
+    var goNext,goPrev;
+    var t1_page=1,t2_page=1,iscanget=true;
+	document.onreadystatechange = loading; 
+	var loading_pc_num=0;
+	var loading_pc=setInterval(function(){
+		loading_pc_num+=parseInt(Math.random()*6);
+		$('.loading_main').html(loading_pc_num);
+		if(loading_pc_num>90){
+			clearInterval(loading_pc);
+		}
+	},300);
+
+	function loading(){
+		if(document.readyState == "complete"){
+			loading_pc_num=94;
+			setTimeout(function(){
+				startpage();
+			},1000);
+		}
+	}
+
+	function startpage(){
+		adaptscreen(640);
+		$('.bxw_block').show();
+		$("#loading").hide();
+		$("#content").show();
+		//playbksound();
+	}
+
+	$(function(){
+		/*member msg submit*/
+		$('#js_form_submit').on('fastClick',function(){
+
+		});
+		/*member msg submit end*/
+
+		/*show detail*/
+		$('.photo_main_block').delegate('.imgdetail','fastClick',function(){
+
+		});
+		/*show detail end*/
+	});
+
+	function adaptscreen(widthnum){
+	 var DEFAULT_WIDTH = widthnum, // 页面的默认宽度
+        ua = navigator.userAgent.toLowerCase(), // 根据 user agent 的信息获取浏览器信息
+        deviceWidth = window.screen.width, // 设备的宽度
+        devicePixelRatio = window.devicePixelRatio || 1, // 物理像素和设备独立像素的比例，默认为1
+        targetDensitydpi;    // Android4.0以下手机不支持viewport的width，需要设置target-densitydpi
+        if (ua.indexOf("android") !== -1 && parseFloat(ua.slice(ua.indexOf("android")+8)) < 4) {
+        targetDensitydpi = DEFAULT_WIDTH / deviceWidth * devicePixelRatio * 160;
+        $('meta[name="viewport"]').attr('content', 'target-densitydpi=' + targetDensitydpi + ', width=device-width, user-scalable=no');
+		}else{
+			$('meta[name="viewport"]').attr('content', 'target-densitydpi=device-dpi, width='+DEFAULT_WIDTH+'px, user-scalable=no');
+		}
+    }
+	</script>
+	</body>
+</html>

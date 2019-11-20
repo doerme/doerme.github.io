@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="no-cache, must-revalidate">
+<meta http-equiv="expires" content="-1">
+<title>挑战小学语文</title>
+<link rel="stylesheet" href="http://test.gdtengnan.com/h5game/strokes2/m.css">
+</head>
+<body>
+<div class="grid">
+	<div class="wrap page4">
+	<div class="zy_box">
+	<div class="wp4_title">排行榜</div>
+	<ul class="rank_list" id="js-rank_list"></ul>
+	<div id="js-my-score"></div>
+	</div>
+	<button id="js-back" class="btn bts2">再来一次</button>
+	</div>
+</div>
+
+
+<script type="text/javascript" src="jquery-2.1.1.min.js"></script>
+<script type="text/javascript">
+var mainTitle='挑战小学生',/*标题*/
+mainDesc="你确定小学语文毕业了么?",
+mainURL='http://wy.city.qq.com/shubihua/strokes/index.html',/*跳转地址*/
+mainImgUrl= 'http://test.gdtengnan.com/h5game/strokes2/cover.gif'/*封面地址*/;
+
+function getdata(linkurl){
+$.ajax({
+	url:linkurl,
+	type:"POST",
+	success:getdatasuccess
+	});
+}
+
+function getdatasuccess(json_data){
+	// alert(json_data);
+	// json_print=$.parseJSON(json_data);
+	// try{
+    json_data=eval('('+json_data+')');
+    if (json_data.err==2) {
+
+    	var from_url= encodeURIComponent(window.location.href);
+    	window.location.href=json_data.url+from_url;
+    };
+    //alert(json_data);
+    // }catch(e){}
+    // json_data=json_print;
+	if(json_data.data){
+	var tmp_html="";
+	for(n in json_data.data){
+	tmp_html+='<li>';
+	tmp_html+='<span class="rank_num">'+parseInt(n*1+1)+'</span>';
+	tmp_html+='<span class=""><img src="'+json_data.data[n].headimg+'" /></span>';
+	tmp_html+='<span class="rank_name">'+json_data.data[n].name+'</span>';
+	tmp_html+='<span class="">'+json_data.data[n].score+'分</span>';
+	//tmp_html+='<span class="rank_time fr">'+json_data.data[n].addTime+'</span>';
+	tmp_html+='</li>';
+	 }
+	$("#js-rank_list").html(tmp_html);
+	$("#js-my-score").html("我的最高分："+json_data.zuigaofen+" 排名："+json_data.paiming);
+	var game_level=json_data.zuigaofen;
+	mainTitle="我在1分钟内数清了"+game_level+"个汉字的笔画，你能超过我吗？";
+	}
+}
+
+$(function(){
+	getdata("http://wy.city.qq.com/shubihua/wap.php?m=Index&a=ajax_paiming_list");
+	$("#js-back").click(function(){
+	window.location.href=mainURL;
+	});
+})
+
+
+</script>
+<script type="text/javascript">
+function onBridgeReady() {
+//转发朋友圈
+WeixinJSBridge.on("menu:share:timeline", function(e) {
+var data = {
+img_url:mainImgUrl,
+img_width: "120",
+img_height: "120",
+link: mainURL,
+//desc这个属性要加上，虽然不会显示，但是不加暂时会导致无法转发至朋友圈，
+desc: mainDesc,
+title: mainTitle
+};
+WeixinJSBridge.invoke("shareTimeline", data, function(res) {
+WeixinJSBridge.log(res.err_msg)
+});
+});
+//同步到微博
+WeixinJSBridge.on("menu:share:weibo", function() {
+WeixinJSBridge.invoke("shareWeibo", {
+"content": mainDesc,
+"url": mainURL
+}, function(res) {
+WeixinJSBridge.log(res.err_msg);
+});
+});
+//分享给朋友
+WeixinJSBridge.on('menu:share:appmessage', function(argv) {
+WeixinJSBridge.invoke("sendAppMessage", {
+img_url: mainImgUrl,
+img_width: "120",
+img_height: "120",
+link: mainURL,
+desc: mainDesc,
+title: mainTitle
+}, function(res) {
+WeixinJSBridge.log(res.err_msg)
+});
+});
+};
+//执行
+document.addEventListener('WeixinJSBridgeReady', function() {
+onBridgeReady();
+});
+</script>
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F9a6e82164e4ba5706a080a82d5ae043b' type='text/javascript'%3E%3C/script%3E"));
+</script>
+</body>
+</html>

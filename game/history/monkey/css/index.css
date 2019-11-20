@@ -1,0 +1,229 @@
+body{
+	
+	width:100%;
+	overflow:hidden;
+}
+
+
+
+.hide{ display:none;}
+
+.page{
+	width:100%;
+	height:100%;
+	position:absolute;
+	font-size:100px;
+	text-align:center;
+	background: url(../mkimg/pagebg.jpg) no-repeat;
+	background-size: cover;
+}
+
+.page-3-1{ background:url(../mkimg/gamebg.jpg) no-repeat; background-size:cover;}
+
+.page .wrap{
+	height:500px;
+}
+
+ 
+.page-current{
+	z-index:1;
+}
+
+.pagelogo {
+	height:auto;width:154px;
+	position:absolute;
+	left:3%;
+	top:3%;
+}
+.page-1-1 .img_2 {
+	height:auto;width:640px;
+	position:absolute;
+	left:50%;
+	top:20%;
+	margin-left:-320px;
+}
+.page-1-1 .img_3 {
+	height:auto;width:494px;
+	position:absolute;
+	left:50%;
+	top:50%;
+	margin-left:-247px;
+}
+.page-1-1 .img_4 {
+	height:auto;width:496px;
+	position:absolute;
+	left:50%;
+	top:63%;
+	margin-left:-248px;
+}
+.page-1-1 .img_5 {
+	height:auto;width:180px;
+	position:absolute;
+	left:50%;
+	bottom:18%;
+	margin-left:-248px;
+}
+.page-1-1 .img_5 a{
+	font-family:SimHei;
+	font-size:32px;
+	color:#00484b;
+	font-weight:bold;
+}
+
+.page-1-1 .img_6{ width:540px; margin-left:-290px; padding:20px; background:#FFF;position:absolute;left:50%; top:3%; border-radius:9px 9px 9px 9px;}
+.page-1-1 .img_6 dl{ font-size:30px; color:#009aa0; text-align:left;}
+.page-1-1 .img_6 dl dt{ font-size:36px; font-weight:bold;}
+.page-1-1 .img_6 dl dd{ line-height:32px; margin-top:18px; text-indent:2em;}
+.page-1-1 .img_6 dl dd.bt_block{ text-indent:0;}
+.page-1-1 .img_6 dl dd .gz_bt{ width:269px;margin-top:10px; margin-left:120px;}
+
+.page-2-1 .img_2 {
+	height:auto;width:640px;
+	position:absolute;
+	left:50%;
+	top:15%;
+	margin-left:-320px;
+}
+.page-2-1 .img_3 {
+	height:auto;width:504px;
+	position:absolute;
+	left:50%;
+	top:55%;
+	margin-left:-252px;
+}
+
+.page-3-1 .img_1 {
+	height:auto;width:573px;
+	position:absolute;
+	left:50%;
+	top:25px;
+	margin-left:-286px;
+}
+
+.page-3-1 .img_2 {
+	height:auto;width:240px;
+	position:absolute;
+	left:50%; 
+	margin-left:-120px;
+	top:12%;
+}
+
+.page-3-1 .img_2 span{ font-size:72px; color:#FFF; text-align:center;}
+
+.page-3-1 .img_3{
+	width:120px;
+	position:absolute;
+	top:69px;
+	left:140px;
+	height:38px;
+	font-size:30px;
+	line-height:38px;
+	text-align:left;
+}
+.page-3-1 .img_4{
+	width:120px;
+	position:absolute;
+	top:69px;
+	left:408px;
+	height:38px;
+	font-size:30px;
+	line-height:38px;
+	text-align:left;
+}
+
+.page-3-1 .img_3 span,.page-3-1 .img_4 span{  color:#000;}
+
+.page-3-1 .img_5 {
+	height:auto;width:141px;
+	position:absolute;
+	left:50%; 
+	margin-left:-10px;
+	bottom:10%;
+	z-index: 5;
+}
+.page-3-1 .img_6 {
+	height:auto;width:159px;
+	position:absolute;
+	left:20%; 
+	top:40%;
+}
+.page-3-1 .img_7 {
+	height:auto;width:149px;
+	position:absolute;
+	left:60%; 
+	top:40%;
+}
+.page-3-1 .img_8 {
+	height:auto;width:134px;
+	position:absolute;
+	left:60%; 
+	top:40%;
+}
+
+.page-3-1 .imgy0{
+transform:rotateY(0deg);
+-webkit-transform:rotateY(0deg); /* Safari and Chrome */
+-moz-transform:rotateY(0deg); /* Firefox */
+}
+
+.page-3-1 .img45{
+transform:rotate(45deg);
+-webkit-transform:rotate(45deg); /* Safari and Chrome */
+-moz-transform:rotate(45deg); /* Firefox */
+}
+
+
+.page-3-1 .imgy180{
+transform:rotateY(180deg);
+-webkit-transform:rotateY(180deg); /* Safari and Chrome */
+-moz-transform:rotateY(180deg); /* Firefox */
+}
+
+
+
+
+.page-4-1 .img_1 {
+	font-family: Mircosoft YaHei;
+	font-size: 30px; 
+	background: #009aa0;
+	color: #FFF;
+	border:6px solid #FFF; 
+	border-radius: 18px 18px 18px 18px; 
+	padding: 30px 20px;
+    width: 450px;
+    position:absolute;
+	left:50%;
+	top:20%;
+	margin-left:-248px;
+	text-align: left;
+}
+
+.page-4-1 .img_1 .yellow{ color:#fff600; }
+.page-4-1 .img_1 .cdkeyblock{ width: 300px; height: 50px; line-height: 50px; color:#009aa0; background:#FFF;border-radius: 12px 12px 12px 12px; display: inline-block; text-align: center;}
+.page-4-1 .img_1 .tis{ font-size: 24px; color: #5bd0d3; float: right;}
+.page-4-1 .img_1 .cdline{ margin-top: 18px; line-height: 40px;}
+.page-4-1 .img_2 {
+	height:auto;width:494px;
+	position:absolute;
+	left:50%;
+	top:62%;
+	margin-left:-247px;
+}
+.page-4-1 .img_3 {
+	height:auto;width:234px;
+	position:absolute;
+	left:50%;
+	top:75%;
+	margin-left:-248px;
+}
+.page-4-1 .img_4 {
+	height:auto;width:233px;
+	position:absolute;
+	left:50%;
+	top:75%;
+	margin-left:10px;
+}
+
+#textsuper{position:absolute;top:-1000;left:-1000;overflow-x:hidden;overflow-y:hidden;z-index:4000}
+#textsub{color:black;position:relative;font-size:21pt;text-align:left;line-height:40pt;top:2000px}
+#share{ background:url(../mkimg/share_bg.png) no-repeat; background-size:100% auto; position:absolute; top:0px; left: 0px; width:100%; height:100%; display:none; z-index:99;}

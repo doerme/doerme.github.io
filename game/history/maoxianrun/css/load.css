@@ -1,0 +1,10 @@
+#loading{
+	width:100%; height:100%; position:absolute; top:0%; left:0%;background:url(../imgs/load_bg.jpg); background-size:100% 100%;
+}
+#loading .logo{width:10.6rem; margin:0px auto; padding-top:10%;}
+#loading .logo img{width:100%;}
+#loading .load_info{width:100%; position:absolute; top:50%; text-align:center;}
+#loading .load_info b{font-size:.6rem; color:#fff; display:block; line-height:1.2rem;}
+#loading .load_info .rex{background:#fbbe2c; width:8rem; height:.4rem; margin:0 auto; border-radius:.2rem; position:relative;}
+#loading .load_info .rex i{background:#f07c00; border-radius:.2rem; width:0%; height:.4rem; display:block; position:absolute; left:0;}
+#loading .load_info .txt{color:#fff;  text-align:center; font-size:.6rem; text-shadow: 1px 0 1px #202064, 0 1px 1px #202064, 0 -1px 1px #202064, -1px 0 1px #202064; height:1.5rem; line-height:1.5rem;}

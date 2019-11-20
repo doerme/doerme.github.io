@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=640px, user-scalable=no">
+<link rel="stylesheet" href="css/reset.css" />
+<link rel="stylesheet" href="css/base.css" />
+</head>
+<body>
+<input id='myFile'type="file" value='' onchange="fileChange(this)" />
+<input type="hidden" name='imgData' id='imgData' />
+<img id="myImg" src="" />
+<script src="js/jquery-2.1.3.min.js"></script> 
+<script src="js/jquery.tap.js"></script> 
+<script src="js/fun.js"></script>
+<script>
+//function $(d){return document.getElementById(d);}
+
+function fileChange(e){
+var f = e.files[0];//一次只上传1个文件，其实可以上传多个的
+var FR = new FileReader();
+FR.onload = function(f){
+compressImg(this.result,600,function(data){//压缩完成后执行的callback
+$('#imgData').val(data);//写到form元素待提交服务器
+$('#myImg').attr('src',data);//压缩结果验证
+});
+};
+FR.readAsDataURL(f);//先注册onload，再读取文件内容，否则读取内容是空的
+}
+
+function compressImg(imgData,maxHeight,onCompress){
+if(!imgData)return;
+onCompress = onCompress || function(){};
+maxHeight = maxHeight || 200;//默认最大高度200px
+var canvas = document.createElement('canvas');
+var img = new Image();
+
+img.onload = function(){ 
+if(img.height > maxHeight) {//按最大高度等比缩放
+img.width *= maxHeight / img.height; 
+img.height = maxHeight; 
+}
+
+var ctx = canvas.getContext("2d"); 
+ctx.clearRect(0, 0, canvas.width, canvas.height); // canvas清屏
+
+//重置canvans宽高 canvas.width = img.width; canvas.height = img.height;
+ctx.drawImage(img, 0, 0, img.width, img.height); // 将图像绘制到canvas上 
+onCompress(canvas.toDataURL("image/jpeg"));//必须等压缩完才读取canvas值，否则canvas内容是黑帆布
+};
+
+// 记住必须先绑定事件，才能设置src属性，否则img没内容可以画到canvas
+img.src = imgData;
+}
+</script>
+</body>
+</html>

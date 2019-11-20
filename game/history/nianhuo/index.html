@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="zh-cn" class="no-js">
+	<head>
+    <meta http-equiv="Content-Type">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    <script type="text/javascript">
+    var phoneWidth = parseInt(window.screen.width);
+    var phoneScale = phoneWidth/320;
+    var ua = navigator.userAgent;
+    if (/Android (\d+\.\d+)/.test(ua)){
+        var version = parseFloat(RegExp.$1);
+        // andriod 2.3
+        if(version>2.3){
+            document.write('<meta name="viewport" content="width=320, initial-scale= '+phoneScale+' ,minimum-scale = '+phoneScale+', maximum-scale = '+phoneScale+', target-densitydpi=device-dpi">');
+        // andriod 2.3以上
+        }else{
+            document.write('<meta name="viewport" content="width=320, initial-scale= '+phoneScale+' , target-densitydpi=device-dpi">');
+        }
+        // 其他系统
+    } else {
+        document.write('<meta name="viewport" content="width=320, user-scalable=no, target-densitydpi=device-dpi">');
+    }
+    </script>
+		<meta charset="utf8">
+		<title>过年你回家吗</title>		
+		<meta name="format-detection" content="telephone=no">
+		<meta name="format-detection" content="email=no">        
+		<link rel="stylesheet" type="text/css" href="css/reset.css?v=19" />
+		<link rel="stylesheet" type="text/css" href="css/index.css?v=19" />
+		<link rel="stylesheet" type="text/css" href="css/animations.css?v=19" />
+        <link rel="stylesheet" type="text/css" href="css/load.css?v=19" /> 
+	</head>
+	<body>
+    <div id="loading">
+     	<div class="spinner">
+  			<div class="double-bounce1"></div>
+  			<div class="double-bounce2"></div>
+			<span class="loading-text"></span>
+		</div>
+	</div>
+		<div id="content" style="display:none">
+			<div class="page page-1-1 page-current">
+				<div class="wrap">
+					<img class="img_4 pt-page-slowFadeIn pt-page-delay1000" src="imgo/p1_font_1.jpg" />
+					<img class="img_5 pt-page-slowFadeIn pt-page-delay2000" src="imgo/p1_font_2.jpg" />
+					<div class="pt-page-slowFadeIn">
+					<img class="img_3 pt-page-slowFadeIn" src="imgo/p1_main_2.jpg" />
+                    <img class="img_2 pt-page-moveFlash pt-page-delay1000" src="imgo/p1_main_1.jpg" />
+					</div>
+					<img class="img_6 pt-page-moveIconUp pt-page-delay4000" src="img/icon_up.png" />
+				</div>
+			</div>
+			<div class="page page-2-1 hide">
+				<div class="wrap">
+					<img class="img_1 hide pt-page-fadeIn pt-page-delay500" src="imgo/p2_font.png" />
+ 					<img class="img_2 hide pt-page-flipInTop" src="imgo/p2_main.png" />
+                    <img class="img_3 hide pt-page-moveFromLeftFade pt-page-delay2000" src="imgo/p2_say_1.png" />
+                    <img class="img_4 hide pt-page-moveFromRightFade pt-page-delay3000" src="imgo/p2_say_2.png" />
+                    <img class="img_5 hide pt-page-fadeIn pt-page-delay4000" src="imgo/p2_say_3.png" />
+                    <img class="img_6 pt-page-moveIconUp pt-page-delay5000" src="img/icon_up.png" />
+ 				</div>
+			</div>
+			<div class="page page-3-1 hide">
+				<div class="wrap">
+					<img class="img_1 hide pt-page-fadeIn pt-page-delay500" src="imgo/p3_font.png" />
+					<img class="img_2 hide pt-page-flipInTop" src="imgo/p3_main.png" />
+                    <img class="img_3 hide pt-page-moveFromLeftFade pt-page-delay3000" src="imgo/p3_say_1.png" />
+                    <img class="img_4 hide pt-page-moveFromLeftFade pt-page-delay2000" src="imgo/p3_say_2.png" />
+ 					<img class="img_6 hide pt-page-moveIconUp pt-page-delay4000" src="img/icon_up.png" /> 
+				</div>
+			</div>
+			<div class="page page-4-1 hide">
+				<div class="wrap">
+					<img class="img_1 hide pt-page-fadeIn pt-page-delay500" src="imgo/p4_font.png" />
+                    <img class="img_2 hide pt-page-flipInTop" src="imgo/p4_main.png" />
+					<img class="img_3 pt-page-moveSlowFromLeftFade hide pt-page-delay2000" src="imgo/p4_say_1.png" />
+                    <img class="img_4 pt-page-moveSlowFromRightFade hide pt-page-delay3000" src="imgo/p4_say_2.png" />
+                    <img class="img_5 pt-page-fadeIn hide pt-page-delay4000" src="imgo/p4_say_3.png" />
+					<img class="img_6 hide pt-page-moveIconUp pt-page-delay5000" src="img/icon_up.png" />
+				</div>
+			</div> 
+            
+            <div class="page page-5-1 hide">
+				<div class="wrap">
+					<img class="img_1 hide pt-page-fadeIn" src="imgo/p5_font.png" /> 
+					<img class="img_2 pt-page-fadeIn hide pt-page-delay1000" src="imgo/p5_main_1.png" />
+                    <img class="img_3 pt-page-fadeIn hide pt-page-delay2000" src="imgo/p5_main_2.png" /> 
+                    <img class="img_4 pt-page-fadeIn hide pt-page-delay3000" src="imgo/p5_main_3.png" /> 
+					<img class="img_6 hide pt-page-moveIconUp pt-page-delay4000" src="img/icon_up.png" /> 
+				</div>
+			</div>
+            
+            <div class="page page-6-1 hide">
+				<div class="wrap">
+					<img class="img_1 hide pt-page-fadeIn  pt-page-delay500" src="imgo/p6_font.png" />
+                    <img class="img_2 hide pt-page-flipInTop" src="imgo/p6_main.png" />
+					<img class="img_3 pt-page-moveFromRightFade hide pt-page-delay2000" src="imgo/p6_say_1.png" />
+                    <img class="img_4 pt-page-moveFromLeftFade hide pt-page-delay3000" src="imgo/p6_say_2.png" />
+					<img class="img_6 hide pt-page-moveIconUp pt-page-delay4000" src="img/icon_up.png" /> 
+				</div>
+			</div>
+            
+            <div class="page page-7-1 hide">
+				<div class="wrap">
+					<img class="img_1 hide pt-page-fadeIn" src="imgo/p7_main.jpg" /> 
+					<img class="img_7 hide pt-page-fadeIn pt-page-delay500" src="imgo/p7_title.png" /> 
+					<img class="img_2 hide pt-page-fadeIn pt-page-delay1000" src="imgo/p7_font.png" />
+                    <div class="img_3 " id="js-chuxi"></div>
+                    <div class="part p7__print-wrap ">
+                        <i class="part p7__print"></i>
+                        <i class="part p7__scanner scanner"  doneText=""></i>
+                        <i class="digg" id="apps_svy_opt_title_10232926_0"></i>
+                    </div>
+				</div>
+			</div>
+            
+            <div class="page page-8-1 hide">
+				<div class="wrap">
+                <div class="img_1"></div>
+                <a class="img_2" href="javascript:shareDialog();">传递给好友</a>
+                <img class="img_9 hide pt-page-slowFadeIn pt-page-delay2000" src="imgo/p8_font_1.jpg" />
+				<img class="img_10 hide pt-page-fadeIn pt-page-delay500" src="imgo/p8_font_2.jpg" />
+				<img class="img_11 hide pt-page-slowFadeIn pt-page-delay2000" src="imgo/p8_font_3.png" />
+				<img class="img_8 hide pt-page-slowFadeIn pt-page-delay2000" src="imgo/p8_bottom.png" />
+				<div class="pt-page-moveFromBottomFade pt-page-delay4000">
+                <img onclick="javascript:window.location.href='http://gd.qq.com/zt2015/nianhuo2015/index.htm';" class="img_7 hide pt-page-swing " src="imgo/p8_bt.png" />
+				</div>
+                <div class="img_6 count" id="apps_svy_opt_count_10232926_0"></div>
+				</div>
+			</div>
+    </div>
+	<div id="audiocontainer"></div>
+	<div id="textsuper">
+	<div id="textsub"><img id="fontimg" />
+    </div></div>
+    <div id="share" onClick="javascript:closeDialog();">
+	<!--<a class="share_close">返回</a>-->
+	<div class="share_mask"></div>
+	<div class="share_main">
+	<img class="sm_img1" src="imgo/sharetobg_1.png" />
+	<img class="sm_img2" src="imgo/sharetobg_2.png" />
+	</div>
+    </div>		
+<script type="text/javascript">
+var imgUrl = 'imgo/sharesimg.jpg';
+var lineLink = window.location.href.split('#')[0]+'?v='+Math.round(Math.random()*999)+3000;
+var descContent = "有时爱需要及时送达，腾讯网邀您一起参与回家过年行动。今天，让爱先回家！";
+var shareTitle = '今年过年，你回家吗？';
+var appid = 'wx213278c5a45f7349'; 
+gSound = 'music/1.mp3'; 
+</script>
+<script src="js/zepto.min.js?v=19"></script>
+<script src="js/touch.js?v=19"></script>
+<script src="js/index.js?v=19"></script>
+<script type="text/javascript">
+document.onreadystatechange = loading; 
+function loading(){
+	if(document.readyState == "complete")
+	{ 
+		$("#loading").hide();
+		$("#content").show();
+		playbksound();
+	}
+}
+function shareDialog(){
+	 $("#share").show();			
+}
+function closeDialog(){
+	$("#share").hide();
+}
+</script>
+</body>
+<div style="display:none">
+<script type="text/javascript">
+$(function(){
+$(".p7__print-wrap").on("touchstart", function() {
+	$(".p7__scanner").css("display", "none");
+	$(".p7__scanner").removeClass("scanner");
+	$(".p7__print").css("opacity", "1");
+	setTimeout(function() {
+		showTheLast = 1;
+		gothenext(8);
+	}, 500);
+});
+/*-- --*/
+$("#share").tap(function(){
+  closeDialog();
+});
+
+/*-- --*/
+setInterval(function(){
+chuxiclock();
+},100);
+function chuxiclock(){
+    var now = new Date();
+	var grt= new Date("2/18/2015 00:00:00");
+	var clock='';
+	if(now>grt){
+		clock = '<p>距离除夕还有 </p><p><span>00</span>天<span>00</span>小时<span>00</span>分钟<span></span>秒</p>';
+	}
+	else{
+		now.setTime(now.getTime()+250);
+		days = (grt - now) / 1000 / 60 / 60 / 24;
+		dnum = Math.floor(days);
+		hours = (grt - now) / 1000 / 60 / 60 - (24 * dnum);
+		hnum = Math.floor(hours);
+		if(String(hnum).length ==1 ){hnum = "0" + hnum;}
+		minutes = (grt - now) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+		mnum = Math.floor(minutes);
+		if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+		seconds = (grt - now) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+		snum = Math.round(seconds);
+		if(String(snum).length ==1 ){snum = "0" + snum;}		
+		clock = '<p>距离除夕还有 </p><p><span>'+dnum+'</span>'+'天<span>'+hnum+'</span>小时<span>'+mnum+'</span>分钟<span>'+snum+'</span>秒</p>'
+	}		
+	$("#js-chuxi").html(clock);
+}
+
+
+})
+/*-- --*/
+var now = { row:1, col:1 }, last = { row:0, col:0};
+const towards = { up:1, right:2, down:3, left:4};
+var isAnimating = false;
+/*-- --*/
+function pageone(){
+	$("#page1_bt").hide();
+	setTimeout(function(){
+		gothenext(2);
+		},1000);
+}
+/*-- --*/
+function gothenext(page){
+var lastPage = ".page-"+parseInt(page-1)+"-1",
+nowPage = ".page-"+page+"-1";
+var outClass = 'pt-page-moveToTop';
+var inClass = 'pt-page-moveFromBottom';
+$(nowPage).removeClass("hide");
+$(lastPage).addClass(outClass);
+$(nowPage).addClass(inClass);
+now.row = page; now.col = 1;
+setTimeout(function(){
+	$(lastPage).removeClass('page-current');
+	$(lastPage).removeClass(outClass);
+	$(lastPage).addClass("hide");
+	//$(lastPage).find("img").addClass("hide");
+	//$(lastPage).find("div").addClass("hide");
+	
+	$(nowPage).addClass('page-current');
+	$(nowPage).removeClass(inClass);
+	$(nowPage).find("img").removeClass("hide");
+	$(nowPage).find("div").removeClass("hide");
+	isAnimating = false;
+},600);
+}
+/*-- --*/
+</script>
+<script type="text/javascript" src="http://tajs.qq.com/stats?sId=32436564" charset="UTF-8"></script>
+<script language="javascript">
+var JsLoader={
+	load:function(sUrl,fCallback){
+		var _script = document.createElement("script");
+		_script.setAttribute("type","text/javascript");
+		_script.setAttribute("src",sUrl);
+		document.getElementsByTagName("head")[0].appendChild(_script);
+
+		if(/msie/.test(window.navigator.userAgent.toLowerCase())){
+			_script.onreadystatechange=function(){
+				if(this.readyState=="loaded"||this.readyState=="complete"){
+					fCallback();
+				}
+			};
+		}else if(/gecko/.test(window.navigator.userAgent.toLowerCase())){
+			_script.onload=function(){
+				fCallback();
+			};
+		}else{
+			fCallback();
+		}
+	}
+};
+
+if(typeof jQuery == "undefined"){ 
+    JsLoader.load("http://mat1.gtimg.com/www/panshi/dist/js/jquery.js",function(){});
+}
+JsLoader.load("http://mat1.gtimg.com/www/panshi/js/digg2.js", function()
+{
+	AppPlatform.Survey.Digg.init({
+		PrjId: 10232926, /*调查ID*/
+		SubjId: 253389, /*问题ID*/
+		DiggMode: 0, /*0：单选模式 1：多选模式*/
+		ShowResult: 1,
+		/*｛'选项ID': '索引'｝，快速评价列表，可以根据需要删减*/
+		OptIdObject: 
+		{"585696":0}
+	});
+});
+</script> 
+</html>

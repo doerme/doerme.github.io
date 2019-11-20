@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="zh-cn" class="no-js">
+	<head>
+		<meta http-equiv="Content-Type">
+		<meta content="text/html; charset=utf-8">
+		<meta charset="utf-8">
+		<title>浙江稠州商业银行</title>		
+		<meta name="viewport" content="target-densitydpi=device-dpi, width=640px, user-scalable=no">
+		<meta name="format-detection" content="telephone=no">
+		<meta name="format-detection" content="email=no">        
+		<link rel="stylesheet" type="text/css" href="css/reset.css?v=2" />
+		<link rel="stylesheet" type="text/css" href="css/index.css?v=2" />
+		<link rel="stylesheet" type="text/css" href="css/animations.css?v=2" />
+        <link rel="stylesheet" type="text/css" href="css/load.css?v=2" /> 
+	</head>
+	<body>
+    <div id="loading">
+     	<div class="spinner">
+  			<div class="double-bounce1"></div>
+  			<div class="double-bounce2"></div>
+		</div>
+	</div>
+		<div id="content" style="display:none">
+			<div class="page page-1-1 page-current">
+				<div class="wrap">
+					<img class="pagelogo pt-page-moveFromTop" src="imgb/bank_logo.png" />
+					<img class="pageguide pt-page-moveIconUp" src="imgb/next_guide.gif" />
+					<img class="img_1 pt-page-moveCircle" src="imgb/p1_main.gif" />
+					<img class="img_2 pt-page-moveFromBottomFade" src="imgb/p1_font_01.png" />
+					<img class="img_3 pt-page-moveFromBottomFade pt-page-delay200" src="imgb/p1_font_02.png" />
+					<img class="img_4 pt-page-moveFromBottomFade pt-page-delay400" src="imgb/p1_font_03.png" />
+					<img class="img_5 pt-page-moveFromBottomFade pt-page-delay600" src="imgb/p1_font_04.png" />
+				</div>
+			</div>
+			<div class="page page-2-1 hide photo-block" data-lock="1">
+				<div class="wrap">
+					<img class="pagelogo pt-page-moveFromTop hide" src="imgb/bank_logo.png" />
+						<img class="eg_img img_1 hide pt-page-moveFromBottomFade"  src="imgb/eg/p1.jpg"/>
+						<img class="eg_img img_2 hide pt-page-moveFromBottomFade pt-page-delay200"  src="imgb/eg/p2.jpg"/>
+						<img class="eg_img img_3 hide pt-page-moveFromBottomFade pt-page-delay400"  src="imgb/eg/p3.jpg"/>
+						<img class="eg_img img_4 hide pt-page-moveFromBottomFade pt-page-delay600"  src="imgb/eg/p4.jpg"/>
+						<img class="eg_img img_5 hide pt-page-moveFromBottomFade pt-page-delay800"  src="imgb/eg/p5.jpg"/>
+						<img class="eg_img img_6 hide pt-page-moveFromBottomFade pt-page-delay1000"  src="imgb/eg/p6.jpg"/>
+                        <img class="img_7 hide pt-page-moveFromBottomFade pt-page-delay1200" id="js_go_p3" src="imgb/p2_bt.png"/>
+                        <div class="img_show mask shide"></div>		
+                        <img class="img_show main shide" id="js_img_show" src="">
+ 				</div>
+			</div>
+			<div class="page page-3-1 hide photo-block" data-lock="1">
+				<div class="wrap">
+				<canvas id="myCanvas" width="600" height="760" style="width:600px;height:760px;">您的浏览器不支持canvas</canvas>
+				<div class="img_camera pt-page-moveFromBottomFade hide">
+                    <input class="select_file" type="file" accept="image/*" capture="camera" size="28" onchange="fileChange(this);" /> 
+				</div>
+				<input name="name" id="js-name" value="" type="text" class="input_name hide pt-page-moveFromBottomFade pt-page-delay200"  placeholder="输入您的姓名" maxlength="6" />
+				<input name="position" id="js-position" value="" type="text" class="input_position hide pt-page-moveFromBottomFade pt-page-delay400" placeholder="输入您的岗位"  maxlength="6" />
+				<textarea name="say" id="js-say" class="input_say hide pt-page-moveFromBottomFade pt-page-delay600" placeholder="请输入您的代言宣言(20个字以内)" maxlength="20"></textarea>
+				<div class="img_more hide pt-page-moveFromBottomFade pt-page-delay800">
+					<select class="select_say" id="js_select_say">
+					    <option>选中我吧</option>
+					    <option>我要更加努力</option>
+						<option>老板加人工啊</option>
+					</select>
+				</div>
+				<img class="img_next hide pt-page-moveFromBottomFade pt-page-delay1000" id="js_go_p4" src="imgb/p3_bt.png" />
+ 				</div>
+			</div>
+			<div class="page page-4-1 hide photo-block " data-lock="1">
+				<div class="wrap">
+				<img id="js_result_img" style="width:600px;height:760px;" />
+				<img id="js-guanzhu" class="img_1 hide pt-page-moveFromBottomFade" src="imgb/p4_bt1.png" />
+				<img id="js-remake" class="img_2 hide pt-page-moveFromBottomFade pt-page-delay200" src="imgb/p4_bt2.png" />
+				<img id="js-share" class="img_3 hide pt-page-moveFromBottomFade pt-page-delay400" src="imgb/p4_bt3.png" />
+ 				</div>
+			</div>
+			
+
+    </div>
+	<div id="audiocontainer"></div>
+    <div id="share">
+    	<div class="shareImg"></div>
+    </div>
+
+    <div id="bg_loading" class="hide">
+    <img src="imgb/canvas/canvas_eg.png" />
+    </div>
+
+    <script type="text/javascript">
+	gSound = 'music.mp3'; 
+	</script>
+    <script src="js/zepto.min.js"></script>
+	<script src="js/touch.js"></script>
+	<script src="js/control.js?v=2"></script>
+	<script src="js/camera.js?v=5"></script>
+	<script src="js/index.js?v=2"></script>
+    <script type="text/javascript">
+    LS.set('ls_openid','oQn_-tvqkGA2Ihnc_9ssfbOhCUak');
+    var goNext,goPrev;
+    var t1_page=1,t2_page=1,iscanget=true;
+	document.onreadystatechange = loading; 
+	var loading_pc_num=0;
+	var loading_pc=setInterval(function(){
+		loading_pc_num+=parseInt(Math.random()*6);
+		$('.loading_main').html(loading_pc_num+'%');
+		if(loading_pc_num>90){
+			clearInterval(loading_pc);
+		}
+	},300);
+	function loading(){
+		if(document.readyState == "complete"){
+			loading_pc_num=94;
+			setTimeout(function(){
+				startpage();
+			},1000);
+		}
+	}
+
+	function startpage(){
+		adaptscreen(640);
+		$("#loading").hide();
+		$("#content").show();
+		playbksound();
+	}
+
+	
+
+	$(function(){
+
+	});
+
+	function adaptscreen(widthnum){
+	 var DEFAULT_WIDTH = widthnum, // 页面的默认宽度
+        ua = navigator.userAgent.toLowerCase(), // 根据 user agent 的信息获取浏览器信息
+        deviceWidth = window.screen.width, // 设备的宽度
+        devicePixelRatio = window.devicePixelRatio || 1, // 物理像素和设备独立像素的比例，默认为1
+        targetDensitydpi;    // Android4.0以下手机不支持viewport的width，需要设置target-densitydpi
+        if (ua.indexOf("android") !== -1 && parseFloat(ua.slice(ua.indexOf("android")+8)) < 4) {
+        targetDensitydpi = DEFAULT_WIDTH / deviceWidth * devicePixelRatio * 160;
+        $('meta[name="viewport"]').attr('content', 'target-densitydpi=' + targetDensitydpi + ', width=device-width, user-scalable=no');
+		}else{
+			$('meta[name="viewport"]').attr('content', 'target-densitydpi=device-dpi, width='+DEFAULT_WIDTH+'px, user-scalable=no');
+		}
+    }
+	</script>
+	</body>
+</html>

@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="no-cache, must-revalidate">
+<meta http-equiv="expires" content="-1">
+<title>挑战小学语文</title>
+<link rel="stylesheet" href="m.css">
+<style>
+.page1,.page2,.page3,.page4{display:none;}
+</style>
+</head>
+<body>
+<div class="grid">
+    <div class="wrap page0">
+	<img src="loading.gif" />
+	</div>
+	<div class="wrap page1">
+    <h1>挑战小学语文</h1>
+    <div id="help">在有限时间来确定每个字的笔画数</div>
+    <button id="js-start" class="btn">开始游戏</button>
+	</div>
+
+    <div class="wrap page2">
+    <header>
+        <span class="lv">
+            得分：
+            <em id="js-level">0</em>
+        </span>
+        <span id="js-game-time" class="time"></span>
+    </header>
+    <div id="js-font-show" class="font-box"></div>
+    <div class="ctrl-box">
+    <div id="js-left-bt" class="dc fl"></div>
+    <div id="js-right-bt" class="dc fr"></div>
+    </div>
+	
+	<div id="js-fail-mask">
+	<div class="jfm-title">减5秒!!</div>
+	<div class="jfm-time">
+	<div class="jfm-time_line"></div>
+	</div>
+	</div>
+	
+    </div>
+
+    <div class="wrap page3">
+    <div class="fenshu-title">游戏结束</div>
+    <div class="fenshu-num" id="js-your-level">得分:</div>
+    <button id="js-restart" class="btn">再来一次</button>
+    <button id="js-share" class="btn bts2">虐一下朋友</button>
+    <button id="js-rank" class="btn bts2">我的世界排名</button>
+    </div>
+    <div id="share_mask"><img src="guide.png" /></div>
+	
+	
+</div>
+
+
+<script type="text/javascript" src="jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="d.js?v=6" charset="gbk"></script>
+<script type="text/javascript">
+var mainTitle='挑战小学生',/*标题*/
+mainDesc="你确定小学语文毕业了么?",
+mainURL='http://wy.city.qq.com/shubihua/strokes/index.html',/*跳转地址*/
+mainImgUrl= 'http://test.gdtengnan.com/h5game/strokes2/cover.gif'/*封面地址*/;
+var public_mobile="";
+var game_time=60;
+var game_inter;
+var game_level=0;
+var last_font='';
+var tmp_font='';
+function levelup(){
+		game_level++;
+		fontshow(game_level);
+}
+function fontshow(level){
+	var tmp_rd_num=0;
+	var tmp_up=Math.ceil(Math.random()*10);
+	$("#js-left-bt,#js-right-bt").attr("alt","fail");
+	$("#js-level").html(level);
+	if(level<5){
+		if(tmp_up<6){
+		    tmp_rd_num=Math.floor(Math.random()*s2.length);
+			tmp_font=s2[tmp_rd_num];
+			s2.splice(tmp_rd_num,1);
+			$("#js-left-bt").attr("alt","up");
+		}else{
+		    tmp_rd_num=Math.floor(Math.random()*s3.length);
+			tmp_font=s3[tmp_rd_num];
+			s3.splice(tmp_rd_num,1);
+			$("#js-right-bt").attr("alt","up");
+		}
+		$("#js-left-bt").html('2');
+		$("#js-right-bt").html('3');
+	}else if(level<10){
+		if(tmp_up<6){
+		    tmp_rd_num=Math.floor(Math.random()*s3.length);
+			tmp_font=s3[tmp_rd_num];
+			s3.splice(tmp_rd_num,1);
+			$("#js-left-bt").attr("alt","up");
+		}else{
+		    tmp_rd_num=Math.floor(Math.random()*s4.length);
+			tmp_font=s4[tmp_rd_num];
+			s4.splice(tmp_rd_num,1);
+			$("#js-right-bt").attr("alt","up");
+		}
+		$("#js-left-bt").html('3');
+		$("#js-right-bt").html('4');
+	}else if(level<15){
+		if(tmp_up<6){
+		    tmp_rd_num=Math.floor(Math.random()*s4.length);
+			tmp_font=s4[tmp_rd_num];
+			s4.splice(tmp_rd_num,1);
+			$("#js-left-bt").attr("alt","up");
+		}else{
+		    tmp_rd_num=Math.floor(Math.random()*s5.length);
+			tmp_font=s5[tmp_rd_num];
+			s5.splice(tmp_rd_num,1);
+			$("#js-right-bt").attr("alt","up");
+		}
+		$("#js-left-bt").html('4');
+		$("#js-right-bt").html('5');
+	}else if(level<20){
+		if(tmp_up<6){
+		    tmp_rd_num=Math.floor(Math.random()*s5.length);
+			tmp_font=s5[tmp_rd_num];
+			s5.splice(tmp_rd_num,1);
+			$("#js-left-bt").attr("alt","up");
+		}else{
+		    tmp_rd_num=Math.floor(Math.random()*s6.length);
+			tmp_font=s6[tmp_rd_num];
+			s6.splice(tmp_rd_num,1);
+			$("#js-right-bt").attr("alt","up");
+		}
+		$("#js-left-bt").html('5');
+		$("#js-right-bt").html('6');
+	}else{
+		if(tmp_up<6){
+		    tmp_rd_num=Math.floor(Math.random()*s6.length);
+			tmp_font=s6[tmp_rd_num];
+			s6.splice(tmp_rd_num,1);
+			$("#js-left-bt").attr("alt","up");
+		}else{
+		    tmp_rd_num=Math.floor(Math.random()*s7.length);
+			tmp_font=s7[tmp_rd_num];
+			s7.splice(tmp_rd_num,1);
+			$("#js-right-bt").attr("alt","up");
+		}
+		$("#js-left-bt").html('6');
+		$("#js-right-bt").html('7');
+	}
+
+	$("#js-font-show").html(tmp_font);
+}
+
+function gamefail(){
+$("#js-fail-mask").show();
+$(".jfm-time_line").css("width","200px");
+var tmp_time=10;
+var game_fail=setInterval(function(){
+if(tmp_time>=0){
+$(".jfm-time_line").css("width",tmp_time*20+"px");
+tmp_time--;
+}else{
+$("#js-fail-mask").hide();
+clearInterval(game_fail);
+}
+},100);
+if(game_time<5){gameend();}
+game_time-=4;
+}
+
+function gameend(){
+    $("#js-font-show").html("");
+	if(game_level<9){
+		game_level_str="达到了小学1年级水平"
+	}else if(game_level<19){
+		game_level_str="达到了小学2年级水平"
+	}else if(game_level<29){
+		game_level_str="达到了小学3年级水平"
+	}else if(game_level<39){
+		game_level_str="达到了小学4年级水平"
+	}else if(game_level<49){
+		game_level_str="达到了小学5年级水平"
+	}else if(game_level<59){
+		game_level_str="达到了小学6年级水平"
+	}else{
+		game_level_str="恭喜你小学毕业了"
+	}
+	mainTitle="我在1分钟内数清了"+game_level+"个汉字的笔画，你能超过我吗？";
+	$(".page1,.page2,.page4").hide();
+	$(".page3").show();
+	clearInterval(game_inter);
+	$("#js-your-level").html("数对了"+game_level+"个汉字，"+game_level_str);
+	// if(checkMobile(public_mobile)){
+	// public_mobile=prompt("请输入正确的手机号码，以便我们与您联系");
+	// }
+	// $.post("http://wy.city.qq.com/shubihua/wap.php?m=Index&a=ajax_score_submit",{
+	// "score":game_level,
+	// "mobile":public_mobile
+	// },
+	// function(data){
+	
+	// });
+}
+
+function gamestart(){
+	game_time=60;
+	game_level=0;
+	fontshow(game_level);
+		game_inter=setInterval(function(){
+			if(game_time>=0){
+				
+				$("#js-game-time").html(game_time);
+			}else{
+				gameend();
+			}
+			game_time--;
+		},1000);
+		
+	 $(".page1,.page3,.page4").hide();
+	 $(".page2").show();
+}
+
+function getdata(linkurl){
+$(".page0").hide();
+$(".page1").show();
+return true;
+$.ajax({
+	url:linkurl,
+	type:"POST",
+	success:getdatasuccess
+	});
+}
+
+function getdatasuccess(json_data){
+    $(".page0").hide();
+    $(".page1").show();
+
+	json_data=eval("("+json_data+")");
+	if(json_data.data.mobile){
+    	public_mobile=json_data.data.mobile;
+	}
+	
+	
+}
+
+function tobetrigger(obj){
+	obj.addEventListener('touchstart', function (e) {
+	clickBt($(obj));
+    });
+}
+
+function clickBt(obj){
+	if(obj.attr("alt")=="up"){
+	levelup();
+	}else{
+    gamefail();
+	}
+}
+
+$(function(){
+getdata("http://wy.city.qq.com/shubihua/wap.php?m=Index&a=ajax_init");
+$("#js-game-time").html(game_time);
+    $("#js-start,#js-restart").click(function(){
+		gamestart();
+	});
+	/*end js-start*/	
+$("#js-share").click(function(){
+	$("#share_mask").show();
+	});
+$("#share_mask").click(function(){
+	$(this).hide();
+	});
+$("#js-rank").click(function(){
+	window.location.href="rank.html"
+	});
+$("#js-back").click(function(){
+    $(".page1,.page2,.page4").hide();
+	$(".page3").show();
+    });
+})
+
+tobetrigger($("#js-left-bt").get(0));
+tobetrigger($("#js-right-bt").get(0));
+
+
+function checkMobile(s){   
+	var regu =/^[1][3-9][0-9]{9}$/; 
+	var re = new RegExp(regu); 
+	if (re.test(s)) { 
+	  return false; 
+	}else{ 
+	  return true; 
+	} 
+} 
+</script>
+<script type="text/javascript">
+function onBridgeReady() {
+//转发朋友圈
+WeixinJSBridge.on("menu:share:timeline", function(e) {
+var data = {
+img_url:mainImgUrl,
+img_width: "120",
+img_height: "120",
+link: mainURL,
+//desc这个属性要加上，虽然不会显示，但是不加暂时会导致无法转发至朋友圈，
+desc: mainDesc,
+title: mainTitle
+};
+WeixinJSBridge.invoke("shareTimeline", data, function(res) {
+WeixinJSBridge.log(res.err_msg)
+});
+});
+//同步到微博
+WeixinJSBridge.on("menu:share:weibo", function() {
+WeixinJSBridge.invoke("shareWeibo", {
+"content": mainDesc,
+"url": mainURL
+}, function(res) {
+WeixinJSBridge.log(res.err_msg);
+});
+});
+//分享给朋友
+WeixinJSBridge.on('menu:share:appmessage', function(argv) {
+WeixinJSBridge.invoke("sendAppMessage", {
+img_url: mainImgUrl,
+img_width: "120",
+img_height: "120",
+link: mainURL,
+desc: mainDesc,
+title: mainTitle
+}, function(res) {
+WeixinJSBridge.log(res.err_msg)
+});
+});
+};
+//执行
+document.addEventListener('WeixinJSBridgeReady', function() {
+onBridgeReady();
+});
+
+document.addEventListener('touchmove',function(event){
+	event.preventDefault(); },false);
+</script>
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F9a6e82164e4ba5706a080a82d5ae043b' type='text/javascript'%3E%3C/script%3E"));
+</script>
+</body>
+</html>

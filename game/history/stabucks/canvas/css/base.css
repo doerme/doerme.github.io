@@ -1,0 +1,6 @@
+.select_bt{width: 400px; height: 100px; text-align: center; line-height: 100px; font-size: 30px; color: #4f4f4f;
+background: #c5ddff; border:1px solid #FFF; border-radius: 5px 5px 5px 5px; position: relative;}
+.select_file{position:absolute; top:0; left:0px; height:100%;width:100%;filter:alpha(opacity=0);-moz-opacity:0;-khtml-opacity: 0;opacity: 0;}
+
+.abtblock{ width: 400px;}
+.abt{ font-size: 40px;}

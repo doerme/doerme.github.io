@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="zh-cn" class="no-js">
+	<head>
+	<meta http-equiv="Content-Type">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    <meta name="viewport" content="width=640, user-scalable=no, target-densitydpi=device-dpi">
+    <script type="text/javascript">
+    var phoneWidth = parseInt(window.screen.width);
+    var phoneScale = phoneWidth/640;
+    var ua = navigator.userAgent;
+    if (/Android (\d+\.\d+)/.test(ua)){
+        var version = parseFloat(RegExp.$1);
+        // andriod 2.3
+        if(version>2.3){
+            document.write('<meta name="viewport" content="width=640, initial-scale= '+phoneScale+' ,minimum-scale = '+phoneScale+', maximum-scale = '+phoneScale+', target-densitydpi=device-dpi">');
+        // andriod 2.3以上
+        }else{
+            document.write('<meta name="viewport" content="width=640, initial-scale= '+phoneScale+' , target-densitydpi=device-dpi">');
+        }
+        // 其他系统
+    } else {
+        document.write('<meta name="viewport" content="width=640, user-scalable=no, target-densitydpi=device-dpi">');
+    }
+    </script>
+		<title>腾讯2014大咖秀</title>		
+		<meta charset="utf-8">
+		<meta name="format-detection" content="telephone=no">
+		<meta name="format-detection" content="email=no">        
+		<link rel="stylesheet" type="text/css" href="http://jeremy.gdtengnan.com/gdh5/daka/css/reset.css?v=5" />
+		<link rel="stylesheet" type="text/css" href="http://jeremy.gdtengnan.com/gdh5/daka/css/index.css?v=5" />
+		<link rel="stylesheet" type="text/css" href="http://jeremy.gdtengnan.com/gdh5/daka/css/animations.css?v=5" />
+        <link rel="stylesheet" type="text/css" href="http://jeremy.gdtengnan.com/gdh5/daka/css/load.css?v=5" /> 
+	</head>
+	<body>
+    <div id="loading">
+     	<div class="spinner">
+  			<div class="double-bounce1"></div>
+  			<div class="double-bounce2"></div>
+		</div>
+	</div>
+		<div id="content" style="display:none">
+			<div class="page page-1-1 page-current">
+				<div class="wrap">
+					<img class="img_1 pt-page-moveFromTop" src="http://mat1.gtimg.com/gd/zt2015/daka/imgd/p1_title.png" />
+					<img class="img_3 pt-page-moveIconUp" src="http://mat1.gtimg.com/gd/zt2015/daka/imgd/down.png" />
+				</div>
+			</div>
+			<div class="page page-2-1 hide">
+				<div class="wrap">
+					<img class="img_4 pt-page-moveFromTopFade hide" src="http://mat1.gtimg.com/gd/zt2015/daka/imgd/p2_font_1.png" />
+					<img class="img_5 pt-page-moveFromTopFade pt-page-delay1500 hide" src="http://mat1.gtimg.com/gd/zt2015/daka/imgd/p2_font_2.png" />
+					<img class="img_6 pt-page-moveFromTopFade pt-page-delay3000 hide" src="http://mat1.gtimg.com/gd/zt2015/daka/imgd/p2_font_3.png" />
+ 					<img class="img_3 pt-page-moveIconUp hide" src="http://mat1.gtimg.com/gd/zt2015/daka/imgd/down.png" />
+ 				</div>
+			</div>
+			<div class="page page-3-1 hide" data-lock="1">
+				<div class="wrap">
+                    <div class="guide_block">
+                    <div class="guide_mask"></div>
+                    <img class="guide_img" src="http://mat1.gtimg.com/gd/zt2015/daka/imgd/guide_mask.png" />
+                    </div>
+					<img class="head_top hide pt-page-moveFromTop" src="http://mat1.gtimg.com/gd/zt2015/daka/imgd/q1_head.png" />
+                    <img class="left_select hide pt-page-moveFromTop adsorption" data-val="1" src="http://mat1.gtimg.com/gd/zt2015/daka/imgd/answer_block.png" />
+                    <img class="right_select hide pt-page-moveFromTop adsorption" data-val="2" src="http://mat1.gtimg.com/gd/zt2015/daka/imgd/answer_block.png" />
+                    <div class="left_question hide pt-page-moveFromBottom draggable p1hide" data-in="0" data-left="11%" data-top="68%" data-right="1">
+                    <p>互联网时代下的</br>4P营销理念</p>
+                    </div>
+                    <div class="right_question hide pt-page-moveFromBottom draggable p1hide" data-in="0" data-left="59%" data-top="68%" data-right="2">
+                    <p>当今中国经济</br>形势下腾讯的</br>机会、挑战与突破</p>
+                    </div>
+                    <div class="tb left_tips"></div>
+                    <div class="tb right_tips"></div>
+                    <div class="gonext">下一页</div>
+				</div>
+			</div>
+			<div class="page page-4-1 hide" data-lock="1">
+				<div class="wrap">
+					<img class="head_top hide pt-page-moveFromTop" src="http://mat1.gtimg.com/gd/zt2015/daka/imgd/q2_head.png" />
+                    <img class="left_select hide pt-page-moveFromTop adsorption" data-val="1" src="http://mat1.gtimg.com/gd/zt2015/daka/imgd/answer_block.png" />
+                    <img class="right_select hide pt-page-moveFromTop adsorption" data-val="2" src="http://mat1.gtimg.com/gd/zt2015/daka/imgd/answer_block.png" />
+                    <div class="left_question hide pt-page-moveFromBottom draggable" data-in="0" data-left="11%" data-top="68%" data-right="2">
+                    <p>从一百年前</br>看现在的中国</p>
+                    </div>
+                    <div class="right_question hide pt-page-moveFromBottom draggable" data-in="0" data-left="59%" data-top="68%" data-right="1">
+                    <p>六百年故宫的</br>前世今生</br>故宫文化走进腾讯</p>
+                    </div>
+                    <div class="tb left_tips"></div>
+                    <div class="tb right_tips"></div>
+                    <div class="gonext">下一页</div>
+				</div>
+			</div> 
+            
+            <div class="page page-5-1 hide" data-lock="1">
+				<div class="wrap">
+					<img class="head_top hide pt-page-moveFromTop" src="http://mat1.gtimg.com/gd/zt2015/daka/imgd/q3_head.png" />
+                    <img class="left_select hide pt-page-moveFromTop adsorption" data-val="1" src="http://mat1.gtimg.com/gd/zt2015/daka/imgd/answer_block.png" />
+                    <img class="right_select hide pt-page-moveFromTop adsorption" data-val="2" src="http://mat1.gtimg.com/gd/zt2015/daka/imgd/answer_block.png" />
+                    <div class="left_question hide pt-page-moveFromBottom draggable" data-in="0" data-left="11%" data-top="68%" data-right="2">
+                    <p>创业者精神与今日</br>中国环境的结合</p>
+                    </div>
+                    <div class="right_question hide pt-page-moveFromBottom draggable" data-in="0" data-left="59%" data-top="68%" data-right="1">
+                    <p>智慧的秘密</p>
+                    </div>
+                    <div class="tb left_tips"></div>
+                    <div class="tb right_tips"></div>
+                    <div class="gonext">下一页</div> 
+				</div>
+			</div>
+            
+            <div class="page page-6-1 hide" data-lock="1">
+				<div class="wrap">
+					<img class="head_top hide pt-page-moveFromTop" src="http://mat1.gtimg.com/gd/zt2015/daka/imgd/q4_head.png" />
+                    <img class="left_select hide pt-page-moveFromTop adsorption" data-val="1" src="http://mat1.gtimg.com/gd/zt2015/daka/imgd/answer_block.png" />
+                    <img class="right_select hide pt-page-moveFromTop adsorption" data-val="2" src="http://mat1.gtimg.com/gd/zt2015/daka/imgd/answer_block.png" />
+                    <div class="left_question hide pt-page-moveFromBottom draggable" data-in="0" data-left="11%" data-top="68%" data-right="2">
+                    <p>如何打造电视娱乐</br>精品节目</p>
+                    </div>
+                    <div class="right_question hide pt-page-moveFromBottom draggable" data-in="0" data-left="59%" data-top="68%" data-right="1">
+                    <p>移动互联时代的</br>新媒体发展趋势</p>
+                    </div>
+                    <div class="tb left_tips"></div>
+                    <div class="tb right_tips"></div>
+                    <div class="gonext">下一页</div>
+				</div>
+			</div>
+            
+            <div class="page page-7-1 hide" data-lock="1">
+				<div class="wrap">
+					<img class="head_top hide pt-page-moveFromTop" src="http://mat1.gtimg.com/gd/zt2015/daka/imgd/q5_head.png" />
+                    <img class="left_select hide pt-page-moveFromTop adsorption" data-val="1" src="http://mat1.gtimg.com/gd/zt2015/daka/imgd/answer_block.png" />
+                    <img class="right_select hide pt-page-moveFromTop adsorption" data-val="2" src="http://mat1.gtimg.com/gd/zt2015/daka/imgd/answer_block.png" />
+                    <div class="left_question hide pt-page-moveFromBottom draggable" data-in="0" data-left="11%" data-top="68%" data-right="2">
+                    <p>基于Twitter的</br>大规模主题模型</p>
+                    </div>
+                    <div class="right_question hide pt-page-moveFromBottom draggable" data-in="0" data-left="59%" data-top="68%" data-right="1">
+                    <p>大道至简</br>猎豹移动海外突围</br>经验分享</p>
+                    </div>
+                    <div class="tb left_tips"></div>
+                    <div class="tb right_tips"></div>
+                    <div class="gonext">下一页</div>
+				</div>
+			</div>
+            
+            <div class="page page-8-1 hide" data-lock="1">
+				<div class="wrap">
+					<img class="head_top hide pt-page-moveFromTop" src="http://mat1.gtimg.com/gd/zt2015/daka/imgd/q6_head.png" />
+                    <img class="left_select hide pt-page-moveFromTop adsorption" data-val="1" src="http://mat1.gtimg.com/gd/zt2015/daka/imgd/answer_block.png" />
+                    <img class="right_select hide pt-page-moveFromTop adsorption" data-val="2" src="http://mat1.gtimg.com/gd/zt2015/daka/imgd/answer_block.png" />
+                    <div class="left_question hide pt-page-moveFromBottom draggable" data-in="0" data-left="11%" data-top="68%" data-right="1">
+                    <p>互联网的</br>位移与趋势</p>
+                    </div>
+                    <div class="right_question hide pt-page-moveFromBottom draggable" data-in="0" data-left="59%" data-top="68%" data-right="2">
+                    <p>互联网平台</br>跨界发展的</br>战略思维</p>
+                    </div>
+                    <div class="tb left_tips"></div>
+                    <div class="tb right_tips"></div>
+                    <div class="gonext">下一页</div>
+				</div>
+			</div>
+            
+            <div class="page page-9-1 hide">
+				<div class="wrap">
+                <img class="img_1 pt-page-moveFromTop" src="http://mat1.gtimg.com/gd/zt2015/daka/imgd/p9_main.png" />
+                <img class="img_2 pt-page-moveFromBottom" src="http://mat1.gtimg.com/gd/zt2015/daka/imgd/p9_gdqq.png" />
+                <img class="img_3 pt-page-moveIconUp" src="http://mat1.gtimg.com/gd/zt2015/daka/imgd/down.png" />
+				</div>
+			</div>
+            
+             <div class="page page-10-1 hide">
+				<div class="wrap">
+                <img class="img_1 pt-page-moveFromTop" src="http://mat1.gtimg.com/gd/zt2015/daka/imgd/p10_main.png" />
+                <div class="img_3 pt-page-moveFromBottom" id="js-share_bt">如何转发朋友圈</div>
+				</div>
+			</div> 
+    </div>
+	<div id="audiocontainer"></div>
+	<div id="textsuper">
+	<div id="textsub"><img id="fontimg" />
+    </div></div>
+    <div id="share">
+    	<div class="shareImg"></div>
+    </div>		
+        <script type="text/javascript">
+		var imgUrl = 'http://mat1.gtimg.com/gd/zt2015/daka/imgd/share_icon.jpg';
+		var lineLink = window.location.href;
+		var descContent = '2014年，百位大咖走进腾讯！万万没想到，他们竟然都来过腾讯！';
+		var shareTitle = '2014年，百位大咖走进腾讯！';
+		var appid = 'wx85a74c74d8ff8d5d';
+        if(window.location.href.indexOf("txdx")>1){
+		appid = 'wxe4c6318aeae88897';
+		}		
+		gSound = 'http://jeremy.gdtengnan.com/gdh5/daka/1.mp3'; 
+		</script>
+        <script src="http://jeremy.gdtengnan.com/gdh5/daka/js/zepto.min.js?v=5"></script>
+		<script src="http://jeremy.gdtengnan.com/gdh5/daka/js/touch.js?v=5"></script>
+		<script src="http://jeremy.gdtengnan.com/gdh5/daka/js/index.js?v=5"></script>
+        <script src="http://jeremy.gdtengnan.com/gdh5/daka/js/fx.js?v=5"></script>
+        <script type="text/javascript">
+		/*-- --*/
+		var base_url='http://weiyun.city.qq.com/';
+		//toanswer();
+		
+		function afterjsonp(jdata){
+			if(typeof(jdata)=='string'){
+					jdata=$.parseJSON(jdata);
+				}
+				if(jdata.err=='-2'){
+					window.location.href=jdata.err_msg+encodeURIComponent(window.location.href);
+				}
+		}
+		function toanswer(){
+			var tmp_url=base_url+'index.php?g=Daka&m=Daka&a=answer';
+			$.ajax({
+			url:tmp_url,
+			dataType:"jsonp",
+			jsonpCallback:"afterjsonp"
+			});
+		}
+		
+		var startX, startY, endX, endY;
+        var showADID = 1;
+		var left_offset=100;
+		var top_offset=80;
+		document.onreadystatechange = loading;
+		function loading(){
+			if(document.readyState == "complete")
+			{
+				$("#loading").hide();
+				$("#content").show();
+				
+				/*event bind*/
+				$(".draggable").each(function(index, element) {
+                    $(this).get(0).addEventListener("touchstart", touchStart, false);
+					$(this).get(0).addEventListener("touchmove", touchMove, false);
+					$(this).get(0).addEventListener("touchend", touchEnd, false);
+					$(this).get(0).addEventListener("touchcancel", touchCancel, false);
+                });
+				/*event bind end*/
+				
+				$("#js-share_bt").tap(function(){
+					shareDialog();
+				});
+				$("#share").tap(function(){
+					closeDialog();
+				});
+			}/*end complete*/
+		}/*end loading*/
+		function shareDialog(){
+			$("#share").show();			
+		}
+		function closeDialog(){
+			$("#share").hide();
+		}
+		function touchStart(event) {
+			var touch = event.touches[0];
+			startY = touch.pageY;
+			startX = touch.pageX;
+			left_offset=startX-$(this).offset().left;
+			top_offset=startY-$(this).offset().top;
+        }
+		function touchMove(event) {
+			var touch = event.touches[0];
+			endX = touch.pageX;
+			endY = touch.pageY;
+			$(this).css({"left":endX-left_offset,"top":endY-top_offset});
+		}
+		function touchEnd(event){
+			/*adsorption*/
+			var can_go_next=0;
+			var parent=$(this).parent(".wrap");
+			var myaim=$(this);
+			myaim.data("in",0);
+			parent.children(".draggable").each(function(){
+				can_go_next+=parseInt($(this).data("in"));
+			});
+			parent.children(".adsorption").each(function(){
+				if(Math.abs($(this).offset().left-myaim.offset().left)<200 && Math.abs($(this).offset().top-myaim.offset().top)<159 && can_go_next!=$(this).data("val")){
+					myaim.animate({"top":$(this).offset().top,"left":$(this).offset().left},200).data("in",$(this).data("val"));
+					$(this).data("in",1);
+					if($(this).data("val")!=myaim.data("right")){
+						parent.children(".tb").eq($(this).data("val")-1).html("答错啦！").show();
+					}else{
+						parent.children(".tb").eq($(this).data("val")-1).html("答对啦！").show();
+					}
+				    return false;
+				}
+			});
+			if(myaim.data("in")==0){
+				myaim.animate({"top":myaim.data("top"),"left":myaim.data("left")},200)
+			}
+			can_go_next=0;
+			parent.children(".draggable").each(function(){
+				can_go_next+=parseInt($(this).data("in"));
+			});
+			
+			
+			if(can_go_next==0){parent.children(".tb").hide();}
+			if(can_go_next==1){parent.children(".tb").eq(1).hide();}
+			if(can_go_next==2){parent.children(".tb").eq(0).hide();parent.children(".tb").eq(1).show();}
+			if(can_go_next==3){parent.children(".tb").show();}
+			if(can_go_next==3){
+				parent.children(".gonext").show();
+			}else{
+				parent.children(".gonext").hide();
+			}
+		}
+		
+		function touchCancel(event){
+				
+		}
+		
+		function shareback(){
+		  closeDialog();
+		  //alert(base_url+'index.php?g=Daka&m=Daka&a=guaguaka');
+		  setTimeout(function(){
+                                                window.location.href='http://weiyun.city.qq.com/index.php?g=Wap&m=Guajiang&a=index&token=qhhdof1406514292&id=844&extend=1';
+			  //window.location.href=base_url+'index.php?g=Daka&m=Daka&a=guaguaka';
+			  },600);
+		}
+		</script>
+		
+	</body>
+    <div style="display:none">  
+	<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?c6e11a62d33d62ac727c47e56864c2b1";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+    </div>
+</html>

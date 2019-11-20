@@ -1,0 +1,37 @@
+#loading{
+ position: absolute; left: 0px; top: 0px; width: 100%; height: 100%; background: #5bd0d3;
+}
+
+.loading-line{ width: 420px; height: 20px; border-radius: 30px 30px 30px 30px; border:4px solid #FFF; position: absolute; left: 50%; margin-left: -214px; top: 40%;}
+.loading-line .loading-main{ background: #e2c32a;border-radius: 30px 30px 30px 30px; width: 10%; height: 100%;box-shadow:2px 2px 5px 5px #c5a42e inset;}
+.loading-font{ font-size: 36px; width: 100%; text-align: center; color: #FFF; position: absolute; top: 50%; left: 0%;}
+
+.mk_loading{ position: absolute; left: 10%; top: -78px;}
+
+@-webkit-keyframes mkloading {
+  0%{ width: 10%;}
+  100% {  width: 90%; }
+}
+@keyframes mkloading {
+  0%{ width: 10%;}
+  100% {  width: 90%; }
+}
+
+.pt-page-mkloading{
+-webkit-animation: mkloading 2s ease both;
+animation: mkloading 2s ease both;  
+}
+
+@-webkit-keyframes mkloadingp {
+  0%{ left: 6%;}
+  100% {  left: 86%; }
+}
+@keyframes mkloadingp {
+  0%{ left: 6%;}
+  100% {  left: 86%; }
+}
+
+.pt-page-mkloadingp{
+-webkit-animation: mkloadingp 2s ease both;
+animation: mkloadingp 2s ease both;  
+}

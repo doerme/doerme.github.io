@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="zh-cn" class="no-js">
+	<head>
+		<meta http-equiv="Content-Type">
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+		<script type="text/javascript">
+        var phoneWidth = parseInt(window.screen.width);
+        var phoneScale = phoneWidth/640;
+        var ua = navigator.userAgent;
+        if (/Android (\d+\.\d+)/.test(ua)){
+            var version = parseFloat(RegExp.$1);
+            // andriod 2.3
+            if(version>2.3){
+                document.write('<meta name="viewport" content="width=640, initial-scale= '+phoneScale+' ,minimum-scale = '+phoneScale+', maximum-scale = '+phoneScale+', target-densitydpi=device-dpi">');
+            // andriod 2.3以上
+            }else{
+                document.write('<meta name="viewport" content="width=640, initial-scale= '+phoneScale+' , target-densitydpi=device-dpi">');
+            }
+            // 其他系统
+        } else {
+            document.write('<meta name="viewport" content="width=640, user-scalable=no, target-densitydpi=device-dpi">');
+        }
+        </script>
+		<title>95313</title>
+		<meta name="format-detection" content="telephone=no">
+		<meta name="format-detection" content="email=no">        
+		<link rel="stylesheet" type="text/css" href="css/reset.css?v=31" />
+		<link rel="stylesheet" type="text/css" href="css/index.css?v=31" />
+		<link rel="stylesheet" type="text/css" href="css/animations.css?v=31" />
+        <link rel="stylesheet" type="text/css" href="css/load.css?v=31" /> 
+	</head>
+	<body>
+    <div id="loading">
+     	<div class="spinner">
+  			<div class="double-bounce1"></div>
+  			<div class="double-bounce2"></div>
+		</div>
+	</div>
+		<div id="content" style="display:none">
+			<div class="page page-1-1 page-current">
+				<div class="wrap">
+                    <img class="logo pt-page-moveFromTop" src="imgb/logo.png">
+					<img class="img_1 pt-page-moveFromTop" src="imgb/p1_font_1.png" />
+                    <img class="img_2 pt-page-flipInLeft" src="imgb/p1_main.png" />
+                    <img class="img_3 pt-page-moveFromBottom" src="imgb/p1_font_2.png" />
+					<img class="guide_up pt-page-moveIconUp" src="img/icon_up.png" />
+				</div>
+			</div>
+			<div class="page page-2-1 hide">
+				<div class="wrap">
+					<img class="logo pt-page-moveFromTop hide" src="imgb/logo.png">
+					<img class="img_1 pt-page-moveFromTop hide" src="imgb/p2_title.png" />
+                    <img class="img_2 pt-page-moveFromBottom hide" src="imgb/p2_font.png" />
+                    <img class="img_3 pt-page-moveFromTop hide" src="imgb/p2_main.png" />
+                    <img class="guide_up pt-page-moveIconUp" src="img/icon_up.png" />
+ 				</div>
+			</div>
+			<div class="page page-3-1 hide" data-lock="1">
+				<div class="wrap">
+					<img class="logo pt-page-moveFromTop hide" src="imgb/logo.png">
+                    <img class="img_1 pt-page-moveFromTop hide" src="imgb/p3_score.png" />
+                    <div class="img_2 pt-page-moveFromBottom hide">
+                    <div id="game-box"></div>
+                    </div>
+                    <div class="img_3 pt-page-moveFromBottom hide" id="gameagain">再来一次</div>
+                    <div class="img_4 pt-page-moveFromBottom hide" id="gamenext">去抽奖</div>
+                    <div class="img_5 pt-page-moveFromTop hide"><span id="js-restnum">5</span></div>
+                    <div class="img_6 pt-page-moveFromTop hide"><span id="js-jifen">100</span></div>
+                    <img class="img_7 pt-page-moveFromTop hide" id="loading-line" src="imgb/p3_time_line.png" />
+                    <div class="gs_block">
+                        <div class="gs_mask"></div>
+                        <div class="gs_main">
+                        <div id="gs_main_ctrl"></div>
+                        </div>
+                    </div>
+				</div>
+			</div>
+			<div class="page page-4-1 hide" data-lock="1">
+				<div class="wrap">
+					<img class="logo pt-page-moveFromTop hide" src="imgb/logo.png">
+                    <img class="img_1 pt-page-moveFromTop hide" src="imgb/p4_title.png" />
+                    <div class="img_2 pt-page-moveFromTop hide">您还有<span>100</span>积分</div>
+                    <div class="img_3 pt-page-moveFromTop hide">
+                        <div class="zhuanpanblock">
+                        <div id="outer-cont" class="">
+                            <div id="outer"><img src="imgb/dazhuanpan.png"></div>
+                        </div>
+                        <div id="inner-cont">
+                            <div id="inner"><img id="js-go-zp" src="imgb/dazhuanpan_bt.png"></div>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="img_4 pt-page-moveFromBottom hide">(20积分/次)</div>
+                    <div class="img_5 pt-page-moveFromBottom hide">
+                    <p>微信现金奖品需通过微信钱包渠道进行发放，</p>
+                    <p>本次活动最终解释权归广州农商银行所有。</p>
+                    </div>
+                    <!-- result -->
+                    <div class="prize_result">
+                    <div class="prize_mask"></div>
+                    <div class="prize_main">
+                        <div class="close_bt"></div>
+                        <div class="xjj_num shide">10元</div>
+                        <div class="djj_num shide">￥300元</div>
+                        <div class="xjj_dh shide"></div>
+                        <div class="djj_dh shide"></div>
+                    </div>
+                    </div>
+                    <!-- result end -->
+				</div>
+			</div> 
+            
+            <div class="page page-5-1 hide" data-lock="1">
+				<div class="wrap">
+					<img class="logo pt-page-moveFromTop hide" src="imgb/logo.png">
+                    <img class="img_1 pt-page-moveFromBottom hide" src="imgb/p5_main.png" />
+                    <div class="img_2 pt-page-moveFromBottom hide">25</div>
+                    <img class="img_3 pt-page-moveFromBottom hide" src="imgb/p5_bt_1.jpg" />
+                    <img id="godonate" class="img_4 pt-page-moveFromBottom hide" src="imgb/p5_bt_2.jpg" />
+				</div>
+			</div>
+            
+            <div class="page page-6-1 hide">
+				<div class="wrap">
+					<img class="logo pt-page-moveFromTop hide" src="imgb/logo.png">
+                    <img class="img_1 pt-page-moveFromTopFade hide" src="imgb/p6_font_1.png" />
+                    <img class="img_2 pt-page-moveFromTopFade pt-page-delay1000 hide" src="imgb/p6_font_2.png" />
+                    <img class="img_3 pt-page-moveFromTopFade pt-page-delay2000 hide" src="imgb/p6_font_3.png" />
+                    <img class="img_4 pt-page-moveFromTopFade pt-page-delay3000 hide" src="imgb/p6_font_4.png" />
+                    <div class="img_5 pt-page-moveFromTopFade pt-page-delay4000 hide">
+                    <input class="donate_text" type="text" value="" maxlength="11" />
+                    <div class="donate_bt"></div>
+                    </div>
+				</div>
+			</div>
+    </div>
+	<div id="audiocontainer"></div>
+	<div id="textsuper">
+	<div id="textsub"><img id="fontimg" />
+    </div></div>
+    <div id="share" onClick="closeDialog()">
+    	<div class="shareImg"></div>
+    </div>		
+        <script type="text/javascript">
+		 var imgUrl = 'http://weixin.zto.cn/html/job/img/job-logo.png';
+		var lineLink = 'http://weixin.zto.cn/html/job/?v='+Math.round(Math.random()*999)+3000;
+		var descContent = '95313';
+		var shareTitle = '95313';
+		var appid = 'wxdb943f961ca9da9d'; 
+		gSound = 'img/1.mp3'; 
+		</script>
+        <script src="js/zepto.min.js?v=31"></script>
+		<script src="js/touch.js?v=31"></script>
+		<script src="js/index.js?v=31"></script>
+        <script src="js/game.js?v=31"></script>
+        <script type="text/javascript">
+		var bind_once=0;
+        var js_restnum=5; /*可用游戏次数*/
+        var js_jifen=0; /*当前用户积分*/
+		document.onreadystatechange = loading; 
+		function loading(){
+			if(document.readyState == "complete")
+			{ 
+				$("#loading").hide();
+				$("#content").show();
+				//playbksound();
+				
+				/*after bind*/
+				/*
+				
+				/*after bind end*/
+				
+			}
+		}
+		function shareDialog(){
+			 $("#share").show();			
+		}
+		function closeDialog(){
+			$("#share").hide();
+		}
+        /*连连看游戏结束*/
+        function gameEnd(){
+            $("#gameagain,#gamenext").show();
+            $("#loading-line").removeClass("pt-page-moveFromTop pt-page-mkloading");
+            js_restnum-=1; /*游戏次数-1*/
+            $("#js-restnum").html(js_restnum);
+            $("#js-jifen").html(js_jifen);
+        }
+        /*连连看游戏胜利*/
+        function gameWin(){
+            js_jifen+=10; /*积分+10*/
+            $("#js-restnum").html(js_restnum);
+            $("#js-jifen").html(js_jifen);
+        }
+
+
+		</script>
+	</body>
+    <div style="display:none">
+   
+    </div>
+</html>

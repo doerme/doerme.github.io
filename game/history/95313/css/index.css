@@ -1,0 +1,287 @@
+body{
+	
+	width:100%;
+	overflow:hidden;
+}
+
+
+
+.hide{ display:none;}
+
+.page{
+	width:100%;
+	height:100%;
+	position:absolute;
+	font-size:100px;
+	text-align:center;
+	overflow:hidden;
+}
+
+.page .wrap{
+	height:500px;
+}
+
+.page-1-1{ background:url(../imgb/p1_bg.jpg) no-repeat;background-size:cover;}
+.page-2-1{ background-color:#f3bc61;}
+.page-3-1{ background:url(../imgb/p3_bg.jpg) no-repeat;background-size:cover;}
+.page-4-1{ background:url(../imgb/p4_bg.jpg) no-repeat;background-size:cover;}
+.page-5-1{ background:url(../imgb/p5_bg.jpg) no-repeat;background-size:cover;}
+.page-6-1{ background-color:#f5ce8d;}
+ 
+.page-current{
+	z-index:1;
+}
+
+.logo{
+	position:absolute;
+    width:220px;
+	left:5%;
+	top:2%;
+    }
+
+.guide_up {
+	height:auto;width:25px;
+	position:absolute;
+	left:50%;
+	top:93%;
+	margin-left:-12px;
+}
+
+.page-1-1 .img_1 {
+	height:auto;width:640px;
+	position:absolute;
+	left:50%;
+	top:10%;
+	margin-left:-320px;
+}
+.page-1-1 .img_2 {
+	height:auto;width:640px;
+	position:absolute;
+	left:50%;
+	top:35%;
+	margin-left:-320px;
+}
+.page-1-1 .img_3 {
+	height:auto;width:640px;
+	position:absolute;
+	left:50%;
+	bottom:10%;
+	margin-left:-320px;
+}
+
+.page-2-1 .img_1 {
+	height:auto;width:640px;
+	position:absolute;
+	left:50%;
+	top:10%;
+	margin-left:-320px;
+}
+.page-2-1 .img_2 {
+	height:auto;width:640px;
+	position:absolute;
+	left:50%;
+	top:25%;
+	margin-left:-320px;
+}
+.page-2-1 .img_3 {
+	height:auto;width:640px;
+	position:absolute;
+	left:50%;
+	bottom:18%;
+	margin-left:-320px;
+}
+
+.page-3-1 .img_1 {
+	height:auto;width:640px;
+	position:absolute;
+	left:50%;
+	top:65px;
+	margin-left:-320px;
+}
+
+.page-3-1 .img_2{
+	height:auto;width:640px;
+	position:absolute;
+	left:50%;
+	top:16%;
+	margin-left:-320px;
+	background:url(../imgb/p3_game_bg.png) no-repeat;
+	background-size:cover;
+}
+
+.page-3-1 .img_2 #game-box{width:640px;}
+.page-3-1 .img_2 #game-box img{ width:60px; height:60px;  display:inline-block; float:left; margin:10px;}
+.page-3-1 .img_2 #game-box img.active{ border:5px solid #8cc238;width:50px; height:50px;border-radius:45px 45px 45px 45px;}
+.page-3-1 .img_2 #game-box p{ border:2px solid #8cc238; padding:4px; position:absolute; background:#8cc238; border-radius:45px 45px 45px 45px;box-shadow:2px 2px 15px 15px #608b1f inset;}
+.page-3-1 .img_3{ position:absolute; width:220px; height:80px; left:50%; bottom:8%; margin-left:-250px; background:#f32a34; text-align:center; line-height:80px; font-size:30px; color:#fffc00; font-weight:bold;}
+
+.page-3-1 .img_4{ position:absolute; width:220px; height:80px; left:50%; bottom:8%; margin-left:50px; background:#f32a34; text-align:center; line-height:80px; font-size:30px; color:#fffc00; font-weight:bold;}
+.page-3-1 .img_5{ position:absolute; width:60px; height:78px; text-align:center; top:65px; left:95px; font-size:42px; color:#f9a435; font-weight:bold; line-height:78px;}
+.page-3-1 .img_6{ position:absolute; width:80px; height:78px; text-align:center; top:65px; right:25px; font-size:42px; color:#d37608; font-weight:bold; line-height:78px;}
+
+.page-3-1 .img_7{ position:absolute; width:265px; height:24px; text-align:center; top:90px;left:50%; margin-left:-130px; border-radius:45px 45px 45px 45px;}
+.page-3-1 .gs_block{position:absolute; width:100%; height:100%; left:0px; top:0px; display: none;}
+.gs_mask{ position:absolute; width:100%; height:100%; background:#000;filter:alpha(opacity=80); -moz-opacity:0.8; -khtml-opacity: 0.8; opacity: 0.8;}
+.gs_main{ position:absolute; width:640px; height:541px; left:50%; top:15%; margin-left:-320px; background: url(../imgb/p3_gamenote.png) no-repeat;background-size: cover;}
+.gs_main #gs_main_ctrl{ position: absolute; width: 470px; left: 50%; margin-left:-235px; top:170px;}
+.gs_main #gs_main_ctrl img{ float: left; margin: 5px 11px;}
+.mk_loading{ position: absolute; left: 10%; top: -78px;}
+.pt-page-mkloading{
+-webkit-animation: mkloading 120s ease both;
+animation: mkloading 120s ease both;  
+}
+@-webkit-keyframes mkloading {
+  0% {  width: 265px; }	
+  100%{ width: 0px;}
+}
+@keyframes mkloading {
+  0% {  width: 265px; }	
+  100%{ width: 0px;}
+}
+
+.page-4-1 .img_1 {
+	height:auto;width:640px;
+	position:absolute;
+	left:50%;
+	top:3%;
+	margin-left:-320px;
+}
+
+.page-4-1 .img_2 {
+	height:auto;width:246px; height:44px; line-height:44px; font-size:22px; font-family:Microsoft YaHei;text-align:center;
+	position:absolute;
+	left:50%;
+	top:24%;
+	margin-left:-123px;
+	color:#FFF;
+	background:#5fb8cc; border-radius:12px 12px 12px 12px;
+}
+
+.page-4-1 .img_3{ width:640px; height:462px;position:absolute;left:50%;top:30%;margin-left:-320px;}
+.page-4-1 .img_3 .zhuanpanblock{ position:relative;}
+.page-4-1 .img_3 .zhuanpanblock #outer{ height:462px;}
+.page-4-1 .img_3 .zhuanpanblock #outer-cont{
+overflow: hidden;
+position: relative;
+width: 100%;
+}
+.page-4-1 .img_3 .zhuanpanblock #inner{
+margin: 0 auto;
+cursor: pointer;
+}
+.page-4-1 .img_3 .zhuanpanblock #inner-cont{
+position: absolute;
+width: 100%;
+top: 140px;
+}
+.page-4-1 .img_4{ position:absolute; font-size:26px; color:#FFF; font-family:Microsoft YaHei; left:70%; bottom:22%;}
+.page-4-1 .img_5 {
+	height:auto;width:640px;
+	position:absolute;
+	left:50%;
+	bottom:8%;
+	margin-left:-320px;
+}
+
+.page-4-1 .img_5 p{ text-align:center; font-size:22px; color:#FFF;font-family:Microsoft YaHei;text-align:center; line-height:35px;}
+.page-4-1 .prize_result{ position:absolute; width:100%; height:100%; left:0px; top:0px; display:none;}
+.prize_mask{ position:absolute; width:100%; height:100%; background:#000;filter:alpha(opacity=80); -moz-opacity:0.8; -khtml-opacity: 0.8; opacity: 0.8;}
+.prize_main{ position:absolute; width:640px; height:500px; left:50%; top:15%; margin-left:-320px; }
+.prize_main.djj{background:url(../imgb/p4_djj_block.png) no-repeat; background-size:cover;}
+.prize_main.xjj{background:url(../imgb/p4_xjj_block.png) no-repeat; background-size:cover;}
+.prize_main.wzj{background:url(../imgb/p4_wzj_block.png) no-repeat; background-size:cover;}
+.prize_main .close_bt{ position:absolute; height:50px; width:50px; right:35px; top:20px;}
+.prize_main .xjj_num{ position:absolute;top:250px; left:280px; font-size:44px; color:#c12d2d;}
+.prize_main .djj_num{ position:absolute; top:206px; left:247px; font-size:40px; color:#ff6d00;}
+.prize_main .xjj_dh{ position:absolute;width:195px; height:50px; top:388px; left:217px;}
+.prize_main .djj_dh{ position:absolute; width:190px; height:50px; top:348px; left:217px;}
+.prize_main .shide{ display:none;}
+
+
+.page-5-1 .img_1 {
+	height:auto;
+	width:640px;
+	position:absolute;
+	left:50%;
+	bottom:0px;
+	margin-left:-320px;
+}
+
+.page-5-1 .img_2 {
+	position:absolute;
+	left:50%;
+	bottom:640px;
+	font-size:118px;
+	color:#ff5001;
+	font-weight:bold;
+	margin-left:-50px;
+}
+.page-5-1 .img_3 {
+	height:auto;
+	width:443px;
+	position:absolute;
+	left:50%;
+	bottom:332px;
+	margin-left:-222px;
+}
+.page-5-1 .img_4 {
+	height:auto;
+	width:443px;
+	position:absolute;
+	left:50%;
+	bottom:210px;
+	margin-left:-222px;
+}
+
+
+.page-6-1 .img_1 {
+	height:auto;
+	width:640px;
+	position:absolute;
+	left:50%;
+	top:8%;
+	margin-left:-320px;
+}
+.page-6-1 .img_2 {
+	height:auto;
+	width:640px;
+	position:absolute;
+	left:50%;
+	top:18%;
+	margin-left:-320px;
+}
+.page-6-1 .img_3 {
+	height:auto;
+	width:640px;
+	position:absolute;
+	left:50%;
+	top:28%;
+	margin-left:-320px;
+}
+.page-6-1 .img_4 {
+	height:auto;
+	width:640px;
+	position:absolute;
+	left:50%;
+	top:32%;
+	margin-left:-320px;
+}
+
+.page-6-1 .img_5{
+	height:auto;
+	width:640px;
+	height:89px;
+	position:absolute;
+	left:50%;
+	bottom:10%;
+	margin-left:-320px;
+	background:url(../imgb/p6_font_block.png) no-repeat;
+	background-size:cover;
+}
+.page-6-1 .img_5 .donate_bt{ width:140px; height:70px; top:10px; right:40px; position:absolute;}
+.page-6-1 .img_5 .donate_text{ position:absolute; width:250px; height:40px; border:none; outline:none; left:155px; top:22px; font-size:40px;}
+
+#textsuper{position:absolute;top:-1000;left:-1000;overflow-x:hidden;overflow-y:hidden;z-index:4000}
+#textsub{color:black;position:relative;font-size:21pt;text-align:left;line-height:40pt;top:2000px}
+#share{ background: rgba(0,0,0,0.8); position:absolute; top:0px; width:100%; height:100%; display:none; z-index:99998}
+.shareImg{ background: url(../img/share.png) right top no-repeat; position:absolute; top:0px; right:0px; width:165px; height:114px; background-size:cover; z-index:99999}

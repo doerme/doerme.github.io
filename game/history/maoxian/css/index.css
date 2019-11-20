@@ -1,0 +1,180 @@
+body{
+	
+	width:100%;
+	overflow:hidden;
+}
+
+
+
+.hide{ display:none;}
+
+.page{
+	width:100%;
+	height:100%;
+	position:absolute;
+	font-size:100px;
+	text-align:center;
+	overflow: hidden;
+}
+
+.page .wrap{
+	height:500px;
+}
+
+.page-1-1{ background-color:#ececec;}
+.page-2-1{ background-color:#76AB20;}
+.page-3-1{ background-color:#FFF;}
+ 
+.page-current{
+	z-index:1;
+}
+
+.logo{
+	height:auto;width:129px;
+	position:absolute;
+	left:30px;
+	top:10px;
+}
+.page-1-1 .maoxian{
+	height:auto;width:108px;
+	position:absolute;
+	right:100px;
+	bottom:180px;
+}
+.page-1-1 .img_1 {
+	height:auto;width:640px;
+	position:absolute;
+	left:50%;
+	bottom:140px;
+	margin-left:-320px;
+}
+.page-1-1 .img_2 {
+	height:auto;width:381px;
+	position:absolute;
+	left:50%;
+	top:170px;
+	margin-left:-190px;
+}
+.page-1-1 .img_3 {
+	height:auto;width:352px;
+	position:absolute;
+	left:50%;
+	top:305px;
+	margin-left:-176px;
+}
+.page-1-1 .img_4 {
+	height:auto;width:258px;
+	position:absolute;
+	left:40px;
+	bottom:0px;
+}
+.page-1-1 .img_5 {
+	height:auto;width:259px;
+	position:absolute;
+	right:40px;
+	bottom:0px;
+}
+.page-1-1 .bt_bg{
+   background: #ececec;
+   position: fixed;
+   bottom: 0px;
+   left: 0px;
+   width: 100%;
+   height: 140px;
+}
+
+.page-2-1 .img_1{
+    height: auto; width: 640px;
+    position: absolute;
+    left: 0px;
+    top:0px;
+}
+
+.page-2-1 .gh{
+	 display: none;
+}
+.page-2-1 .img_2{
+    height: auto; width: 280px;
+    position: absolute;
+    left: 0px;
+    top:20px;
+    font-size: 34px;
+    color: #666;
+}
+.page-2-1 .img_3{
+    height: auto; width: 280px;
+    position: absolute;
+    right: 0px;
+    top:20px;
+    font-size: 34px;
+    color: #666;
+}
+.page-2-1 .img_2 span,.page-2-1 .img_3 span{ color: #F00;}
+.page-2-1 .img_4{ position: absolute; left: 60%; top: 30%;}
+
+.page-3-1 .img_1 {
+	height:auto;width:640px;
+	position:absolute;
+	left:50%;
+	top:-220px;
+	margin-left:-320px;
+}
+.page-3-1  .paiming{
+	height:calc(100% - 430px);
+	width:640px;
+	position:absolute;
+	left:50%;
+	top:430px;
+	margin-left:-320px;
+}
+.page-3-1 .img_2 {
+	height:auto;width:382px;
+	position:absolute;
+	left:50%;
+	top:200px;
+	margin-left:-191px;
+}
+.page-3-1 .img_3 {
+	height:auto;width:395px;
+	position:absolute;
+	left:50%;
+	top:280px;
+	margin-left:-198px;
+}
+.page-3-1 .img_4 {
+	height:auto;width:395px;
+	position:absolute;
+	left:50%;
+	top:350px;
+	margin-left:-198px;
+}
+
+.paiming .main-block{ margin:1% 8px; border-radius: 9px 9px 9px 9px; background:#f8f8f8; height: 98%; border:1px solid #d7d7d7;}
+.paiming .main-block .mb-title{ text-align: center; font-size: 24px; color: #202020; font-family: Microsoft YaHei; height: 80px; line-height: 80px; border-bottom:1px solid #ebebeb;}
+.paiming .main-block .mb-title span{ font-size: 32px; color: #b50603;}
+.paiming .main-block .mb-bt-block{height: 80px; line-height: 80px;}
+.paiming .main-block .mb-bt-block .m3b_1{ width: 273px; display: inline-block; margin-left: 20px; vertical-align: middle;}
+.paiming .main-block .mb-bt-block .m3b_2{ width: 273px; display: inline-block; margin-right: 20px; vertical-align: middle;}
+.paiming .main-block .mb-bt-note{font-size: 24px; color: #202020; height: 80px; line-height: 80px; font-family: Microsoft YaHei;}
+.paiming .main-block .mb-bt-note span{ color: #F00;}
+.paiming .main-block .mb-list-block{height:calc(100% - 241px); overflow-x: hidden; overflow-y:auto; }
+.paiming .main-block .mb-list-block ul{}
+.paiming .main-block .mb-list-block ul li{ height: 75px; line-height: 75px; clear: both; overflow: hidden; font-size: 20px; padding-left: 50px; padding-right: 50px;}
+.paiming .main-block .mb-list-block ul li span{ padding-left: 30px; padding-right: 30px;}
+.paiming .main-block .mb-list-block .l{ float: left;}
+.paiming .main-block .mb-list-block .r{ float: right;}
+
+.guize{ width:540px; margin-left:-290px; padding:20px; background:#FFF;position:absolute;left:50%; top:18%; border-radius:9px 9px 9px 9px; z-index: 9;}
+.guize dl{ font-size:30px; color:#009aa0; text-align:left;}
+.guize dl dt{ font-size:36px; font-weight:bold;}
+.guize dl dd{ line-height:32px; margin-top:18px; text-indent:2em;}
+.guize dl dd.bt_block{ text-indent:0;}
+.guize dl dd .gz_bt{ width:269px;margin-top:10px; margin-left:120px;}
+
+.rank-list{ display: none;}
+.ac_list{ display: none;}
+
+#textsuper{position:absolute;top:-1000;left:-1000;overflow-x:hidden;overflow-y:hidden;z-index:4000}
+#textsub{color:black;position:relative;font-size:21pt;text-align:left;line-height:40pt;top:2000px}
+#share{ background: rgba(0,0,0,0.8); position:absolute; top:0px; width:100%; height:100%; display:none; z-index:99998}
+.shareImg{ background: url(../img/share.png) right top no-repeat; position:absolute; top:0px; right:0px; width:330px; height:228px; background-size:cover; z-index:99999}

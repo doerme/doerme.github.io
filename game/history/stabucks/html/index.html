@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="zh-cn" class="no-js">
+	<head>
+		<meta http-equiv="Content-Type">
+		<meta content="text/html; charset=utf-8">
+		<meta charset="utf-8">
+		<title>星冰乐</title>		
+		<meta name="viewport" content="target-densitydpi=device-dpi, width=640px, user-scalable=no">
+		<meta name="format-detection" content="telephone=no">
+		<meta name="format-detection" content="email=no">        
+		<link rel="stylesheet" type="text/css" href="css/reset.css?v=1" />
+		<link rel="stylesheet" type="text/css" href="css/index.css?v=1" />
+		<link rel="stylesheet" type="text/css" href="css/animations.css?v=1" />
+        <link rel="stylesheet" type="text/css" href="css/load.css?v=1" /> 
+	</head>
+	<body>
+    <div id="loading" class="loading_block">
+    	<div class="loading_mask"></div>
+    	<img class="loading_font pt-page-flash" src="imgs/loading_font_new.png" />
+     	<div class="loading_main">0%</div>
+	</div>
+		<div id="content" style="display:none">
+			<div class="page page-1-1 page-current" data-lock="1">
+				<div class="wrap">
+					<img class="img_1 pt-page-moveFromTop" src="imgs/p1_font1.png" />
+					<img class="img_2 pt-page-moveFromTopFade pt-page-delay500" src="imgs/p1_font2.png" />
+					<img class="img_3 pt-page-moveFromTopFade pt-page-delay1000" src="imgs/p1_font3.png" />
+					<img class="img_4 pt-page-show" id="js_p1_bt" src="imgs/p1_bt.jpg" />
+					<div class="img_5"><img class="dib" id="js_agree" src="imgs/p1_agree_null.png" /><span class="dib img_guize_bt">我已阅读并接受此活动条款与规则</span></div>
+					<div class="img_guize_main act_guize">
+						<div class="gm_wrap">
+		                    <dl>
+		                    <dd class="mt10">参与步骤</dd>
+		                    <dd>1.任意选择一种拍照style</dd>
+		                    <dd>2.根据要求拍摄照片，确认上传后添加星冰乐logo贴纸效果</dd>
+		                    <dd>3.确认生成，并填写具体联系方式 </dd>
+		                    <dd class="mt10">照片拍摄要求</dd>
+		                    <dd>必备条件：画面中必须出现三杯星冰乐</dd>
+		                    <dd class="mt10">奖品设置</dd>
+		                    <dd>3000个星巴克限量吸管杯</dd>
+		                    <dd class="mt10">限量杯发放说明</dd>
+		                    <dd>1. 每产生1万张照片，就会从中筛选出50个符合条件的用户赠送限量杯。</dd>
+		                    <dd>2. 每周最多发放200个限量杯。</dd>
+		                    <dd class="mt10">领奖规则</dd>
+		                    <dd>用户需在页面完整填写真实联系方式，获奖消息会以短信形式通知</dd>
+		                    <dd class="mt10">活动申明</dd>
+		                    <dd>1.在法律允许范围内本活动最终解释权归星巴克中国所有（以下简称我方）</dd>
+		                    <dd>2.如遇不可抗因素，我方拥有取消本次活动的权利</dd>
+		                    <dd>3.我方保留对活动规则、奖品等进行调整的权利，恕不另行通知</dd>
+		                    <dd>4.本活动不含港澳台及海外</dd>
+		                    <dd>5.活动时间：2015年4月28日-2015年8月12日</dd>
+		                    <dd class="bt_block mt10"><div id="js-closegz" class="gz_bt">我知道了</div></dd>
+		                    </dl>
+                         </div>
+                    </div>
+				</div>
+			</div>
+			<div class="page page-2-1 hide photo-block" data-lock="1">
+				<div class="wrap">
+					<img class="img_1 hide" src="imgs/p2_title.png" />
+					<img class="img_2 pt-page-cup hide" src="imgs/p2_cup.png" />
+					<img class="img_3 pt-page-moveFromTopFade pt-page-delay2000 hide" src="imgs/p2_font1.png" />
+					<img class="img_4 pt-page-show pt-page-delay2500 hide" src="imgs/p2_font2.png" />
+					<img class="img_5 pt-page-show pt-page-delay3000 hide" src="imgs/p2_font3.png" />
+                    <img class="img_6 pt-page-show pt-page-delay3500 hide" id="js_p2_bt" src="imgs/p2_bt.jpg" />
+ 				</div>
+			</div>
+			<div class="page page-3-1 hide photo-block" data-lock="1">
+				<div class="wrap">
+					<img class="img_1 hide" src="imgs/p2_title.png" />
+					<img class="img_2 pt-page-moveFromTopFade hide" src="imgs/p3_font1.png" />
+					<img class="img_3 pt-page-show pt-page-delay500 hide" src="imgs/p3_font2.png" />
+					<img class="img_4 pt-page-show pt-page-delay1000 hide" src="imgs/p3_cup.png" />
+					<img class="img_5 pt-page-show pt-page-delay1500 hide" src="imgs/p3_font3.png" />
+					<img class="img_6 pt-page-show pt-page-delay2000 hide" src="imgs/p3_font4.png" />
+                    <img class="img_7 pt-page-show pt-page-delay2500 hide" id="js_p3_bt" src="imgs/p3_bt.jpg" />
+                    <div class="img_list_bt">来点灵感</div>
+ 				</div>
+			</div>
+			<div class="page page-4-1 hide photo-block" data-lock="1">
+				<div class="wrap">
+					<img class="img_1 hide" src="imgs/p2_title.png" />
+					<img class="img_2 hide" src="imgs/p4_font1.png" />
+					<div class="img_3 hide">
+                    <input class="select_file" type="file" accept="image/*;capture=camera" capture="camera" size="28" onchange="fileChange(this);"> 
+					</div>
+					<img class="img_4 hide" src="imgs/p4_font2.png" id="js_p4_bt_2" />
+					<div class="img_5 hide">
+                    <input class="select_file" type="file" accept="image/*;capture=camera" capture="camera" size="28" onchange="fileChange(this);">
+				    </div>
+				    <!--
+					<img class="img_6 pt-page-moveFromRightFade hide pt-page-delay500" src="imgs/p4_eg1_font.png" />
+					<img class="img_7 pt-page-moveFromLeftFade hide pt-page-delay500" src="imgs/p4_eg2_font.png" />
+				    -->
+					<img class="img_8 pt-page-swing  hide pt-page-delay1000" src="imgs/p4_camera_new.png">
+					<img class="img_9 pt-page-swing  hide pt-page-delay1000" src="imgs/p4_camera_new.png">
+					<div class="img_list_bt">来点灵感</div>
+ 				</div>
+			</div>
+			<div class="page page-5-1 hide" data-lock="1">
+				<div class="wrap">
+					<img class="img_1 hide" src="imgs/p2_title.png" />
+					<canvas id="myCanvas" width="510" height="380">您的浏览器不支持canvas</canvas>
+					<img class="img_2 hide" id="js_filter_bt" data-value="off" src="imgs/p5_bt_off.jpg" />
+					<img class="img_3 hide pt-page-show" id="js_recamera_bt" src="imgs/p5_bt1.jpg" />
+					<img class="img_4 hide pt-page-show" id="js_finish_bt" src="imgs/p5_bt2.jpg" />
+					<div class="img_list_bt">来点灵感</div>
+				</div>
+			</div>
+			<div class="page page-6-1 hide" data-lock="1">
+				<div class="wrap">
+					<img class="img_1 hide" src="imgs/p2_title.png" />
+					<img class="img_2 hide" id="js_result_img" src="" />
+					<img class="img_3 hide pt-page-show" id="js_go_form" src="imgs/p6_bt.jpg" />
+					<div class="img_list_bt">来点灵感</div>
+				</div>
+			</div>
+			<div class="page page-7-1 hide" data-lock="1">
+				<div class="wrap">
+					<img class="img_1 hide pt-page-moveFromLeft" src="imgs/p2_title.png" />
+					<img class="img_2 hide pt-page-moveFromTop" id="js_result_img" src="imgs/p7_font.png" />
+					<div class="img_3 hide pt-page-show msg_block">
+						<div class="form_line">
+							<span class="dib">手机</span><input class="dib" type="text" value="" />
+						</div>
+						<div class="form_line">
+							<span class="dib">姓名</span><input class="dib" type="text" value="" />
+						</div>
+
+					</div>
+					<img class="img_4 hide pt-page-show" id="js_form_submit" src="imgs/p7_bt.jpg" />
+				</div>
+			</div>
+			<div class="page page-8-1 hide" data-lock="1">
+				<div class="wrap">
+					<img class="img_1 hide pt-page-moveFromTop" src="imgs/p2_title.png" />
+					<img class="img_2 hide pt-page-moveFromTop" src="imgs/p8_font1.png" />
+					<img class="img_3 hide pt-page-moveFromTop" src="imgs/p8_cup.png" />
+					<img class="img_4 hide pt-page-show" id="js_go_index" src="imgs/p8_bt1.jpg" />
+					<img class="img_5 hide pt-page-show" id="js_share" src="imgs/p8_bt2.jpg" />
+				</div>
+			</div>	
+
+    </div>
+	<div id="audiocontainer"></div>
+	<div id="textsuper">
+	<div id="textsub"><img id="fontimg" />
+    </div></div>
+    <div id="share">
+    	<div class="shareImg"></div>
+    </div>
+
+    <div id="bg_loading" class="hide">
+    <img src="imgs/common_bg.jpg">
+    </div>
+    
+    <div id="photo_list">
+    	<div class="photo_list_nav">
+    		<div class="pln cur">夏日一起Fun</div>
+    		<div class="pln">我就是Fashion</div>
+    	</div>
+    	<div class="photo_main_block">
+           <div class="mod_blcok mod1">
+           	<div class="page_block">
+             <img class="cover photo_unit" id="js_share" src="imgs/p4_eg1.jpg" />
+             <img class="photo_unit" id="js_share" src="imgs/p4_eg1.jpg" />
+             <img class="photo_unit" id="js_share" src="imgs/p4_eg1.jpg" />
+
+             <img class="photo_unit" id="js_share" src="imgs/p4_eg1.jpg" />
+             <img class="photo_unit" id="js_share" src="imgs/p4_eg1.jpg" />
+             <img class="photo_unit" id="js_share" src="imgs/p4_eg1.jpg" />
+
+             <img class="photo_unit" id="js_share" src="imgs/p4_eg1.jpg" />
+             <img class="photo_unit" id="js_share" src="imgs/p4_eg1.jpg" />
+             <img class="photo_unit" id="js_share" src="imgs/p4_eg1.jpg" />
+
+             <img class="photo_unit" id="js_share" src="imgs/p4_eg1.jpg" />
+             <img class="photo_unit" id="js_share" src="imgs/p4_eg1.jpg" />
+             <img class="photo_unit" id="js_share" src="imgs/p4_eg1.jpg" />
+           	</div><!-- end page -->
+           	<div class="page_block">
+             <img class="cover photo_unit" id="js_share" src="imgs/p4_eg1.jpg" />
+             <img class="photo_unit" id="js_share" src="imgs/p4_eg1.jpg" />
+             <img class="photo_unit" id="js_share" src="imgs/p4_eg1.jpg" />
+
+             <img class="photo_unit" id="js_share" src="imgs/p4_eg1.jpg" />
+             <img class="photo_unit" id="js_share" src="imgs/p4_eg1.jpg" />
+             <img class="photo_unit" id="js_share" src="imgs/p4_eg1.jpg" />
+
+             <img class="photo_unit" id="js_share" src="imgs/p4_eg1.jpg" />
+             <img class="photo_unit" id="js_share" src="imgs/p4_eg1.jpg" />
+             <img class="photo_unit" id="js_share" src="imgs/p4_eg1.jpg" />
+
+             <img class="photo_unit" id="js_share" src="imgs/p4_eg1.jpg" />
+             <img class="photo_unit" id="js_share" src="imgs/p4_eg1.jpg" />
+             <img class="photo_unit" id="js_share" src="imgs/p4_eg1.jpg" />
+           	</div><!-- end page -->
+           	<div class="page_block">
+             <img class="cover photo_unit" id="js_share" src="imgs/p4_eg1.jpg" />
+             <img class="photo_unit" id="js_share" src="imgs/p4_eg1.jpg" />
+             <img class="photo_unit" id="js_share" src="imgs/p4_eg1.jpg" />
+
+             <img class="photo_unit" id="js_share" src="imgs/p4_eg1.jpg" />
+             <img class="photo_unit" id="js_share" src="imgs/p4_eg1.jpg" />
+             <img class="photo_unit" id="js_share" src="imgs/p4_eg1.jpg" />
+
+             <img class="photo_unit" id="js_share" src="imgs/p4_eg1.jpg" />
+             <img class="photo_unit" id="js_share" src="imgs/p4_eg1.jpg" />
+             <img class="photo_unit" id="js_share" src="imgs/p4_eg1.jpg" />
+
+             <img class="photo_unit" id="js_share" src="imgs/p4_eg1.jpg" />
+             <img class="photo_unit" id="js_share" src="imgs/p4_eg1.jpg" />
+             <img class="photo_unit" id="js_share" src="imgs/p4_eg1.jpg" />
+           	</div><!-- end page -->
+           </div>
+           <div class="mod_blcok mod2">
+           	<div class="page_block">
+             <img class="cover photo_unit" id="js_share" src="imgs/p4_eg1.jpg" />
+             <img class="photo_unit" id="js_share" src="imgs/p4_eg1.jpg" />
+             <img class="photo_unit" id="js_share" src="imgs/p4_eg1.jpg" />
+
+             <img class="photo_unit" id="js_share" src="imgs/p4_eg1.jpg" />
+             <img class="photo_unit" id="js_share" src="imgs/p4_eg1.jpg" />
+             <img class="photo_unit" id="js_share" src="imgs/p4_eg1.jpg" />
+
+             <img class="photo_unit" id="js_share" src="imgs/p4_eg1.jpg" />
+             <img class="photo_unit" id="js_share" src="imgs/p4_eg1.jpg" />
+             <img class="photo_unit" id="js_share" src="imgs/p4_eg1.jpg" />
+
+             <img class="photo_unit" id="js_share" src="imgs/p4_eg1.jpg" />
+             <img class="photo_unit" id="js_share" src="imgs/p4_eg1.jpg" />
+             <img class="photo_unit" id="js_share" src="imgs/p4_eg1.jpg" />
+           	</div><!-- end page -->
+           </div>
+    	</div>
+    	<div class="photo_bt_block">
+    		<img class="list_close_bt dib" src="imgs/list_close.jpg" />
+    	</div>
+    </div>
+
+
+    <script type="text/javascript">
+	gSound = 'imgs/samsung.mp3'; 
+	</script>
+    <script src="js/jquery-2.1.3.min.js?v=3"></script>
+	<script src="js/google.fastbutton.js?v=3"></script>
+	<script src="js/jquery.google.fastbutton.js?v=3"></script>
+	<script src="js/camera.js?v=1"></script>
+	<script src="js/index.js?v=1"></script>
+    <script type="text/javascript">
+	document.onreadystatechange = loading; 
+	var loading_pc_num=0;
+	var loading_pc=setInterval(function(){
+		loading_pc_num+=parseInt(Math.random()*6);
+		$('.loading_main').html(loading_pc_num+'%');
+		if(loading_pc_num>90){
+			clearInterval(loading_pc);
+		}
+	},300);
+	function loading(){
+		if(document.readyState == "complete"){
+			loading_pc_num=94;
+			setTimeout(function(){
+				startpage();
+			},1000);
+		}
+	}
+
+	function startpage(){
+		adaptscreen(640);
+		$("#loading").hide();
+		$("#content").show();
+		//playbksound();
+	}
+
+	function adaptscreen(widthnum){
+	 var DEFAULT_WIDTH = widthnum, // 页面的默认宽度
+        ua = navigator.userAgent.toLowerCase(), // 根据 user agent 的信息获取浏览器信息
+        deviceWidth = window.screen.width, // 设备的宽度
+        devicePixelRatio = window.devicePixelRatio || 1, // 物理像素和设备独立像素的比例，默认为1
+        targetDensitydpi;    // Android4.0以下手机不支持viewport的width，需要设置target-densitydpi
+        if (ua.indexOf("android") !== -1 && parseFloat(ua.slice(ua.indexOf("android")+8)) < 4) {
+        targetDensitydpi = DEFAULT_WIDTH / deviceWidth * devicePixelRatio * 160;
+        $('meta[name="viewport"]').attr('content', 'target-densitydpi=' + targetDensitydpi + ', width=device-width, user-scalable=no');
+		}else{
+			$('meta[name="viewport"]').attr('content', 'target-densitydpi=device-dpi, width='+DEFAULT_WIDTH+'px, user-scalable=no');
+		}
+    }
+	</script>
+	</body>
+</html>

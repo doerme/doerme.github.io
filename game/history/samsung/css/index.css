@@ -1,0 +1,262 @@
+body{
+	
+	width:100%;
+	overflow:hidden;
+}
+
+
+
+.hide,.shide{ display:none;}
+
+.page{
+	width:100%;
+	height:100%;
+	position:absolute;
+	font-size:100px;
+	text-align:center;
+	overflow: hidden;
+}
+
+.page .wrap{
+	height:500px;
+}
+
+.page-1-1{  background:#000 url(../imgs/main_bg.jpg) center top no-repeat; background-size: auto 100%;}
+.page-2-1{  background:#000 url(../imgs/scene1_bg.jpg) center top no-repeat; background-size: auto 100%;}
+.page-3-1{  background:#000 url(../imgs/scene2_bg.jpg) center top no-repeat; background-size: auto 100%;}
+.page-4-1{  background:#000 url(../imgs/scene3_bg.jpg) center top no-repeat; background-size: auto 100%;}
+.page-5-1{ background: #9c1707;}
+ 
+.page-current{
+	z-index:1;
+}
+
+.img_phone_body{
+	position: absolute; width: 520px;
+	left: 50%;
+	margin-left: -260px;
+	top: 6px;
+}
+
+.img_guide_tis{
+	font-size: 23px; color: #F00; top: 650px; width: 440px; 
+	text-align: center; left: 50%; margin-left: -220px; 
+	position: absolute;
+}
+
+.page-1-1 .img_1 {
+	height:auto;width:338px;
+	position:absolute;
+	left:50%;
+	top:305px;
+	margin-left:-169px;
+}
+.page-1-1 .img_2 {
+	height:auto;width:175px;
+	position:absolute;
+	left:50%;
+	top:380px;
+	margin-left:-88px;
+}
+.page-1-1 .img_3 {
+	height:auto;width:25px;
+	position:absolute;
+	left:50%;
+	top:93%;
+	margin-left:-12px;
+}
+
+.page-1-1 .img_guize_bt{
+	font-size: 28px;
+	color: orange;
+	width: 180px;
+	text-align: center;
+	right: 43px;
+	top: 140px;
+	position: absolute;
+	text-decoration: underline;
+}
+
+.page-1-1 .img_guize_main{ width:540px; margin-left:-290px; padding:20px; background:#FFF;position:absolute;left:50%; top:3%; border-radius:9px 9px 9px 9px;}
+.page-1-1 .img_guize_main dl{ font-size:30px; color:#009aa0; text-align:left;}
+.page-1-1 .img_guize_main dl dt{ font-size:36px; font-weight:bold;}
+.page-1-1 .img_guize_main dl dd{ line-height:32px; margin-top:18px; text-indent:2em;}
+.page-1-1 .img_guize_main dl dd.bt_block{ text-indent:0;}
+.page-1-1 .img_guize_main dl dd .gz_bt{ width:269px;margin-top:10px; margin-left:120px;}
+
+.photo-block .img_1 {
+	height:auto;width:448px;
+	position:absolute;
+	left:50%;
+	top:110px;
+	margin-left:-224px;
+}
+.photo-block .img_2 {
+	height:auto;width:580px;
+	position:absolute;
+	left:50%;
+	top:160px;
+	margin-left:-290px;
+}
+.photo-block .img_3 {
+	height:auto;width:580px;
+	position:absolute;
+	left:50%;
+	top:160px;
+	margin-left:-290px;
+}
+.photo-block .img_4{
+	width: 270px; height: 270px;
+	position: absolute;;
+	left: 50%;
+	top: 320px;
+	margin-left: -135px;
+	border-radius: 135px 135px 135px 135px;
+	background: #FFF;
+	font-size: 180px;
+	color: #666;
+	text-align: center;
+	line-height: 270px;
+}
+.photo-block .img_sp {
+	height:auto;width:448px;
+	position:absolute;
+	left:50%;
+	top:110px;
+	margin-left:-224px;
+}
+.photo-block .img_5{
+	height:auto;width:134px;
+	position:absolute;
+	left:50%;
+	top:720px;
+	margin-left:-67px;
+
+}
+.photo-block .img_6{
+	height:auto;width:128px;
+	position:absolute;
+	left:50%;
+	top:110px;
+	margin-left:160px;
+}
+.photo-block .img_7 {
+	height:auto;width:448px;
+	position:absolute;
+	left:50%;
+	top:110px;
+	margin-left:-224px;
+}
+.photo-block .img_photo_mask{
+	height:793px;width:448px;
+	position:absolute;
+	left:50%;
+	top:110px;
+	margin-left:-224px;
+	background: #FFF;
+}
+.photo-block .img_8{
+	height:auto;width:108px;
+	position:absolute;
+	left:50%;
+	top:376px;
+	margin-left:-168px;
+
+}
+.img_daojishi{
+	width:600px; height:600px;
+	position:relative;
+	left:50%;
+	top:150px;
+	margin-left:-300px;
+	z-index: 1;
+}
+.img_daojishi .daojishi_mini{
+	position: absolute; left: 0px; top: 0px; width: 600px; height: 600px;
+}
+.img_jishimark {
+	width:580px; height:580px;
+	position:absolute;
+	left:50%;
+	top:160px;
+	margin-left:-290px;
+	z-index: 1;
+}
+.img_jishimark .pie {
+	 width:580px; height:580px; background:url(../imgs/daojishi_2.png) center top no-repeat;
+	 border-radius:290px;
+	 position:absolute;
+}
+
+.img_jishimark .pie1 { clip:rect(0px,580px,580px,290px); }
+.img_jishimark .pie2 { clip:rect(0px,290px,580px,0px); }
+.img_jishimark.jishimark1 { clip:rect(0px,580px,580px,290px); }
+.img_jishimark.jishimark2 { clip:rect(0px,290px,580px,0px); }
+.share_bt,.replay_bt,.next_bt{
+	position: absolute;
+	width: 196px; height: 76px;
+	background: #FFF;
+	text-align: center;
+	line-height: 76px;
+	font-size: 30px;
+	left: 50%;
+	top: 710px;
+}
+.share_bt{
+	color: #00b0ff;
+	margin-left: -208px;
+}
+.replay_bt{
+	color: #f32258;
+	margin-left: 12px;
+}
+.next_bt{
+	color: #f32258;
+	margin-left: 12px;
+}
+.result_view{
+	width: 386px; height: 235px;
+	position:absolute;
+	left:50%;
+	top:370px;
+	margin-left:-193px;
+}
+.result_title{ font-size: 46px; color: #FFF; top: 178px; width: 440px; text-align: center; left: 50%; margin-left: -220px; position: absolute;}
+.result_content{ font-size: 36px; color: #FFF; top: 238px; width: 440px; text-align: center;left: 50%; margin-left: -220px; position: absolute;}
+
+.page-5-1 .img_1{
+	height:auto;width:645px;
+	position:absolute;
+	left:50%;
+	top:0px;
+	margin-left:-322px;
+}
+
+.page-5-1 .img_2,.page-5-1 .img_3{
+	height:683px;width:591px;
+	position:absolute;
+	left:50%;
+	bottom:0px;
+	margin-left:-285px;
+}
+
+.page-5-1 .img_3{
+	background: url(../imgs/scene4_hongbao.jpg) center top no-repeat; 
+}
+.page-5-1 .hb_t{ color: #ffd700; font-size: 100px; text-align: center; padding-top: 140px;}
+.page-5-1 .hb_m{ color: #ffd700; font-size: 24px; text-align: center; padding-top: 35px; line-height: 50px;}
+
+.img_adv_1,.img_adv_2{ position: absolute; width: 100%; left: 0px;}
+.img_adv_1{ top: 0px;}
+.img_adv_2{ bottom: 0px;}
+
+.common_adv{ display: none;}
+.common_adv.main{ position: absolute; width: 100%; left: 0%; top: 0px; z-index: 3998;}
+.common_adv.timeshow{ position: absolute; width: 120px; height: 40px; background: #000; color: #FFF; text-align: center; line-height: 40px;z-index: 3999; top: 20px; left: 20px; font-size: 28px;}
+#iframe_block{ position: absolute;left: 0px; top: 200px;}
+#textsuper{position:absolute;top:-1000;left:-1000;overflow-x:hidden;overflow-y:hidden;z-index:4000}
+#textsub{color:black;position:relative;font-size:21pt;text-align:left;line-height:40pt;top:2000px}
+#share{ background: rgba(0,0,0,0.8); position:absolute; top:0px; width:100%; height:100%; display:none; z-index:99998}
+.shareImg{ background: url(../img/share.png) no-repeat; position:absolute; top:60px; left:50%; width:380px; margin-left: -150px; height:242px; background-size:cover; z-index:99999}
+.img_guize_mark{background: rgba(0,0,0,0.8); position:absolute; top:0px; width:100%; height:100%;}
+.act_guize{ display: none;}

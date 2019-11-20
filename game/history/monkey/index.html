@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="zh-cn" class="no-js">
+	<head>
+    <meta http-equiv="Content-Type">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    <script type="text/javascript">
+    var phoneWidth = parseInt(window.screen.width);
+    var phoneScale = phoneWidth/640;
+    var ua = navigator.userAgent;
+    if (/Android (\d+\.\d+)/.test(ua)){
+    var version = parseFloat(RegExp.$1);
+    // andriod 2.3
+    if(version>2.3){
+    document.write('<meta name="viewport" content="width=640, initial-scale= '+phoneScale+' ,minimum-scale = '+phoneScale+', maximum-scale = '+phoneScale+', target-densitydpi=device-dpi">');
+    // andriod 2.3以上
+    }else{
+    document.write('<meta name="viewport" content="width=640, initial-scale= '+phoneScale+' , target-densitydpi=device-dpi">');
+    }
+    // 其他系统
+    } else {
+    document.write('<meta name="viewport" content="width=640, user-scalable=no, target-densitydpi=device-dpi">');
+    }
+    </script>
+        <meta charset="utf-8">
+		<title>将猴子一网打尽吧！</title>		
+		<meta name="format-detection" content="telephone=no">
+		<meta name="format-detection" content="email=no">        
+		<link rel="stylesheet" type="text/css" href="css/reset.css?v=11" />
+		<link rel="stylesheet" type="text/css" href="css/index.css?v=11" />
+		<link rel="stylesheet" type="text/css" href="css/animations.css?v=11" />
+        <link rel="stylesheet" type="text/css" href="css/load.css?v=11" /> 
+	</head>
+	<body>
+    <div id="loading">
+     	<div class="loading-line">
+  			<div class="loading-main pt-page-mkloading"></div>
+  			<img class="mk_loading pt-page-mkloadingp" src="mkimg/mk_loading.png" />
+		</div>
+		<div class="loading-font">loading...</div>
+	</div>
+		<div id="content" style="display:none">
+			<div class="page page-1-1 page-current">
+				<div class="wrap">
+					<img class="pagelogo pt-page-moveFromTop" src="mkimg/logo.png" />
+                    <img class="img_2 pt-page-moveCircle" src="mkimg/p1_title.png" />
+                    <img id="js-beginbt" class="img_3 pt-page-moveFromTop" src="mkimg/p1_bt_1.png" />
+                    <img class="img_4 pt-page-moveFromTop" src="mkimg/p1_bt_2.png" onclick="window.location.href='http://mp.weixin.qq.com/s?__biz=MjM5MzI3NjM4OA==&mid=205172323&idx=1&sn=57b2fd2777c869056c7da09cca96fa10#rd'"/>
+                    <div class="img_5 pt-page-moveFromBottom"><a id="js-opengz">活动规则>></a></div>
+                    <div class="img_6 pt-page-moveFromTopFade hide" id="js-gz" >
+                    <dl>
+                    <dt class="gz_title">活动规则：</dt>
+                    <dd>游戏开始时，仙树后会不间断出现2种猴子，头上戴着箍的猴子为玩家需要抓住的猴子。</dd>
+                    <dd>玩家需在一分钟内不断地抓正确的猴子，抓住一只计十分，分数累计。</dd>
+                    <dd>游戏结束后，得到40分可获得XX，得到50分可获得XX，得到60分可获得XX。</dd>
+                    <dd>游戏结束后玩家会获得CDKey一枚，CDKey可在仙剑游戏内进行兑换。 </dd>
+                    <dd>本次活动每个玩家只能获得一个礼包。</dd>
+                    <dd>【领取说明】：进入游戏后，在游戏公告页面-仙剑CDKey兑换活动中，点击“活动链接”，输入CDKey后即可兑换。兑换成功后在游戏内邮件系统中领取。每个帐号仅能使用一次。 </dd>
+                    <dd class="bt_block"><img id="js-closegz" class="gz_bt" src="mkimg/p1_bt_3.png" /></dd>
+                    </dl>
+                    </div>
+				</div>
+			</div>
+			<div class="page page-2-1 hide">
+				<div class="wrap">
+                    <img class="pagelogo pt-page-moveFromTop" src="mkimg/logo.png" />
+					<img class="img_2 hide pt-page-moveCircle" src="mkimg/p2_main.png" />
+ 					<img id="js-gameplay" class="img_3 hide pt-page-moveFromBottom" src="mkimg/p2_bt.png" />
+ 				</div>
+			</div>
+			<div class="page page-3-1 hide" id="js-game-block">
+				<div class="wrap">
+					<img class="img_1 hide pt-page-moveFromTop" src="mkimg/p3_scoreboard.png" />
+                    <div class="img_2 hide pt-page-moveFromTop"><span id="js-gametime">00:00</span></div>
+                    <div class="img_3 hide pt-page-moveFromTop"><span id="js-clicktrue">0</span></div>
+                    <div class="img_4 hide pt-page-moveFromTop"><span id="js-score">0</span></div>
+					<img class="img_5 hide pt-page-moveCircle" id="js-the_net" src="mkimg/the_net.png" />
+                    <img class="img_6 hide pt-page-moveCircle" id="js-mk_false" data-fen="0" src="mkimg/mk_false.png" />
+                    <img class="img_7 hide pt-page-moveCircle" id="js-mk_true" data-fen="1" src="mkimg/mk_true.png" />
+                    <img class="img_8 hide pt-page-moveFromLeft" id="js-the_net_aim" src="mkimg/the_net_aim.png" >
+				</div>
+			</div>
+			<div class="page page-4-1 hide">
+				<div class="wrap">
+					<img class="pagelogo pt-page-moveFromTop" src="mkimg/logo.png" />
+                    <div class="img_1">
+                        <div class="cdline"><span class="yellow">恭喜你！</span>你获得<span class="yellow" id="js-fenshow"></span>分,可获得<span class="yellow">"xxx"</span>,赶快到游戏进行兑换吧！</div>
+                        <div class="cdline"><span class="yellow">CDKey：</span><span class="cdkeyblock">thisisthecdkey</span></div>
+                        <div class="cdline"><span class="tis">长按可以复制</span></div> 
+                    </div>
+                    <img id="" class="img_2  pt-page-moveFromBottom" src="mkimg/p4_share_bt.png" onclick="javascript:shareDialog();" />
+                    <img id="" class="img_3  pt-page-moveFromBottom" src="mkimg/p4_bt_2.png" />
+                    <img id="js-replay" class="img_4  pt-page-moveFromBottom" src="mkimg/p4_bt_3.png" />
+				</div>
+			</div> 
+            
+    </div>
+	<div id="audiocontainer"></div>
+	<div id="textsuper">
+	<div id="textsub"><img id="fontimg" />
+    </div></div>
+    <div id="share"></div>		
+        <script type="text/javascript">
+		 var imgUrl = 'http://weixin.zto.cn/html/job/img/job-logo.png';
+		var lineLink = 'http://weixin.zto.cn/html/job/?v='+Math.round(Math.random()*999)+3000;
+		var descContent = "让我们一起闯荡江湖，让我们一起创造奇迹！";
+		var shareTitle = '找的就是你，被埋没是一种罪过——中通快递喊你来面试啦！';
+		var appid = 'wxdb943f961ca9da9d'; 
+		//gSound = 'img/1.mp3'; 
+		</script>
+        <script src="js/zepto.min.js?v=11"></script>
+		<script src="js/touch.js?v=11"></script>
+        <script src="js/fx.js?v=11"></script>
+		<script src="js/index.js?v=11"></script>
+        <script type="text/javascript">
+		document.onreadystatechange = loading; 
+		function loading(){
+			if(document.readyState == "complete")
+			{ 
+				setTimeout(function(){
+					$("#loading").hide();
+				    $("#content").show();
+				},600);
+				
+				//playbksound();
+			}
+		}
+		function shareDialog(){
+			 $("#share").show();			
+		}
+		function closeDialog(){
+			$("#share").hide();
+		}
+		</script>
+	</body>
+    <div style="display:none">   
+    </div>
+</html>

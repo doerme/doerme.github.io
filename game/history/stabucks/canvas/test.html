@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>通过Canvas及File API缩放并上传图片</title>
+	<meta charset="utf-8">
+	<meta http-equiv="pragma" content="no-cache">
+	<meta http-equiv="cache-control" content="no-cache">
+	<meta http-equiv="expires" content="0">    
+	<meta http-equiv="keywords" content="Canvas,File,Image">
+	<meta http-equiv="description" content="2013年8月8日,renfufei@qq.com">
+	
+	<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+	<script>
+	// 参数，最大高度
+	var MAX_HEIGHT = 100;
+	// 渲染
+	function render(src){
+		// 创建一个 Image 对象
+		var image = new Image();
+		// 绑定 load 事件处理器，加载完成后执行
+		image.onload = function(){
+			// 获取 canvas DOM 对象
+			var canvas = document.getElementById("myCanvas");
+			// 如果高度超标
+			if(image.height > MAX_HEIGHT) {
+				// 宽度等比例缩放 *=
+				image.width *= MAX_HEIGHT / image.height;
+				image.height = MAX_HEIGHT;
+			}
+			// 获取 canvas的 2d 环境对象,
+			// 可以理解Context是管理员，canvas是房子
+			var ctx = canvas.getContext("2d");
+			// canvas清屏
+			ctx.clearRect(0, 0, canvas.width, canvas.height);
+			// 重置canvas宽高
+			canvas.width = image.width;
+			canvas.height = image.height;
+			// 将图像绘制到canvas上
+			ctx.drawImage(image, 0, 0, image.width, image.height);
+			// !!! 注意，image 没有加入到 dom之中
+		};
+		// 设置src属性，浏览器会自动加载。
+		// 记住必须先绑定事件，才能设置src属性，否则会出同步问题。
+		image.src = src;
+	};
+	// 加载 图像文件(url路径)
+	function loadImage(src){
+		// 过滤掉 非 image 类型的文件
+		if(!src.type.match(/image.*/)){
+			if(window.console){
+				console.log("选择的文件类型不是图片: ", src.type);
+			} else {
+				window.confirm("只能选择图片文件");
+			}
+			return;
+		}
+
+		// 创建 FileReader 对象 并调用 render 函数来完成渲染.
+		var reader = new FileReader();
+		// 绑定load事件自动回调函数
+		reader.onload = function(e){
+			// 调用前面的 render 函数
+			render(e.target.result);
+		};
+		// 读取文件内容
+		reader.readAsDataURL(src);
+	};
+
+	// 上传图片，jQuery版
+	function sendImage(){
+	  // 获取 canvas DOM 对象
+	  var canvas = document.getElementById("myCanvas");
+	  // 获取Base64编码后的图像数据，格式是字符串
+	  // "data:image/png;base64,"开头,需要在客户端或者服务器端将其去掉，后面的部分可以直接写入文件。
+	  var dataurl = canvas.toDataURL("image/png");
+	  // 为安全 对URI进行编码
+	  // data%3Aimage%2Fpng%3Bbase64%2C 开头
+	  var imagedata =  encodeURIComponent(dataurl);
+	  //var url = $("#form").attr("action");
+	  // 1. 如果form表单不好处理,可以使用某个hidden隐藏域来设置请求地址
+	  // <input type="hidden" name="action" value="receive.jsp" />
+	  var url = $("input[name='action']").val();
+	  // 2. 也可以直接用某个dom对象的属性来获取
+	  // <input id="imageaction" type="hidden" action="receive.jsp">
+	  // var url = $("#imageaction").attr("action");
+	  
+	  // 因为是string，所以服务器需要对数据进行转码，写文件操作等。
+	  // 个人约定，所有http参数名字全部小写
+	  console.log(dataurl);
+	  //console.log(imagedata);
+	  var data = {
+	            imagename: "myImage.png",
+	            imagedata: imagedata
+	        };
+	  jQuery.ajax( {
+		url : url,
+		data : data,
+		type : "POST",
+		// 期待的返回值类型
+		dataType: "json",
+		complete : function(xhr,result) {
+			//console.log(xhr.responseText);
+			var $tip2 = $("#tip2");
+			if(!xhr){
+				$tip2.text('网络连接失败!');
+				return false;
+			}
+			
+			var text = xhr.responseText;
+			if(!text){
+				$tip2.text('网络错误!');
+				return false;
+			}
+			
+			var json = eval("("+text+")");
+			if(!json){
+				$tip2.text('解析错误!');
+				return false;
+			} else {
+				$tip2.text(json.message);
+			}
+			//console.dir(json);
+			//console.log(xhr.responseText);
+		}
+	  });
+	};
+	function init(){
+		// 获取DOM元素对象
+		var target = document.getElementById("drop-target");
+		// 阻止 dragover(拖到DOM元素上方) 事件传递
+		target.addEventListener("dragover", function(e){e.preventDefault();}, true);
+		// 拖动并放开鼠标的事件
+		target.addEventListener("drop", function(e){
+			// 阻止默认事件，以及事件传播
+			e.preventDefault(); 
+			// 调用前面的加载图像 函数，参数为dataTransfer对象的第一个文件
+			loadImage(e.dataTransfer.files[0]);
+		}, true);
+		var setheight = document.getElementById("setheight");
+		var maxheight = document.getElementById("maxheight");
+		setheight.addEventListener("click", function(e){
+				//
+				var value = maxheight.value;
+				if(/^\d+$/.test(value)){
+					MAX_HEIGHT = parseInt(value);
+				}
+				e.preventDefault();
+			},true);
+		var btnsend = document.getElementById("btnsend");
+		btnsend.addEventListener("click", function(e){
+			//
+			sendImage();
+		},true);
+	};
+	window.addEventListener("DOMContentLoaded", function() {
+		//
+		init();
+	},false);
+	</script>
+  </head>
+  
+  <body>
+   <div>
+	<h1>通过Canvas及File API缩放并上传图片</h1>
+	<p>从文件夹拖动一张照片到下方的盒子里， canvas 和 JavaScript将会自动的进行缩放.</p>
+	<div>
+		<input type="text" id="maxheight" value="100"/> 
+		<button id="setheight">设置图片最大高度</button>
+		<input type="hidden" name="action" value="receive.jsp" />
+	</div>
+	<div id="preview-row">
+		<div id="drop-target" style="width:400px;height:200px;min-height:100px;min-width:200px;background:#eee;cursor:pointer;">拖动图片文件到这里...</div>
+		<div>
+			<div>
+				<button id="btnsend"> 上 传 </button> <span id="tip2" style="padding:8px 0;color:#f00;"></span>
+			</div>
+		</div>
+		<div><h4>缩略图：</h4></div>
+		<div id="preview" style="background:#f4f4f4;width:400px;height:200px;min-height:100px;min-width:200px;">
+			<canvas id="myCanvas"></canvas>
+		</div>
+	</div>
+   </div>
+  </body>
+</html>

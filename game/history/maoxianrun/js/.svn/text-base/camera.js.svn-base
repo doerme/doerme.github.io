@@ -1,0 +1,253 @@
+$(function(){
+    $('#gameCanvas').css({'width':window.innerWidth+'px','height':window.innerHeight+'px'}).attr({'width':window.innerWidth,'height':window.innerHeight});
+    var canvas = $("#gameCanvas");
+    var canvasWidth = canvas.attr('width');
+    var canvasHeight = canvas.attr('height');
+    var game_start_time=new Date();
+    var last_time_step=0;
+    var ctx = canvas.get(0).getContext("2d");
+    var rc={};/*role config*/
+    var gameRoadVate = 100;/*X轴移动速度*/
+    var gameRoadOffsetX=0;/*路面偏移量*/
+    var stoneOutChange=38;/*石头出现几率*/
+    var stoneCount=0;
+    var y_ini=0;/*路面基础Y值*/
+    var gameplay=false;
+    var image_run = new Image();
+    var image_stone_1 = new Image();
+    var image_stone_2 = new Image();
+    var stone_array=[];
+    image_stone_1.src='./imgs/road_stone1.png';
+    image_stone_2.src='./imgs/road_stone2.png';
+    var drawRoleCommon=function(){
+        ctx.drawImage(image_run,getRcStep(),0,rc.unit_width,rc.unit_height,rc.x,rc.y,rc.unit_width,rc.unit_height);
+    }
+    image_run.onload = function(){
+        drawRoleCommon();
+    };
+
+    var getRcStep = function(){
+        rc.stepsum++;
+        if(parseInt(rc.stepsum/rc.stepstamp)==1){
+            rc.curstep++;
+            rc.stepsum=0;
+        }
+        if(rc.curstep>=rc.unit_step.length){
+            rc.curstep=0;
+        }
+        return rc.unit_step[rc.curstep];
+    }
+
+    var setRcY = function(TimeStamp){
+        if(rc.offset_y>=0){
+             rc.vy-=TimeStamp*520/1000;
+             rc.offset_y+=TimeStamp*rc.vy/1000;
+        }
+        if(rc.offset_y<0){
+            rc.offset_y=0;
+            rc.vy=0;
+            rc.jumpcur=0;
+        }
+        rc.y = y_ini;
+        rc.y -= rc.offset_y+rc.offset_y_add;
+    }
+
+    var setRcX = function(TimeStamp){
+        rc.x = canvasWidth/4;
+        rc.x += rc.offset_x;
+    }
+
+    /*石头出现*/
+    var setStone = function(TimeStamp){
+        var mf = parseInt(Math.random()*1000);
+        var nostone=200;
+        if(Math.abs(parseInt(gameRoadOffsetX/10))<nostone){
+            return;
+        }
+        if(stoneCount*14>(Math.abs(parseInt(gameRoadOffsetX/10))-nostone)/8){
+            return;
+        }
+        if(1000-mf<stoneOutChange){
+            stone_array.push(new stone_small(canvasWidth,y_ini+42,gameRoadVate,0,53,71));
+            stoneCount++;
+        }
+    }
+
+    /*设置路面移动速度*/
+    var setRoadVate = function(TimeStamp){
+        gameRoadVate=Math.abs(parseInt(gameRoadOffsetX/10))/10+300;
+        var tmp_num=Math.abs(parseInt(gameRoadOffsetX/1000))/3;
+        if(tmp_num<8){
+            rc.stepstamp=10-tmp_num;
+        }
+    }
+
+    /*碰撞检测*/
+    var setWar = function(stone){
+        if(Math.abs(rc.x+rc.offset_x_add-stone.x) <= (rc.unit_width+stone.width-30)/2){
+            if(Math.abs(rc.y-stone.y) <= (rc.unit_height+stone.height-20)/2){
+                gameplay=false;
+                $('.js-rs_num').html(Math.abs(parseInt(gameRoadOffsetX/10)));
+                console.log('crash');
+                goNext();
+            }
+        }
+    }
+
+    /*石头逻辑*/
+    var drawStone = function(TimeStamp){
+        for(var n in stone_array){
+            ctx.drawImage(image_stone_1,0,0,stone_array[n].width,stone_array[n].height,stone_array[n].x,stone_array[n].y,stone_array[n].width,stone_array[n].height);
+            stone_array[n].x-=gameRoadVate*TimeStamp/1000;
+            setWar(stone_array[n]);
+            if(stone_array[n].x<-stone_array[n].width){
+                stone_array.shift();
+            }
+        }
+    }
+
+    var drawGameRole = function(TimeStamp){
+        setRcY(TimeStamp);
+        setRcX(TimeStamp);
+        drawRoleCommon(TimeStamp);
+    };
+
+    var drawRoad = function(TimeStamp){
+        gameRoadOffsetX-=gameRoadVate*TimeStamp/1000;
+        $('.js-game_bg_bottom').css('background-position',gameRoadOffsetX+'px 0px');
+    }
+
+    var drawGameUI = function(TimeStamp){
+        $('.js-game_score_ui').html(Math.abs(parseInt(gameRoadOffsetX/10))+' 米');
+    }
+
+    var updateTimeStamp = function(TimeStamp){
+        if(TimeStamp>0){
+            last_time_step =  TimeStamp;
+        }else{
+            requestAnimationFrame(updateTimeStamp);
+        }
+    }
+
+    var repeatGame = function(){
+        updateTimeStamp(0)
+        stone_array=[];
+        gameRoadOffsetX=0;
+        rc.stepstamp=8;
+        stoneCount=0;
+        gameplay=true;
+        animate(last_time_step);
+    }
+
+    $('#gameCanvas').on('fastClick',function(){
+        if(rc.jumpcur<rc.jumplimit){
+            rc.vy=300;
+        }
+        rc.jumpcur++;
+    })
+
+    $('.js-restart').on('fastClick',function(){
+            goPrev();
+            setTimeout(function(){
+                repeatGame();
+            },600);
+    });
+
+    $('.js-select-role').on('fastClick',function(){
+        var index=$(this).index();
+        switch(index){
+            case 1:
+                image_run.src='./imgs/pao2_n.png';
+                rc.unit_width=75;
+                rc.unit_height=80;
+                rc.unit_step=[0,75,150];
+                rc.curstep=0;
+                rc.stepstamp=8;
+                rc.stepsum=1;
+                rc.x=0;
+                rc.y=0;
+                rc.offset_x=0;
+                rc.offset_y=0;
+                rc.offset_y_add=-5;
+                rc.offset_x_add=0;
+                rc.vx=0;
+                rc.vy=0;
+                rc.jumplimit=2;
+                rc.jumpcur=0;
+            break;
+            case 2:
+                image_run.src='./imgs/pao3_n.png';
+                rc.unit_width=55;
+                rc.unit_height=80;
+                rc.unit_step=[0,55,110];
+                rc.curstep=0;
+                rc.stepstamp=8;
+                rc.stepsum=1;
+                rc.x=0;
+                rc.y=0;
+                rc.offset_x=0;
+                rc.offset_y=0;
+                rc.offset_y_add=-12;
+                rc.offset_x_add=0;
+                rc.vx=0;
+                rc.vy=0;
+                rc.jumplimit=2;
+                rc.jumpcur=0;
+            break;
+            case 0:
+                image_run.src='./imgs/pao1_n.png';
+                // rc.unit_width=223;
+                // rc.unit_height=101;
+                // rc.unit_step=[0,223,446];
+                rc.unit_width=70;
+                rc.unit_height=80;
+                rc.unit_step=[0,70,140,210];
+                rc.curstep=0;
+                rc.stepstamp=8;
+                rc.stepsum=1;
+                rc.x=0;
+                rc.y=0;
+                rc.offset_x=0;
+                rc.offset_y=0;
+                rc.offset_y_add=-10;
+                rc.offset_x_add=25;
+                rc.vx=0;
+                rc.vy=0;
+                rc.jumplimit=2;
+                rc.jumpcur=0;
+            break;
+        }
+        y_ini=canvasHeight-50-rc.unit_height;
+        setTimeout(function(){
+            repeatGame();
+        },600);
+    })
+
+    function animate(TimeStamp){
+        //console.log(TimeStamp);
+        if(!gameplay){
+            last_time_step=TimeStamp;
+            return;
+        }
+        //console.log(TimeStamp-last_time_step);
+        ctx.clearRect(0, 0, canvasWidth, canvasHeight);
+        drawGameRole(TimeStamp-last_time_step);
+        drawRoad(TimeStamp-last_time_step);
+        setStone(TimeStamp-last_time_step);
+        setRoadVate(TimeStamp-last_time_step);
+        drawStone(TimeStamp-last_time_step);
+        drawGameUI(TimeStamp-last_time_step);
+        last_time_step=TimeStamp;
+        requestAnimationFrame(animate);
+    }
+
+});
+
+var stone_small = function(x,y,vx,vy,width,height){
+    this.x=x;
+    this.y=y;
+    this.vx=vx;
+    this.vy=vy;
+    this.width=width;
+    this.height=height;
+};

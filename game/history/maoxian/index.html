@@ -1,0 +1,177 @@
+<html lang="zh-cn" class="no-js">
+        <head>
+        <meta charset="utf-8">
+        <meta http-equiv="Content-Type">
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+       <meta name="viewport" content="width=640, user-scalable=no, target-densitydpi=device-dpi">
+        <script type="text/javascript">
+        var phoneWidth = parseInt(window.screen.width);
+        var phoneScale = phoneWidth/640;
+        var ua = navigator.userAgent;
+        if (/Android (\d+\.\d+)/.test(ua)){
+            var version = parseFloat(RegExp.$1);
+            // andriod 2.3
+            if(version>2.3){
+                document.write('<meta name="viewport" content="width=640, initial-scale= '+phoneScale+' ,minimum-scale = '+phoneScale+', maximum-scale = '+phoneScale+', target-densitydpi=device-dpi">');
+            // andriod 2.3以上
+            }else{
+                document.write('<meta name="viewport" content="width=640, initial-scale= '+phoneScale+' , target-densitydpi=device-dpi">');
+            }
+            // 其他系统
+        } else {
+            document.write('<meta name="viewport" content="width=640, user-scalable=no, target-densitydpi=device-dpi">');
+        }
+        </script>
+		<title>滚毛线</title>		
+		<meta name="format-detection" content="telephone=no">
+		<meta name="format-detection" content="email=no">        
+		<link rel="stylesheet" type="text/css" href="css/reset.css?v=2" />
+		<link rel="stylesheet" type="text/css" href="css/index.css?v=2" />
+		<link rel="stylesheet" type="text/css" href="css/animations.css?v=2" />
+        <link rel="stylesheet" type="text/css" href="css/load.css?v=2" /> 
+	</head>
+	<body>
+    <div id="loading">
+     	<div class="spinner">
+  			<div class="double-bounce1"></div>
+  			<div class="double-bounce2"></div>
+		</div>
+	</div>
+	<div class="guize pt-page-moveFromTopFade hide" id="js-gz-block" >
+        <dl>
+        <dt class="gz_title">游戏规则：</dt>
+        <dd>在游戏页面点击【开始游戏】—【点击开始】用手指在线的位置往下快速划屏幕即可。</dd>
+        <dd>在规定的时间内滚毛线达到300m，即可凭游戏页面到永威南樾售楼部领取围脖一条。还可以邀请好友来帮你织围脖，邀请好友越多，排名越高。</dd>
+        <dd>第1名：苹果6手机一台。</dd>
+        <dd>第2-4名：小米手机一台。</dd>
+        <dd>第5-16名：小米移动电源一个。</dd>
+        <dd class="bt_block"><img id="js-closegz" class="gz_bt" src="imgm/p1_bt_3.png" /></dd>
+        </dl>
+   </div>
+		<div id="content" style="display:none">
+			<div class="page page-1-1 page-current">
+				<div class="wrap">
+					<img class="img_1 pt-page-moveFromTop" src="imgm/p1_bg.jpg" />
+					<img class="logo pt-page-moveFromTop" src="imgm/logo.png" />
+                    <img class="img_2 pt-page-moveFromTop" src="imgm/p1_font1.png" />
+					<img class="img_3 pt-page-moveCircle pt-page-delay500" src="imgm/p1_font2.png" />
+					<img class="maoxian pt-page-moveCircle-ball pt-page-delay500" src="imgm/p1_maoxian.png" />
+					<div class="bt_bg pt-page-moveFromBottom" ></div>
+					<img class="img_4 pt-page-moveFromBottom" id="js-start-game" src="imgm/p1_bt1.jpg" />
+					<img class="img_5 pt-page-moveFromBottom" id="js-gz-bt" src="imgm/p1_bt2.jpg" />
+				</div>
+			</div>
+			<div class="page page-2-1 hide">
+				<div class="wrap">
+				<!--<div id="tmp_gonext">gonext</div>-->
+				<div class="ac_list">
+				<img class="img_1 gm_0 tgm" src="imga/a_1.jpg" />
+			    </div>
+				<div class="ac_list">
+				<img class="img_1 gm_0 tgm gh" src="imga/a_2.jpg" />
+				<img class="img_1 gm_1 tgm gh" src="imga/a_3.jpg" />
+				<img class="img_1 gm_2 tgm gh" src="imga/a_4.jpg" />
+			    </div>
+                <div class="ac_list">
+				<img class="img_1 gm_0 tgm gh" src="imga/b_1.jpg" />
+				<img class="img_1 gm_1 tgm gh" src="imga/b_2.jpg" />
+				<img class="img_1 gm_2 tgm gh" src="imga/b_3.jpg" />
+			    </div>
+			    <div class="ac_list">
+				<img class="img_1 gm_0 tgm gh" src="imga/c_1.jpg" />
+				<img class="img_1 gm_1 tgm gh" src="imga/c_2.jpg" />
+				<img class="img_1 gm_2 tgm gh" src="imga/c_3.jpg" />
+			    </div>
+				<div class="img_2">剩余时间：<span id="js-game-resttime">30</span></div>
+				<div class="img_3">游戏得分：<span id="js-game-score">0</span></div>
+				<img class="img_4 hide pt-page-moveIconDown" id="js-guide" src="imgm/Hand-Gestures.png" />
+ 				</div>
+			</div>
+			<div class="page page-3-1 hide">
+				<div class="wrap">
+				<img class="img_1 pt-page-moveFromTop hide" src="imgm/p3_bg.jpg" />
+				<img class="logo pt-page-moveFromTop" src="imgm/logo.png" />
+				<img class="img_2 pt-page-moveFromTop hide" id="js-share-bt" src="imgm/p3_bt_yaoqing.png" />
+				<img class="img_3 pt-page-moveFromTop hide"  id="js-gz-bt2" src="imgm/p3_bt_guize.png" />
+				<img class="img_4 pt-page-moveFromTop hide" id="js-again" src="imgm/p3_bt_again.png" />
+					<div class="paiming pt-page-moveFromTop hide" />
+						<div class="main-block">
+							<div class="mb-title">活动剩余时间：<span>73</span>天<span>23</span>小时<span>25</span>分<span>59</span>秒</div>
+							<div class="mb-bt-block">
+								<img class="m3b_1" id="js-zhichi" src="imgm/p3_bt_zhichi.png" />
+								<img class="m3b_2" id="js-nengli" src="imgm/p3_bt_nengli.png" />
+							</div>
+							<div class="mb-bt-note">我的得分是<span id="js-fl-score"></span>,下面是<span id="list_type">点赞</span>排行榜。</div>
+							<div class="mb-list-block">
+								<ul class="rank-list">
+									<li><span class="l">01</span><img class="l" src="imgm/icon_head.jpg" /><span class="r">395</span></li>
+									<li><span class="l">02</span><img class="l" src="imgm/icon_head.jpg" /><span class="r">395</span></li>
+									<li><span class="l">03</span><img class="l" src="imgm/icon_head.jpg" /><span class="r">395</span></li>
+									<li><span class="l">04</span><img class="l" src="imgm/icon_head.jpg" /><span class="r">395</span></li>
+									<li><span class="l">05</span><img class="l" src="imgm/icon_head.jpg" /><span class="r">395</span></li>
+									<li><span class="l">06</span><img class="l" src="imgm/icon_head.jpg" /><span class="r">395</span></li>
+									<li><span class="l">07</span><img class="l" src="imgm/icon_head.jpg" /><span class="r">395</span></li>
+									<li><span class="l">08</span><img class="l" src="imgm/icon_head.jpg" /><span class="r">395</span></li>
+								</ul>
+								<ul class="rank-list">
+									<li><span class="l">01</span><img class="l" src="imgm/icon_head.jpg" /><span class="r">395</span></li>
+									<li><span class="l">02</span><img class="l" src="imgm/icon_head.jpg" /><span class="r">395</span></li>
+									<li><span class="l">03</span><img class="l" src="imgm/icon_head.jpg" /><span class="r">395</span></li>
+									<li><span class="l">04</span><img class="l" src="imgm/icon_head.jpg" /><span class="r">395</span></li>
+									<li><span class="l">05</span><img class="l" src="imgm/icon_head.jpg" /><span class="r">395</span></li>
+									<li><span class="l">06</span><img class="l" src="imgm/icon_head.jpg" /><span class="r">395</span></li>
+									<li><span class="l">07</span><img class="l" src="imgm/icon_head.jpg" /><span class="r">395</span></li>
+									<li><span class="l">08</span><img class="l" src="imgm/icon_head.jpg" /><span class="r">395</span></li>
+								</ul>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+			
+	<div id="audiocontainer"></div>
+	<div id="textsuper">
+	<div id="textsub"><img id="fontimg" />
+    </div>
+    </div>
+    <div id="share">
+    	<div class="shareImg"></div>
+    </div>		
+        <script type="text/javascript">
+		 var imgUrl = 'http://weixin.zto.cn/html/job/img/job-logo.png';
+		var lineLink = 'http://weixin.zto.cn/html/job/?v='+Math.round(Math.random()*999)+3000;
+		var descContent = '滚毛线';
+		var shareTitle = '滚毛线';
+		var appid = ''; 
+		gSound = 'img/1.mp3'; 
+		</script>
+        <script src="js/zepto.min.js?v=2"></script>
+		<script src="js/touch.js?v=2"></script>
+		<script src="js/fx.js?v=2"></script>
+		<script src="js/index.js?v=2"></script>
+        <script type="text/javascript">
+		document.onreadystatechange = loading; 
+		function loading(){
+			if(document.readyState == "complete")
+			{ 
+				$("#loading").hide();
+				$("#content").show();
+				//playbksound();
+			}
+		}
+		function shareDialog(){
+			 $("#share").show();			
+		}
+		function closeDialog(){
+			$("#share").hide();
+		}
+		</script>
+	</body>
+    <div style="display:none">
+    <script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F94e284cce83a62b278089260f366a629' type='text/javascript'%3E%3C/script%3E"));
+</script>    
+    </div>
+</html>

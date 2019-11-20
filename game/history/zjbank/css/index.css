@@ -1,0 +1,265 @@
+body{
+	
+	width:100%;
+	overflow:hidden;
+}
+
+
+.dib{ display: inline-block; vertical-align: middle;}
+.hide,.shide{ display:none;}
+
+.page{
+	width:100%;
+	height:100%;
+	position:absolute;
+	text-align:center;
+	overflow: hidden;
+	
+}
+
+#debug{ position: absolute; left: 0px; top: 0px; font-size: 20px; color: #FFF; z-index: 999; background: #000;}
+.pagelogo{
+	position: absolute;
+	width: 268px; height: auto;
+	left: 30px;
+	top: 40px;
+}
+.pageguide{
+	position: absolute;
+	width: 68px; height: auto;
+	bottom: 80px;
+	left: 50%;
+	margin-left: -34px;
+}
+
+.page .wrap{
+
+}
+
+.page-1-1,.page-2-1{background:#000 url(../imgb/main_bg.gif) center top no-repeat; background-size: 100% 100%;}
+.page-3-1,.page-4-1{background:#000 url(../imgb/make_bg.jpg) center top no-repeat; background-size: 100% 100%;}
+ 
+.page-current{
+	z-index:1;
+}
+
+
+
+.page-1-1 .img_1 {
+	height:auto;width:524px;
+	position:absolute;
+	left:50%;
+	top:130px;
+	margin-left:-262px;
+}
+
+.page-1-1 .img_2{
+	position: absolute;
+	height: auto;width: 380px;
+	left: 50%;
+	margin-left: -190px;
+	top: 690px;
+}
+
+.page-1-1 .img_3{
+	position: absolute;
+	height: auto;width: 380px;
+	left: 50%;
+	margin-left: -190px;
+	top: 740px;
+}
+
+.page-1-1 .img_4{
+	position: absolute;
+	height: auto;width: 380px;
+	left: 50%;
+	margin-left: -190px;
+	top: 790px;
+}
+
+.page-1-1 .img_5{
+	position: absolute;
+	height: auto;width: 380px;
+	left: 50%;
+	margin-left: -190px;
+	top: 840px;
+}
+
+.page-2-1 .eg_img{
+	position: absolute;
+	width: 190px;
+	height: 260px;
+}
+
+.page-2-1 .img_1{
+	left: 12px;
+	top: 140px;
+}
+
+.page-2-1 .img_2{
+	left: 220px;
+	top: 140px;
+}
+
+.page-2-1 .img_3{
+	left: 430px;
+	top: 140px;
+}
+
+.page-2-1 .img_4{
+	left: 12px;
+	top: 420px;
+}
+
+.page-2-1 .img_5{
+	left: 220px;
+	top: 420px;
+}
+
+.page-2-1 .img_6{
+	left: 430px;
+	top: 420px;
+}
+
+.page-2-1 .img_7{
+	position: absolute;
+	width: 256px; height: auto;
+	left: 50%;
+	margin-left: -128px;
+	top: 730px;
+}
+
+.page-2-1 .img_show.mask{
+	position: absolute;
+	background: rgba(0,0,0,0.8); position:absolute; top:0px; width:100%; height:100%;
+}
+.page-2-1 .img_show.main{
+	position: absolute;
+	width: 90%;height: auto;
+	left: 5%;
+	top: 10%;
+}
+
+#myCanvas{
+	position: absolute;
+	top:88px;
+	left: 50%;
+	margin-left: -300px;
+}
+
+#js_result_img{
+	position: absolute;
+	top:88px;
+	left: 50%;
+	margin-left: -300px;
+
+}
+
+.page-3-1 .img_camera{
+	width: 178px; height: 42px;
+	position: absolute;
+	left: 40px;
+	top:240px;
+	background: url(../imgb/upload_bt.png?vv) center top no-repeat; background-size: 100% auto;
+}
+
+.page-3-1 .input_name{
+	width: 178px; height: 50px;
+	position: absolute;
+	display: block;
+	left: 40px;
+	top: 300px;
+	border:none;
+	border:2px solid #a72227;
+	border-radius: 8px 8px 8px 8px;
+	font-size: 24px;
+	text-align: center;
+}
+
+.page-3-1 .input_position{
+	width: 178px; height: 50px;
+	position: absolute;
+	display: block;
+	left: 40px;
+	top: 370px;
+	border:none;
+	border:2px solid #a72227;
+	border-radius: 8px 8px 8px 8px;
+	font-size: 24px;
+	text-align: center;
+}
+
+.page-3-1 .input_say{
+	width: 160px; height: 120px;
+	padding: 5px;
+	position: absolute;
+	display: block;
+	right: 40px;
+	top: 560px;
+	border-radius: 8px 8px 8px 8px;
+	font-size: 24px;
+	background: rgba(255,255,255,0.8);
+}
+
+.page-3-1 .img_more{
+	width: 164px; height: 39px;
+	position: absolute;
+	display: block;
+	right: 40px;
+	top: 720px;
+	background: url(../imgb/more_sqy.png?vv) center top no-repeat; background-size: 100% auto;
+}
+
+.page-3-1 .img_next{
+	width: 169px; height: auto;
+	position: absolute;
+	display: block;
+	right: 40px;
+	top: 780px;
+}
+
+.page-4-1 .img_1{
+	position: absolute;
+	display: block;
+	width: 171px; height: auto;
+	right: 20px;
+	bottom: 150px;
+}
+
+.page-4-1 .img_2{
+	position: absolute;
+	display: block;
+	width: 171px; height: auto;
+	right: 20px;
+	bottom: 90px;
+}
+
+.page-4-1 .img_3{
+	position: absolute;
+	display: block;
+	width: 171px; height: auto;
+	right: 20px;
+	bottom: 30px;
+}
+
+
+#share{ background: rgba(0,0,0,0.9); position:absolute; top:0px; width:100%; height:100%; display:none; z-index:998;}
+.shareImg{ background: url(../img/share.png) no-repeat; position:absolute; top:60px; left:50%; width:380px; margin-left: -150px; height:102px; background-size:cover; z-index:999;}
+.img_guize_mark{background: rgba(0,0,0,0.8); position:absolute; top:0px; width:100%; height:100%;}
+.act_guize{ display: none;}
+
+
+.select_file{position:absolute; top:0; left:0px; height:100%;width:100%;filter:alpha(opacity=0);-moz-opacity:0;-khtml-opacity: 0;opacity: 0;}
+.select_say{position:absolute; top:0; left:0px; height:100%;width:100%;filter:alpha(opacity=0);-moz-opacity:0;-khtml-opacity: 0;opacity: 0;}
+
+
+
+
+
+
+
+
+
+
+
+

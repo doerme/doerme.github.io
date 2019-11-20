@@ -1,0 +1,262 @@
+body{
+	
+	width:100%;
+	overflow:hidden;
+}
+
+
+.dib{ display: inline-block; vertical-align: middle;}
+.hide,.shide{ display:none;}
+
+.page{
+	width:100%;
+	height:100%;
+	position:absolute;
+	text-align:center;
+	overflow: hidden;
+	
+}
+
+#debug{ position: absolute; left: 0px; top: 0px; font-size: 20px; color: #FFF; z-index: 999; background: #000;}
+.pagelogo{
+	position: absolute;
+	width: 268px; height: auto;
+	left: 30px;
+	top: 40px;
+}
+.pageguide{
+	position: absolute;
+	width: 68px; height: auto;
+	bottom: 80px;
+	left: 50%;
+	margin-left: -34px;
+}
+
+.page .wrap{
+	height: 100%;
+}
+
+.page-1-1{background:#FFF url(../imgs/bg.jpg) center top;  background-size: 100% auto;}
+.page-2-1{background:#FFF url(../imgs/p2_bg.jpg) center top ; background-size: 100% auto;}
+.page-3-1{background:#FFF url(../imgs/main_bg.jpg) center -40px ; background-size: 100% auto;}
+
+.page-current{
+	z-index:1;
+}
+
+.flower{
+	position: absolute;
+	width: 640px;
+	left: 0px;
+	top: 0px;
+}
+
+.cloud{
+	position: absolute;
+	width: 640px;
+	bottom: 0px;
+	left: 50%;
+	margin-left: -320px;
+}
+
+.heart{
+	position: absolute;
+	width: 166px;
+	right: 20px;
+	bottom: 20px;
+}
+
+.page-1-1 .p1_moon{
+	position: absolute;
+	width: 514px;
+	top: 160px;
+	left: 50%;
+	margin-left: -257px;
+}
+
+.page-1-1 .p1_main{
+	position: absolute;
+	width: 640px;
+	top: 60px;
+	left: 50%;
+	margin-left: -320px;
+}
+
+.page-1-1 .p1_bt{
+	position: absolute;
+	width: 369px;
+	top: 690px;
+	left: 50%;
+	margin-left: -185px;
+}
+
+.page-1-1 .logo{
+	position: absolute;
+	width: 171px;
+	top: 20px;
+	right: 20px;
+}
+
+.page-2-1 .p2_bt{
+	position: absolute;
+	width: 124px;
+	right: 20px;
+	bottom: 20px;
+}
+
+.page-2-1 .logo{
+	position: absolute;
+	width: 124px;
+	top: 20px;
+	right: 20px;
+}
+
+.page-3-1 .p3_bt1{
+	position: absolute;
+	width: 245px;
+	left: 30px;
+	top: 30px;
+}
+
+.page-3-1 .p3_bt2{
+	position: absolute;
+	width: 263px;
+	left: 45px;
+	top: 740px;
+}
+
+.page-3-1 .share_logo{
+	position: absolute;
+	width: 213px;
+	left: 45px;
+	top: 740px;
+}
+
+.page-3-1 .p3_bt3{
+	position: absolute;
+	width: 263px;
+	right: 45px;
+	top: 740px;
+}
+
+.page-3-1 .kiss{
+	position: absolute;
+	width: 413px;
+	top: 250px;
+	left: 50%;
+	margin-left: -206px;
+}
+
+.page-3-1 .kiss_node{
+	position: absolute;
+	top: 595px;
+	left: 50%;
+	margin-left: -225px;
+	width: 450px;
+	height: 115px;
+	background: #f9faf5;
+}
+
+.page-3-1 .kiss_node p{
+	text-align: center;
+	font-size: 38px;
+	color: #fa536f;
+	line-height: 55px;
+}
+
+.page-rank .p2_bt{
+	position: absolute;
+	width: 124px;
+	right: 20px;
+	bottom: 20px;
+}
+
+.page-rank .page_title{
+	position: absolute;
+	top: 10px;
+	font-size: 85px;
+	text-align: center;
+	color: #FFF;
+	width: 100%;
+}
+
+.page-rank .rank_block{
+	position: relative;
+	width: 526px;
+	height: 734px;
+	top: 130px;
+	left: 50%;
+	margin-left: -263px;
+	background: url(../imgs/rank_block_bg.jpg) no-repeat;
+	background-size: 100% 100%;
+}
+
+.page-rank .rank_main{
+	position: absolute;
+	width: 470px;
+	height: 550px;
+	top: 25px;
+	left: 50%;
+	margin-left: -235px;
+	overflow-x:hidden;
+	overflow-y:auto;  
+}
+
+.page-rank .rank_main table{
+	width: 100%;
+	font-size:22px;
+	border-collapse: collapse;
+}
+
+.page-rank .rank_main table th{
+	background-color: #f64764;
+	color: #FFF;
+	padding: 8px;
+}
+
+.page-rank .rank_main table td{
+	color: #f64764;
+	padding: 8px;
+}
+
+.page-rank .rank_main table td:nth-child(2){
+	width: 150px;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+.page-rank .rank_main .table_head{
+	width: 60px;
+	height: 60px;
+}
+
+#share{ background: rgba(0,0,0,0.9); position:absolute; top:0px; width:100%; height:100%; display:none; z-index:998;}
+.shareImg{ 
+	background: url(../imgs/share_bg.png) no-repeat; 
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 640px;
+	height: 392px;
+	background-size: cover;
+	z-index: 999;
+}
+.img_guize_mark{background: rgba(0,0,0,0.8); position:absolute; top:0px; width:100%; height:100%;}
+.act_guize{ display: none;}
+
+
+.select_file{position:absolute; top:0; left:0px; height:100%;width:100%;filter:alpha(opacity=0);-moz-opacity:0;-khtml-opacity: 0;opacity: 0;}
+.select_say{position:absolute; top:0; left:0px; height:100%;width:100%;filter:alpha(opacity=0);-moz-opacity:0;-khtml-opacity: 0;opacity: 0;}
+
+
+
+
+
+
+
+
+
+
+
+

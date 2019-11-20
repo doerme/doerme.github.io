@@ -1,0 +1,50 @@
+.grid{ display:block; font-family:Microsoft YaHei;}
+.wrap{ position:absolute; top:0px; left:0px; width:100%; height:100%;}
+.btn {border: none;color: #666;cursor: pointer;display:block;margin: 50px auto 0;text-transform: uppercase;letter-spacing: 1px;font-weight: 700;outline: none;position: relative;background: #FFF;border-radius: 7px;box-shadow: 0 5px #CCC;font-size: 20px;height: 70px;width: 220px;line-height: 70px;-webkit-tap-highlight-color: rgba(0,0,0,0);}
+.fl{ float:left;}
+.fr{ float:right;}
+.page0{ background:#FFF;}
+.page0 img{ display:block; margin-left:auto; margin-right:auto; margin-top:400px; width:136px;}
+.page1{ background:#537399;}
+.page1 h1{text-align: center;font-size: 50px;padding: 30px 0;color:#FFF; letter-spacing:0.1em;}
+.page1 #help {height:30px;font-size: 16px;color: #FFF;text-align: center;}
+
+
+.page2{ background:#8D6097;}
+.page2 header {position: absolute;top: 0;left: 0;width: 100%;height: 50px;line-height: 50px;text-align: center;font-size: 16px;color: #FFF;}
+.page2 header .lv {position: absolute;width: 80px;height: 50px;left: 10px;top: 0;}
+.page2 header .lv em {font-style: normal;}
+.page2 header .time {font-size: 20px;font-weight: bold;background-color: #999;color: #FFF;padding: 0 10px;border-radius: 10px;}
+.page2 header .btn-pause {position: absolute;top: 5px;right: 10px;height: 40px;width: 60px;line-height: 40px;padding: 0;margin: 0;}
+.page2 #js-font-show{ color:#FFF; font-size:150px; text-align:center; margin:80px 0 40px;} 
+.page2 .ctrl-box{ padding:0 1em;}
+.page2 .ctrl-box .dc{ width:45%; height:120px; background:#FFF; border-radius:10px; line-height:120px; text-align:center; font-size:100px; color:#666;}
+
+.page3{background:#537399;}
+.page3 .fenshu-title{height:45px;font-size: 16px;color: #FFF;text-align: center; font-size:45px; padding:30px 0 0;letter-spacing:0.1em;}
+.page3 .fenshu-num{height:16px;font-size: 16px;color: #FFF;text-align: center; padding-top:30px;}
+.page3 .btn.bts2{ height:40px; line-height:40px;margin: 25px auto 0;}
+#share_mask{ position:absolute; top:0px; left:0px; width:100%; height:100%; background:#000;
+filter:alpha(opacity=60); -moz-opacity:0.6; -khtml-opacity: 0.6; opacity: 0.6; display:none; }
+#share_mask img{ width:90%;  display:block; margin:10px auto;}
+
+.page4{ background:#f6ed9f;}
+.page4 .wp4_title{ font-size:25px; border-bottom:3px solid #F00; line-height:36px; height:36px;}
+.page4 .zy_box{ width:90%; margin:10px auto;}
+.page4 .rank_list{list-style:none; margin:0px; padding:5px 0 0 0; overflow:hidden;}
+.page4 .rank_list li{ padding:1px 0; border-bottom:1px dotted #fc8080;overflow:hidden;}
+.page4 .rank_list li img{ width:30px; height:30px;}
+.page4 .rank_list li span{ display:inline-block; vertical-align:middle; margin-right:15px;}
+.page4 .rank_num{ font-size:20px; width:25px;}
+.page4 .rank_time{ color:#999; padding-top:0px;}
+.page4 .rank_name{ color:#F00;}
+.page4 #js-back{ height:40px; line-height:40px;}
+.page4 #js-my-score{ padding-top:5px; overflow:hidden;}
+
+#js-fail-mask{ display:none;position:absolute; top:0px; left:0px; width:100%; height:100%; background:#000;
+filter:alpha(opacity=70); -moz-opacity:0.7; -khtml-opacity: 0.7; opacity: 0.7; display:none;}
+#js-fail-mask .jfm-title{ font-size:75px; color:#F00; text-align:center; padding-top:80px; letter-spacing:1px;}
+#js-fail-mask .jfm-time{height:10px;padding-top:20px; width:200px; margin-left:auto; margin-right:auto; text-align:left;}
+#js-fail-mask .jfm-time .jfm-time_line{background:#F00;width:200px; height:10px;}
+
+.adv_block{ display:block; position:fixed; bottom:0px; left:0px; height:60px; width:100%; background:url(http://test.gdtengnan.com/h5game/strokes/adv.jpg?v=1) no-repeat; background-size:100% 100%;}
