@@ -20,6 +20,9 @@
 }
 .button {
 }
+.primary_button {
+  color:#FFFFFF;
+}
 .link_button {
   color:#169BD5;
 }
@@ -113,5 +116,13 @@
   color:#999999;
 }
 ._表单禁用 {
+}
+.box_3 {
+}
+.shape {
+}
+.flow_shape {
+}
+.image {
 }
 textarea, select, input, button { outline: none; }
