@@ -327,8 +327,8 @@
   position:absolute;
   left:0px;
   top:0px;
-  width:600px;
-  height:400px;
+  width:984px;
+  height:750px;
   background:inherit;
   background-color:rgba(242, 242, 242, 1);
   border:none;
@@ -342,8 +342,8 @@
   position:absolute;
   left:0px;
   top:0px;
-  width:600px;
-  height:400px;
+  width:984px;
+  height:750px;
   display:flex;
 }
 #u28 .text {
