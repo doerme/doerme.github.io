@@ -658,7 +658,7 @@
   width:300px;
   height:25px;
   padding:3px 2px 3px 2px;
-  font-family:'ArialMT', 'Arial', sans-serif;
+  font-family:'PingFangSC-Regular', 'PingFang SC', sans-serif;
   font-weight:400;
   font-style:normal;
   font-size:13px;
@@ -677,7 +677,7 @@
   width:300px;
   height:25px;
   padding:3px 2px 3px 2px;
-  font-family:'ArialMT', 'Arial', sans-serif;
+  font-family:'PingFangSC-Regular', 'PingFang SC', sans-serif;
   font-weight:400;
   font-style:normal;
   font-size:13px;
@@ -706,6 +706,9 @@
   -moz-box-shadow:none;
   -webkit-box-shadow:none;
   box-shadow:none;
+  font-family:'PingFangSC-Regular', 'PingFang SC', sans-serif;
+  font-weight:400;
+  font-style:normal;
 }
 #u553 {
   border-width:0px;
@@ -715,6 +718,9 @@
   width:300px;
   height:25px;
   display:flex;
+  font-family:'PingFangSC-Regular', 'PingFang SC', sans-serif;
+  font-weight:400;
+  font-style:normal;
 }
 #u553 .text {
   position:absolute;
@@ -740,6 +746,9 @@
   -moz-box-shadow:none;
   -webkit-box-shadow:none;
   box-shadow:none;
+  font-family:'PingFangSC-Regular', 'PingFang SC', sans-serif;
+  font-weight:400;
+  font-style:normal;
 }
 #u553.disabled {
 }
@@ -792,7 +801,7 @@
   width:300px;
   height:25px;
   padding:3px 2px 3px 2px;
-  font-family:'ArialMT', 'Arial', sans-serif;
+  font-family:'PingFangSC-Regular', 'PingFang SC', sans-serif;
   font-weight:400;
   font-style:normal;
   font-size:13px;
@@ -811,7 +820,7 @@
   width:300px;
   height:25px;
   padding:3px 2px 3px 2px;
-  font-family:'ArialMT', 'Arial', sans-serif;
+  font-family:'PingFangSC-Regular', 'PingFang SC', sans-serif;
   font-weight:400;
   font-style:normal;
   font-size:13px;
@@ -840,6 +849,9 @@
   -moz-box-shadow:none;
   -webkit-box-shadow:none;
   box-shadow:none;
+  font-family:'PingFangSC-Regular', 'PingFang SC', sans-serif;
+  font-weight:400;
+  font-style:normal;
 }
 #u555 {
   border-width:0px;
@@ -849,6 +861,9 @@
   width:300px;
   height:25px;
   display:flex;
+  font-family:'PingFangSC-Regular', 'PingFang SC', sans-serif;
+  font-weight:400;
+  font-style:normal;
 }
 #u555 .text {
   position:absolute;
@@ -874,6 +889,9 @@
   -moz-box-shadow:none;
   -webkit-box-shadow:none;
   box-shadow:none;
+  font-family:'PingFangSC-Regular', 'PingFang SC', sans-serif;
+  font-weight:400;
+  font-style:normal;
 }
 #u555.disabled {
 }
