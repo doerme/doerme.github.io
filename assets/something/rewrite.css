@@ -1,0 +1,21 @@
+@charset "UTF-8";
+
+.order-summary {
+    display: none;
+}
+
+.main__header{
+    display: none;
+}
+
+.cancel {
+    display: none;
+}
+
+.security-tips {
+    display: none;
+}
+
+.security-iconBox.clearfix {
+    display: none;
+}
